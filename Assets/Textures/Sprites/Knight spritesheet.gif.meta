@@ -1,0 +1,630 @@
+fileFormatVersion: 2
+guid: 2fffc45b08254fb489220f5d9fac7d39
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Knight spritesheet_0
+    21300002: Knight spritesheet_1
+    21300004: Knight spritesheet_2
+    21300006: Knight spritesheet_3
+    21300008: Knight spritesheet_4
+    21300010: Knight spritesheet_5
+    21300012: Knight spritesheet_6
+    21300014: Knight spritesheet_7
+    21300016: Knight spritesheet_8
+    21300018: Knight spritesheet_9
+    21300020: Knight spritesheet_10
+    21300022: Knight spritesheet_11
+    21300024: Knight spritesheet_12
+    21300026: Knight spritesheet_13
+    21300028: Knight spritesheet_14
+    21300030: Knight spritesheet_15
+    21300032: Knight spritesheet_16
+    21300034: Knight spritesheet_17
+    21300036: Knight spritesheet_18
+    21300038: Knight spritesheet_19
+    21300040: Knight spritesheet_20
+    21300042: Knight spritesheet_21
+    21300044: Knight spritesheet_22
+    21300046: Knight spritesheet_23
+    21300048: Knight spritesheet_24
+    21300050: Knight spritesheet_25
+    21300052: Knight spritesheet_26
+    21300054: Knight spritesheet_27
+    21300056: Knight spritesheet_28
+    21300058: Knight spritesheet_29
+    21300060: Knight spritesheet_30
+    21300062: Knight spritesheet_31
+    21300064: Knight spritesheet_32
+    21300066: Knight spritesheet_33
+    21300068: Knight spritesheet_34
+    21300070: Knight spritesheet_35
+    21300072: Knight spritesheet_36
+    21300074: Knight spritesheet_37
+    21300076: Knight spritesheet_38
+    21300078: Knight spritesheet_39
+    21300080: Knight spritesheet_40
+    21300082: Knight spritesheet_41
+    21300084: Knight spritesheet_42
+    21300086: Knight spritesheet_43
+    21300088: Knight spritesheet_44
+    21300090: Knight spritesheet_45
+    21300092: Knight spritesheet_46
+    21300094: Knight spritesheet_47
+    21300096: Knight spritesheet_48
+    21300098: Knight spritesheet_49
+    21300100: Knight spritesheet_50
+    21300102: Knight spritesheet_51
+    21300104: Knight spritesheet_52
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Knight spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 541
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 543
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 542
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 540
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 540
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 539
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 540
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 541
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 540
+        width: 67
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 493
+        width: 67
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 484
+        width: 71
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 484
+        width: 67
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 485
+        width: 67
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 487
+        width: 67
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 486
+        width: 67
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 484
+        width: 32
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 408
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 403
+        width: 79
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 396
+        width: 81
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 396
+        width: 69
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 398
+        width: 69
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 399
+        width: 69
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 342
+        width: 69
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 344
+        width: 69
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 332
+        width: 49
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 332
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 332
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 332
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 331
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 264
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 309
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 252
+        width: 52
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 251
+        width: 53
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 253
+        width: 53
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 252
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 196
+        width: 62
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 194
+        width: 62
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 193
+        width: 62
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 192
+        width: 65
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 193
+        width: 65
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 194
+        width: 63
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 130
+        width: 85
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 169
+        width: 64
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 132
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 168
+        width: 63
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 134
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 132
+        width: 62
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 97
+        width: 44
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 97
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 49
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 50
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 40
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Knight spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 43
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
