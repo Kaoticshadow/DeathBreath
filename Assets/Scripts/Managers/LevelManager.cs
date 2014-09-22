@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour {
         CheckTowerPosition();
         if (_knightUnits.Count < 2)
         {
-            _knightUnits.Add(Instantiate(KnightUnit, new Vector2(UnityEngine.Random.Range(-13f, 13f), UnityEngine.Random.Range(-0.01f, -5.0f)), Quaternion.identity) as KnightScript);
+            _knightUnits.Add(Instantiate(KnightUnit, new Vector2(UnityEngine.Random.Range(13f,23f), UnityEngine.Random.Range(-0.01f, -5.0f)), Quaternion.identity) as KnightScript);
         }
 
         if (_towerUnits.Count < 2)
@@ -39,11 +39,18 @@ public class LevelManager : MonoBehaviour {
     {
         for (int i = 0; i < _knightUnits.Count; i++)
         {
-            healthScript = _knightUnits[i].GetComponent<enemyHealth>();
-            if (healthScript.health <= 0)
-            {
-                _knightUnits.RemoveAt(i);
-            }
+			if(_knightUnits[i])
+			{
+	            healthScript = _knightUnits[i].GetComponent<enemyHealth>();
+	            if (healthScript.health <= 0)
+	            {
+	                _knightUnits.RemoveAt(i);
+	            }
+			}
+			else
+			{
+				_knightUnits.RemoveAt(i);
+			}
         }
     }
 

@@ -21,7 +21,7 @@ public class ShootArrowScript : MonoBehaviour {
 		speed = 0.3f;
 		fireSpeed = 20.0f;
 		timerCount = 0;
-		fireCooldown = 40;
+		fireCooldown = 80;
 		DragonTransform = GameObject.Find("Dargon Character").transform;
 		//fireSpeed = 1.0f;
 		

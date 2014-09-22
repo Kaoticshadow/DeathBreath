@@ -38,6 +38,7 @@ public class ForwardFire : MonoBehaviour {
 			}
 
 			clone = Instantiate (m_rb, m_t.position, m_t.rotation) as FireBall;
+			Physics2D.IgnoreCollision(clone.collider2D, collider2D);
 			clone.veloc = _direction;//*fireSpeed;
 			//fireClone.rigidbody2D.velocity = _direction * fireSpeed;
 		}
