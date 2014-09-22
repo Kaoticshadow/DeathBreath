@@ -21,13 +21,12 @@ public class LevelManager : MonoBehaviour {
 
         if (_knightUnits.Count < 2)
         {
-            KnightScript k = Instantiate (KnightUnit, new Vector3(Random.Range(-13f, 13f), Random.Range(-0.01f, -5.0f)), Quaternion.identity) as KnightScript;
-            _knightUnits.Add(k);
+            _knightUnits.Add(Instantiate(KnightUnit, new Vector2(Random.Range(-13f, 13f), Random.Range(-0.01f, -5.0f)), Quaternion.identity) as KnightScript);
         }
 
         if (_towerUnits.Count < 2)
         {
-
+            _towerUnits.Add(Instantiate(TowerUnit, new Vector2(Random.Range(-13f, 13f), Random.Range(-0.01f, -5.0f)), Quaternion.identity) as Tower);
         }
 	}
 }
