@@ -8,11 +8,12 @@ public class GameInitializer : MonoBehaviour {
  
     void Awake()
     {
-        if (!MenuManager.Instance)
-        {
-            MenuManager menuMger = Instantiate(menuManager) as MenuManager;
-            DontDestroyOnLoad(menuMger);
-        }
+        // Example
+        //if (!MenuManager.Instance)
+        //{
+        //    MenuManager menuMger = Instantiate(menuManager) as MenuManager;
+        //    DontDestroyOnLoad(menuMger);
+        //}
     }
 
     void Update()
