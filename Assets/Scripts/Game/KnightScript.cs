@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class KnightScript : MonoBehaviour {
 	
 	public float speed;
+	public float dragonDistance;
 	
 	Transform m_t;
 	Transform DragonTransform;
@@ -13,6 +15,7 @@ public class KnightScript : MonoBehaviour {
 	void Start () {
 		m_t = this.transform;
 		speed = 0.05f;
+		dragonDistance = 5.0f;
 
 		DragonTransform = GameObject.Find("Dargon Character").transform;
 		MidpointY = GameObject.Find ("Midpoint Y").transform;
@@ -33,12 +36,14 @@ public class KnightScript : MonoBehaviour {
 	void Update () {
 
 		//X axis movement
-		if (DragonTransform.localPosition.x < m_t.localPosition.x) {
+		if ( (DragonTransform.localPosition.x < m_t.localPosition.x && !IsDragonTooClose() )
+		    || (DragonTransform.localPosition.x > m_t.localPosition.x && IsDragonTooClose() )) {
 						m_t.localPosition = new Vector3 (m_t.localPosition.x - speed,
 			                                m_t.localPosition.y,
 			                                m_t.localPosition.z);
 
-				} else {
+		} else if ( (DragonTransform.localPosition.x > m_t.localPosition.x && !IsDragonTooClose() )
+		           || (DragonTransform.localPosition.x < m_t.localPosition.x && IsDragonTooClose() )){
 
 						m_t.localPosition = new Vector3 (m_t.localPosition.x + speed,
 		                                m_t.localPosition.y,
@@ -59,6 +64,10 @@ public class KnightScript : MonoBehaviour {
 				}
 
 		
+	}
+
+	bool IsDragonTooClose() {
+		return Math.Abs (DragonTransform.localPosition.x - m_t.localPosition.x) < dragonDistance;
 	}
 	
 }
