@@ -19,8 +19,7 @@ public class enemyHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	if (health <= 0)
-						Destroy (m_go);
-
+		Destroy (m_go);
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
@@ -30,8 +29,8 @@ public class enemyHealth : MonoBehaviour {
 			health -= laserDamage;
 		}
 	void OnCollisionStay2D(Collision2D col){
-		Debug.Log (col.gameObject.name);
-		Debug.Log ("h");
+		//Debug.Log (col.gameObject.name);
+		//Debug.Log ("h");
 
 		if (col.gameObject.name == "Fire Line Renderer(Clone)")
 						health -= stdDamage;
