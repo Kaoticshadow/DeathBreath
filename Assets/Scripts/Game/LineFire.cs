@@ -49,15 +49,13 @@ public class LineFire : MonoBehaviour {
 			if(ammoTransform.localScale.x > ammoMin){
 				lineData = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, -1));
 				
-				lineData.z = -1;
+				lineData.z = 0.001220703f;
 
 				if(stoppable){
 					if(Vector3.Distance(lineData, baseData)>length)
 					{
-						Debug.Log(Vector3.Distance(lineData,baseData));
 						Vector3 norm = lineData-baseData;
 
-						Debug.Log (norm);	
 						lineData = baseData + (norm.normalized*length);
 					}
 				
@@ -66,6 +64,7 @@ public class LineFire : MonoBehaviour {
 				lineData.z = -1;
 				m_lined.SetPosition (0, baseData);
 				m_lined.SetPosition (1, lineData);
+				m_lined.collider2D.transform.position = lineData;
 			if(ammoTransform.localScale.x >ammoMin)
 				ammoTransform.localScale = new Vector3(ammoTransform.localScale.x - ammoRate, 1, 1);
 			}

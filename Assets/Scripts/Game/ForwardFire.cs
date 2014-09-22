@@ -11,6 +11,7 @@ public class ForwardFire : MonoBehaviour {
 	public float fireSpeed;
 	public FireBall m_rb;
 	public Cursor Cursor;
+	FireBall clone;
 	
 	private Vector3 _direction = new Vector3 (1f, 0f, 0f);
 	
@@ -35,14 +36,14 @@ public class ForwardFire : MonoBehaviour {
 			{
 			    _direction.Normalize();
 			}
-			Fire();
+
+			clone = Instantiate (m_rb, m_t.position, m_t.rotation) as FireBall;
+			clone.veloc = _direction;//*fireSpeed;
+			//fireClone.rigidbody2D.velocity = _direction * fireSpeed;
 		}
+		
+		//clone.transform.position = clone.transform.position + (_direction * fireSpeed);
 	}
-	
-	void Fire () 
-	{
-		FireBall fireClone = Instantiate (m_rb, m_t.position, m_t.rotation) as FireBall;
-		fireClone.rigidbody2D.velocity = _direction * fireSpeed;
-	}
+
 }
 
