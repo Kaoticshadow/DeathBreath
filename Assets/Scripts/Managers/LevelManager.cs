@@ -25,13 +25,13 @@ public class LevelManager : MonoBehaviour {
         CheckTowerPosition();
         if (_knightUnits.Count < 2)
         {
-            _knightUnits.Add(Instantiate(KnightUnit, new Vector2(UnityEngine.Random.Range(13f,23f), UnityEngine.Random.Range(-0.01f, -5.0f)), Quaternion.identity) as KnightScript);
+            _knightUnits.Add(Instantiate(KnightUnit, new Vector2(UnityEngine.Random.Range(13f,23f), UnityEngine.Random.Range(-1.00f, -5.0f)), Quaternion.identity) as KnightScript);
         }
 
         if (_towerUnits.Count < 2)
         {
             Debug.Log("Spawning tower units");
-            _towerUnits.Add(Instantiate(TowerUnit, new Vector2(13.0f, UnityEngine.Random.Range(-0.01f, -5.0f)), Quaternion.identity) as Tower);
+            _towerUnits.Add(Instantiate(TowerUnit, new Vector2(13.0f, UnityEngine.Random.Range(-1.00f, -5.0f)), Quaternion.identity) as Tower);
         }
 	}
 

@@ -19,7 +19,7 @@ public class ForwardFire : MonoBehaviour {
 	void Start () {
 		m_t = this.transform;
 		speed = 0.3f;
-		fireSpeed = 25.0f;
+		fireSpeed = 0.5f;
 		//fireSpeed = 1.0f;
 		
 	}
@@ -32,14 +32,11 @@ public class ForwardFire : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0))
 		{
 			_direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_t.position;
-			if (_direction != Vector3.zero)
-			{
-			    _direction.Normalize();
-			}
+			_direction.Normalize();
 
 			clone = Instantiate (m_rb, m_t.position, m_t.rotation) as FireBall;
 			Physics2D.IgnoreCollision(clone.collider2D, collider2D);
-			clone.veloc = _direction;//*fireSpeed;
+			clone.veloc = _direction*fireSpeed;
 			//fireClone.rigidbody2D.velocity = _direction * fireSpeed;
 		}
 		

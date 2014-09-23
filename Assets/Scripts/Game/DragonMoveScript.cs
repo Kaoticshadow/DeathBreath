@@ -10,18 +10,18 @@ public class DragonMoveScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_t = this.transform;
-		speed = 0.3f;
+		speed = 0.2f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.GetKey(KeyCode.A) && (m_t.localPosition.x > -8 ) )
+		if(Input.GetKey(KeyCode.A) && (m_t.localPosition.x > -9 ) )
 			m_t.localPosition = new Vector3(m_t.localPosition.x - speed,
 			                                m_t.localPosition.y,
 			                                m_t.localPosition.z);
 		
-		if(Input.GetKey(KeyCode.D) && (m_t.localPosition.x < 8 ) )
+		if(Input.GetKey(KeyCode.D) && (m_t.localPosition.x < 9 ) )
 			m_t.localPosition = new Vector3(m_t.localPosition.x + speed,
 			                                m_t.localPosition.y,
 			                                m_t.localPosition.z);
