@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour {
     private enemyHealth healthScript;
     private float towerEndXLocation = -13.0f;
 	private int knightSpawnTimer = 0;
-	private int remainingKnights = 15;
+	private int remainingKnights = 20;
 
     void Awake()
     {
@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour {
 		if (_knightUnits.Count < 3 && knightSpawnTimer <= 0 && _knightUnits.Count < remainingKnights)
         {
             _knightUnits.Add(Instantiate(KnightUnit, new Vector2(UnityEngine.Random.Range(13f,23f), UnityEngine.Random.Range(-2.00f, -6.0f)), Quaternion.identity) as KnightScript);
-			knightSpawnTimer = UnityEngine.Random.Range (50,500);
+			knightSpawnTimer = UnityEngine.Random.Range (50,100);
         }
 
         if (_towerUnits.Count < 1)
