@@ -35,7 +35,7 @@ public class LineFire : MonoBehaviour {
 		//fireSpeed = 1.0f;
 		Fire ();
 		ammoTransform = Ammo.transform;
-		ammoTransform.localScale = new Vector3(ammoMax,1,1);
+		ammoTransform.localScale = new Vector3(1,ammoMax,1);
 		
 	}
 	
@@ -46,7 +46,7 @@ public class LineFire : MonoBehaviour {
 		Vector3 lineData;
 		//Vector3 offset = new Vect
 		if (Input.GetMouseButton (0)) {
-			if(ammoTransform.localScale.x > ammoMin){
+			if(ammoTransform.localScale.y > ammoMin){
 				lineData = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, -1));
 				
 				lineData.z = 0.001220703f;
@@ -65,8 +65,8 @@ public class LineFire : MonoBehaviour {
 				m_lined.SetPosition (0, baseData);
 				m_lined.SetPosition (1, lineData);
 				m_lined.collider2D.transform.position = lineData;
-			if(ammoTransform.localScale.x >ammoMin)
-				ammoTransform.localScale = new Vector3(ammoTransform.localScale.x - ammoRate, 1, 1);
+			if(ammoTransform.localScale.y >ammoMin)
+					ammoTransform.localScale = new Vector3(1, ammoTransform.localScale.y - ammoRate, 1);
 			}
 			else{
 			lineData = new Vector3(0,0,0);
@@ -78,8 +78,8 @@ public class LineFire : MonoBehaviour {
 			m_lined.SetPosition (0,lineData);
 			m_lined.SetPosition (1,lineData);
 
-			if(ammoTransform.localScale.x < ammoMax)
-				ammoTransform.localScale = new Vector3(ammoTransform.localScale.x + 2*ammoRate, 1, 1);
+			if(ammoTransform.localScale.y < ammoMax)
+				ammoTransform.localScale = new Vector3(1, ammoTransform.localScale.y + 2*ammoRate, 1);
 		}
 	}
 	

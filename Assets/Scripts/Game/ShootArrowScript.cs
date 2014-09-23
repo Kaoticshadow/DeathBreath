@@ -20,7 +20,7 @@ public class ShootArrowScript : MonoBehaviour {
 	void Start () {
 		m_t = this.transform;
 		speed = 0.3f;
-		fireSpeed = 20.0f;
+		fireSpeed = 15.0f;
 		timerCount = 0;
 		fireCooldown = 80;
 		DragonTransform = GameObject.Find("Dargon Character").transform;
@@ -46,6 +46,13 @@ public class ShootArrowScript : MonoBehaviour {
 		Arrow fireClone = Instantiate (m_arrow, m_t.position, m_t.rotation) as Arrow;
 		fireClone.rigidbody2D.velocity = _direction * fireSpeed;
 		Physics2D.IgnoreCollision(fireClone.collider2D, collider2D);
-		fireClone.transform.Rotate (0f, 0f, 180f*-theDot);
+		if (theDot < 0) {
+						fireClone.transform.Rotate (0f, 0f, 180f * -theDot);
+				}
+
+		//This seems like some bad math
+		if (theDot > 0) {
+			fireClone.transform.Rotate (0f, 0f, 180f * (1-theDot));
+		}
 	}
 }

@@ -96,7 +96,8 @@ public class DragonHP : MonoBehaviour {
 		{
 			GameObject Gravitron = healthScales.Peek () as GameObject;
 
-			Gravitron.rigidbody2D.velocity = new Vector3(1, -4, 0);
+			Gravitron.rigidbody2D.velocity = new Vector3(2, 2, 0);
+			Gravitron.rigidbody2D.gravityScale = 2;
 	
 
 
