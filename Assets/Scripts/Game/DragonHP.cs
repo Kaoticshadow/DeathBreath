@@ -7,8 +7,11 @@ public class DragonHP : MonoBehaviour {
 	public int currentHealth = 100;
 	public int maxHealth = 100;
 	public int invulnerableCountdown;
+	public int blinkduration = 10;
+	int blinkCount= 0;
 	bool invulnerable;
-	
+
+	SpriteRenderer m_sprite;
 	Stack healthScales = new Stack();
 
 
@@ -23,6 +26,7 @@ public class DragonHP : MonoBehaviour {
 		healthScales.Push(GameObject.Find ("DragonScaleHealthBar-5"));
 
 		invulnerableCountdown = 0;
+		m_sprite = this.gameObject.GetComponent <SpriteRenderer>();
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
@@ -41,11 +45,20 @@ public class DragonHP : MonoBehaviour {
 	void Update () 
 	{
 		if (invulnerable) {
-			invulnerableCountdown--;
-			if(invulnerableCountdown <= 0){
-				invulnerable = false;
-			}
-		}
+						invulnerableCountdown--;
+						if (invulnerableCountdown <= 0) {
+								invulnerable = false;
+						}
+						blinkCount++;
+						if (blinkCount % blinkduration == 0) {
+								if (m_sprite.color.a == 0f)
+										m_sprite.color = new Color (1f, 1f, 1f, 1f);
+								else
+										m_sprite.color = new Color (1f, 1f, 1f, 0f);
+						}
+				} else {
+						m_sprite.color = new Color (1f, 1f, 1f, 1f);
+				}
 
 
 		AdjustCurrentHealth (0);
