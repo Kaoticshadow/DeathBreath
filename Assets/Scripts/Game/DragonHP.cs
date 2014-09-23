@@ -6,6 +6,8 @@ public class DragonHP : MonoBehaviour {
 
 	public int currentHealth = 100;
 	public int maxHealth = 100;
+	public int invulnerableCountdown;
+	bool invulnerable;
 	
 	Stack healthScales = new Stack();
 
@@ -14,23 +16,37 @@ public class DragonHP : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-
-
 		healthScales.Push(GameObject.Find ("DragonScaleHealthBar-1"));
 		healthScales.Push(GameObject.Find ("DragonScaleHealthBar-2"));
 		healthScales.Push(GameObject.Find ("DragonScaleHealthBar-3"));
 		healthScales.Push(GameObject.Find ("DragonScaleHealthBar-4"));
 		healthScales.Push(GameObject.Find ("DragonScaleHealthBar-5"));
 
-
-	
+		invulnerableCountdown = 0;
 	}
 
-
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (!invulnerable) 
+		{
+			Debug.Log (coll.gameObject.name);
+			if (coll.gameObject.name == "Arrow(Clone)") {
+				AdjustCurrentHealth (-20);
+				invulnerable = true;
+				invulnerableCountdown = 90;
+			}
+		}
+	}
 
 	// Update is called once per frame
 	void Update () 
 	{
+		if (invulnerable) {
+			invulnerableCountdown--;
+			if(invulnerableCountdown <= 0){
+				invulnerable = false;
+			}
+		}
+
 
 		AdjustCurrentHealth (0);
 		/*healthText.text = currentHealth + " / " + maxHealth;
@@ -79,7 +95,7 @@ public class DragonHP : MonoBehaviour {
 		{
 			GameObject LosingText = GameObject.Find ("LosingText");
 
-			GameObject.Find ("LosingText").guiText.text  = "YOU LOSE SUCKAAAAA";
+			GameObject.Find ("LosingText").guiText.text  = "GAME OVER";
 		}
 
 
