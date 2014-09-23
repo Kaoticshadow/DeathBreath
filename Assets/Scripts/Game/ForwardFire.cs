@@ -29,7 +29,7 @@ public class ForwardFire : MonoBehaviour {
 
 	
 		
-		if (Input.GetMouseButtonDown(1))
+		if (Input.GetMouseButtonDown(0))
 		{
 			_direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_t.position;
 			if (_direction != Vector3.zero)

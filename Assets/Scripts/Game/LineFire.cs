@@ -42,10 +42,10 @@ public class LineFire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Vector3 baseData = new Vector3 (m_t.position.x, m_t.position.y, -1);
+		Vector3 baseData = new Vector3 (m_t.position.x+0.8f, m_t.position.y-0.5f, -1f);
 		Vector3 lineData;
 		//Vector3 offset = new Vect
-		if (Input.GetMouseButton (0)) {
+		if (Input.GetMouseButton (1)) {
 			if(ammoTransform.localScale.y > ammoMin){
 				lineData = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, -1));
 				
