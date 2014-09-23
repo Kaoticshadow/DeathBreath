@@ -16,22 +16,22 @@ public class DragonMoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.GetKey(KeyCode.A) && (m_t.localPosition.x > -9 ) )
+		if(Input.GetKey(KeyCode.A) && (m_t.localPosition.x > -8 ) )
 			m_t.localPosition = new Vector3(m_t.localPosition.x - speed,
 			                                m_t.localPosition.y,
 			                                m_t.localPosition.z);
 		
-		if(Input.GetKey(KeyCode.D) && (m_t.localPosition.x < 9 ) )
+		if(Input.GetKey(KeyCode.D) && (m_t.localPosition.x < 8 ) )
 			m_t.localPosition = new Vector3(m_t.localPosition.x + speed,
 			                                m_t.localPosition.y,
 			                                m_t.localPosition.z);
 		
-		if(Input.GetKey(KeyCode.S) && (m_t.localPosition.y > -3.5f ) )
+		if(Input.GetKey(KeyCode.S) && (m_t.localPosition.y > -4f ) )
 			m_t.localPosition = new Vector3(m_t.localPosition.x,
 			                                m_t.localPosition.y - speed,
 			                                m_t.localPosition.z);
 		
-		if(Input.GetKey(KeyCode.W) && (m_t.localPosition.y < 3.5f ) )
+		if(Input.GetKey(KeyCode.W) && (m_t.localPosition.y < 4f ) )
 			m_t.localPosition = new Vector3(m_t.localPosition.x,
 			                                m_t.localPosition.y + speed,
 			                                m_t.localPosition.z);
