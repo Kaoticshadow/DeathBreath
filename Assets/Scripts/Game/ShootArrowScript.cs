@@ -12,6 +12,7 @@ public class ShootArrowScript : MonoBehaviour {
 	public Cursor Cursor;
 	public int timerCount;
 	public int fireCooldown;
+	public float theDot;
 	
 	private Vector3 _direction = new Vector3 (1f, 0f, 0f);
 	
@@ -32,16 +33,19 @@ public class ShootArrowScript : MonoBehaviour {
 		timerCount++;
 		if (timerCount >= fireCooldown) {
 			timerCount = 0;
-			_direction = DragonTransform.position - m_t.position + new Vector3(0f, 1f, 0f);
-			_direction.Normalize();
+
 			Fire ();
 		}
 	}
 	
 	void Fire () 
 	{
+		_direction = DragonTransform.position - m_t.position + new Vector3(0f, 1f, 0f);
+		_direction.Normalize();
+		theDot = Vector3.Dot(_direction, new Vector3(1f,0f,0f));
 		Arrow fireClone = Instantiate (m_arrow, m_t.position, m_t.rotation) as Arrow;
 		fireClone.rigidbody2D.velocity = _direction * fireSpeed;
 		Physics2D.IgnoreCollision(fireClone.collider2D, collider2D);
+		fireClone.transform.Rotate (0f, 0f, 180f*-theDot);
 	}
 }
