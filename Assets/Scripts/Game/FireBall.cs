@@ -10,10 +10,11 @@ public class FireBall : MonoBehaviour {
 	GameObject m_go;
 	Transform m_t;
 	public Vector3 veloc;
-	
+
 	// Use this for initialization
 	void Start () {
-		lifeTime = 300;
+		lifeTime = 60;
+		currentLife = 0;
 		m_go = this.gameObject;
 		m_t  = this.transform;
 	}

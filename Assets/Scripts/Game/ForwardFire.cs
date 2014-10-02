@@ -31,8 +31,8 @@ public class ForwardFire : MonoBehaviour {
 		
 		if (Input.GetMouseButtonDown(0))
 		{
-			_direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_t.position;
-			_direction.Normalize();
+			//_direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_t.position;
+			//_direction.Normalize();
 
 			clone = Instantiate (m_rb, m_t.position, m_t.rotation) as FireBall;
 			Physics2D.IgnoreCollision(clone.collider2D, collider2D);
