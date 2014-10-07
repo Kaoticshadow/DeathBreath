@@ -21,7 +21,7 @@ public class ScrollingBackground : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(m_t.localPosition.x < leftedge)
-			m_t.localPosition = new Vector3 (rightedge, m_t.localPosition.y, m_t.localPosition.z);
+			m_t.localPosition = new Vector2 (rightedge, m_t.localPosition.y);
 		//m_t.localPosition = new Vector3 (m_t.localPosition.x - speed, m_t.localPosition.y, m_t.localPosition.z);
 	}
 }
