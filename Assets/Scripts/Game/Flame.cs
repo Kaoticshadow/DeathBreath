@@ -5,6 +5,7 @@ public class Flame : MonoBehaviour {
 
 	float lifetime = 1f;
 	float counter = 0;
+	public float power;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,5 +16,13 @@ public class Flame : MonoBehaviour {
 		counter += Time.deltaTime;
 		if (counter > lifetime)
 						Destroy (this.gameObject);
+	}
+
+	void OnTriggerEnter2D (Collider2D col){
+		if (col.gameObject.tag == "Enemy") {
+				col.gameObject.SendMessage ("takeDamage", power);
+				//create splosions
+				Destroy(this.gameObject);
+		}
 	}
 }
