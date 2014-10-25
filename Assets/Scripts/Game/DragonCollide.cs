@@ -9,12 +9,12 @@ public class DragonCollide : MonoBehaviour {
 	public int blinkduration = 10;
 	int blinkCount= 0;
 	bool invulnerable;
-	SpriteRenderer m_sprite;
+	Renderer m_sprite;
 	// Use this for initialization
 	void Start () {
 		invulnerable = false;
 		invulnerableCountdown = 0;
-		m_sprite = this.gameObject.GetComponent <SpriteRenderer>();
+		m_sprite = this.gameObject.renderer;
 	
 	}
 	
@@ -23,28 +23,22 @@ public class DragonCollide : MonoBehaviour {
 		if (invulnerable) {
 			invulnerableCountdown--;
 			if (invulnerableCountdown <= 0) {
-				invulnerable = false;
+					invulnerable = false;
 			}
 			blinkCount++;
 			if (blinkCount % blinkduration == 0) {
-				if (m_sprite.color.a == 0f)
-					m_sprite.color = new Color (1f, 1f, 1f, 1f);
-				else
-					m_sprite.color = new Color (1f, 1f, 1f, 0f);
+					m_sprite.enabled = !m_sprite.enabled;
 			}
-		} else {
-			m_sprite.color = new Color (1f, 1f, 1f, 1f);
 		}
-	
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (!invulnerable) 
 		{
 			Debug.Log (coll.gameObject.name);
-			if (coll.gameObject.tag == "Enemy)") {
+			if (coll.gameObject.tag == "Enemy") {
 				//AdjustCurrentHealth (-20);
-				GameObject.Find("Health Bar").GetComponent<HealthScript>().SendMessage("DropScale");
+				GameObject.Find("Health Bar").GetComponent<HealthScript>().DropScale();
 				invulnerable = true;
 				invulnerableCountdown = 90;
 			}

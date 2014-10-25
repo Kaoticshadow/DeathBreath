@@ -25,8 +25,8 @@ public class HealthScript : MonoBehaviour {
 	
 	}
 
-	void DropScale(){
-		GameObject scale = HealthScaleStack.Pop() as GameObject;
+	public void DropScale(){
+		HealthScale scale = HealthScaleStack.Pop() as HealthScale;
 		scale.rigidbody2D.gravityScale = 1;
 		scale.rigidbody2D.velocity = new Vector3(2, 2, 0);
 	}
