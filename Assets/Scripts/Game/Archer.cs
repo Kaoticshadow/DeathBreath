@@ -10,6 +10,7 @@ public class Archer : MonoBehaviour {
 	GameObject target;
 	
 	public float followRate = 3f;
+	public float maxRange = 15f;
 
 	public bool canFlip = false;
 	int flipFactor = 1;
@@ -75,12 +76,25 @@ public class Archer : MonoBehaviour {
 		return 1/ (1/distance*1);
 	}
 
-	void fire(int offset){
+	void fireVariableForce(int offset){
 		Arrow x = (Arrow)Instantiate (arrow, arrowStart.transform.position, arrowStart.transform.rotation);
 		Vector3 dir = target.transform.position - this.transform.position + new Vector3(0,offset,0);
 		Vector3 dirn = dir.normalized;
 
 		x.rigidbody2D.AddForce (new Vector2 (dirn.x, dirn.y) * arrowForce*calcDecay(dir.magnitude));
+
+		canfire = false;
+	}
+
+	void fireConstantForce(){
+		Arrow x = (Arrow)Instantiate (arrow, arrowStart.transform.position, arrowStart.transform.rotation);
+		Vector3 dir = target.transform.position - this.transform.position;
+		Vector3 dirn = dir.normalized;
+
+		float constantArrowForce = 1000f;
+		Vector2 yOffset = new Vector2(0f, Mathf.Abs(dir.x * 5f));
+		x.rigidbody2D.AddForce (new Vector2 (dirn.x, dirn.y) * 1000f + yOffset);
+
 		canfire = false;
 	}
 	
@@ -89,10 +103,14 @@ public class Archer : MonoBehaviour {
 		armHinge.transform.rotation = Quaternion.Slerp (armHinge.transform.rotation, q, Time.deltaTime * followRate);
 		headHinge.transform.rotation = Quaternion.Slerp (headHinge.transform.rotation, q, Time.deltaTime * followRate);
 	
-		if(this.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Shoot 0")&&canfire)
-						fire (0);
-		if (this.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("archerIdle"))
-						canfire = true;	   
+		if(this.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Shoot 0")&&canfire&&targetInRange()){
+			fireVariableForce (0);
+			//fireConstantForce();
+		}
+						
+		if (this.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("archerIdle")){
+			canfire = true;	   
+		}
 	}
 
 	void updateMode1(){
@@ -100,10 +118,13 @@ public class Archer : MonoBehaviour {
 		armHinge.transform.rotation = Quaternion.Slerp (armHinge.transform.rotation, q, Time.deltaTime * followRate);
 		headHinge.transform.rotation = Quaternion.Slerp (headHinge.transform.rotation, q, Time.deltaTime * followRate);
 
-		if(this.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Shoot 0")&&canfire)
-			fire (1);
-		if (this.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("archerIdle"))
+		if(this.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Shoot 0")&&canfire&&targetInRange()){
+			fireVariableForce (1);
+			//fireConstantForce ();
+		}
+		if (this.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("archerIdle")){
 			canfire = true;
+		}
 	}
 
 	float getAngle(Vector3 targetpos){
@@ -119,5 +140,13 @@ public class Archer : MonoBehaviour {
 			Destroy (this.gameObject);
 
 		//score++;
+	}
+
+	float getDistanceToTarget(){
+		return (target.transform.localPosition - this.transform.localPosition).magnitude;
+	}
+
+	bool targetInRange(){
+		return getDistanceToTarget() < maxRange;
 	}
 }
