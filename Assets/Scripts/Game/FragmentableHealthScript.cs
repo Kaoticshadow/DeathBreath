@@ -14,16 +14,11 @@ public class FragmentableHealthScript : MonoBehaviour {
 		m_t = this.transform;
 		FragmentableHealthScale scale;
 		
-		for(int i=0;i<3;i++)
+		for(int i=0;i<5;i++)
 		{
-			scale = Instantiate(fragmentableScalePrefab,m_t.localPosition + new Vector3(i/2.0f,0f,0f),Quaternion.identity) as FragmentableHealthScale;
+			scale = Instantiate(fragmentableScalePrefab,m_t.localPosition + new Vector3(i/2f,0f,0f),Quaternion.identity) as FragmentableHealthScale;
 			HealthScaleList.Add(scale);
-			//scale.setSortOrder(i);
-		}
-
-		for(int i=0;i<3;i++)
-		{
-			HealthScaleList[i].setSortOrder(i);
+			scale.setSortOrder(i);
 		}
 	}
 	
@@ -34,7 +29,7 @@ public class FragmentableHealthScript : MonoBehaviour {
 	
 	public void DropScale(){
 		FragmentableHealthScale scale = HealthScaleList[HealthScaleList.Count-1];
-		scale.DropFragment();
+		scale.DropFragments();
 		if(scale.getHP () <= 0){
 			HealthScaleList.Remove(scale);
 		}

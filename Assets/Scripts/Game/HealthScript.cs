@@ -16,7 +16,7 @@ public class HealthScript : MonoBehaviour {
 		for(int i=0;i<5;i++)
 		{
 			HealthScale clone = Instantiate(scalePrefab,m_t.localPosition + new Vector3(i/3.0f,0f,0f),Quaternion.identity) as HealthScale;
-			clone.renderer.sortingOrder = i;
+			//clone.renderer.sortingOrder = i;
 			HealthScaleStack.Push(clone);
 		}
 	

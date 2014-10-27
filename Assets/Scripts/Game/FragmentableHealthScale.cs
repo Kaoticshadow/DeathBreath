@@ -10,19 +10,20 @@ public class FragmentableHealthScale : MonoBehaviour {
 	public HealthScaleFragment m_br;
 	List<HealthScaleFragment> HealthScaleFragmentList;
 	int hp;
+	int sortOrder;
 	Transform m_t;
-	bool fragmentsInitialized;
-
 
 	// Use this for initialization
 	void Start () {
+
+	}
+
+	void Awake() {
 		hp = 4;
+		sortOrder = 0;
 		HealthScaleFragmentList = new List<HealthScaleFragment>();
 		m_t = this.transform;
-		fragmentsInitialized = false;
-		if(!fragmentsInitialized){
-			InitializeFragments();
-		}
+		InitializeFragments();
 	}
 	
 	// Update is called once per frame
@@ -32,8 +33,6 @@ public class FragmentableHealthScale : MonoBehaviour {
 
 	void InitializeFragments(){
 		//todo: not like this
-		HealthScaleFragmentList = new List<HealthScaleFragment>();
-		m_t = this.transform;
 
 		HealthScaleFragment fragment = Instantiate(m_tl,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
 		fragment.transform.localScale = new Vector3(2,2,1);
@@ -47,7 +46,8 @@ public class FragmentableHealthScale : MonoBehaviour {
 		fragment = Instantiate(m_br,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
 		fragment.transform.localScale = new Vector3(2,2,1);
 		HealthScaleFragmentList.Add(fragment);
-		fragmentsInitialized = true;
+		applySortOrder();
+	
 	}
 
 	public void DropFragment(){
@@ -59,16 +59,29 @@ public class FragmentableHealthScale : MonoBehaviour {
 		hp--;
 	}
 
+	public void DropFragments(){
+		foreach(HealthScaleFragment fragment in HealthScaleFragmentList){
+			//HealthScaleFragmentList.Remove(fragment);
+			fragment.rigidbody2D.gravityScale = 1.0f;
+			fragment.rigidbody2D.AddForce(new Vector2(100.0f * Random.Range(-1f,1f),100.0f * Random.Range(0.5f,2.0f)));
+			fragment.rigidbody2D.AddTorque(100f * Random.Range(0.5f,2.0f));
+			hp = 0;
+		}
+	}
+
 	public int getHP(){
 		return hp;
 	}
 
 	public void setSortOrder(int i){
-		if(!fragmentsInitialized){
-			InitializeFragments();
-		}
+		sortOrder = i;
+		applySortOrder();
+	}
+
+	void applySortOrder(){
 		foreach(HealthScaleFragment fragment in HealthScaleFragmentList){
-			fragment.renderer.sortingOrder = i;
+			fragment.renderer.sortingOrder = sortOrder;
 		}
 	}
+
 }
