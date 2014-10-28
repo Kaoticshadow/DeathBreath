@@ -7,6 +7,9 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject archer;
 	public GameObject tower;
+	public GameObject knight_boss;
+	public GameObject goombat;
+	public GameObject spicy_chicken;
 	GameObject leftLevelEdge;
 	GameObject rightLevelEdge;
 	SpawnableEntityContainer m_spawnableEntityCollection;
@@ -26,7 +29,11 @@ public class LevelManager : MonoBehaviour {
 			if(!entity.spawned && Time.time >= entity.time)
 			{
 				entity.spawned = true;
-				Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
+				GameObject spawnedObject = (GameObject)Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
+				if(entity.x_scale == 0){entity.x_scale = 1;}
+				if(entity.y_scale == 0){entity.y_scale = 1;}
+				spawnedObject.transform.localScale = new Vector3(entity.x_scale,entity.y_scale);
+
 			}
 		}
 
@@ -51,7 +58,8 @@ public class LevelManager : MonoBehaviour {
 		spawnableEntityDictionary = new Dictionary<string, GameObject>();
 		spawnableEntityDictionary.Add("archer",archer);
 		spawnableEntityDictionary.Add("tower",tower);
-
-
+		spawnableEntityDictionary.Add ("knight_boss", knight_boss);
+		spawnableEntityDictionary.Add ("goombat", goombat);
+		spawnableEntityDictionary.Add("spicy_chicken",spicy_chicken);
 	}
 }
