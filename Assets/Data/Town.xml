@@ -1,134 +1,297 @@
  <SpawnableEntityCollection>
  	<SpawnableEntities>
  	
- 	<SpawnableEntity>
+ <!-- 8 seconds free time to figure out controls -->
+ 
+ 		<SpawnableEntity>
  			<name>archer</name>
- 			<time>2</time>
+ 			<time>8</time>
  			<x>0</x>
  			<y>-1.5</y>
  		</SpawnableEntity>
+ 		
  		<SpawnableEntity>
  			<name>archer</name>
- 			<time>3</time>
+ 			<time>15</time>
  			<x>0</x>
  			<y>-2</y>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>archer</name>
- 			<time>5</time>
+ 			<time>16</time>
  			<x>-0.5</x>
- 			<y>1.5</y>
+ 			<y>-1</y>
  		</SpawnableEntity>
+ <!-- Tower spawn-->	
  		<SpawnableEntity>
  			<name>tower</name>
- 			<time>5</time>
+ 			<time>19</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ <!-- hut spawn -->
+ 		<SpawnableEntity>
+ 			<name>hut</name>
+ 			<time>20</time>
  			<x>0</x>
  			<y>0</y>
  		</SpawnableEntity>
  		
- 			<SpawnableEntity>
+ 		<SpawnableEntity>
  			<name>archer</name>
- 			<time>10</time>
+ 			<time>24</time>
  			<x>0</x>
  			<y>-1.5</y>
  		</SpawnableEntity>
+ 		
+ <!-- Archers on towers -->
  		<SpawnableEntity>
  			<name>archer</name>
- 			<time>11</time>
- 			<x>0</x>
- 			<y>-2</y>
- 		</SpawnableEntity>
- 		<SpawnableEntity>
- 			<name>archer</name>
- 			<time>15</time>
+ 			<time>25</time>
  			<x>-0.5</x>
  			<y>1.5</y>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>tower</name>
- 			<time>15</time>
+ 			<time>25</time>
  			<x>0</x>
  			<y>0</y>
  		</SpawnableEntity>
  		
+ <!-- goombat spawn swarm -->
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.0</time>
+ 			<time>30.0</time>
  			<x>0</x>
- 			<y>0</y>
+ 			<y>1</y>
  			<x_scale>0.5</x_scale>
  			<y_scale>0.5</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.1</time>
+ 			<time>30.1</time>
  			<x>0</x>
- 			<y>0</y>
+ 			<y>1</y>
  			<x_scale>0.5</x_scale>
  			<y_scale>0.5</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.2</time>
+ 			<time>30.2</time>
  			<x>0.5</x>
- 			<y>0.5</y>
+ 			<y>0.95</y>
  			<x_scale>0.7</x_scale>
  			<y_scale>0.7</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.3</time>
+ 			<time>27.3</time>
  			<x>0.5</x>
- 			<y>0.5</y>
+ 			<y>0.95</y>
  			<x_scale>0.7</x_scale>
  			<y_scale>0.7</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.4</time>
+ 			<time>30.4</time>
  			<x>0.5</x>
- 			<y>0.5</y>
+ 			<y>0.95</y>
  			<x_scale>0.7</x_scale>
  			<y_scale>0.7</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.5</time>
+ 			<time>30.5</time>
  			<x>0.5</x>
- 			<y>0.5</y>
+ 			<y>0.95</y>
  			<x_scale>0.7</x_scale>
  			<y_scale>0.7</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.6</time>
+ 			<time>30.6</time>
  			<x>0.7</x>
- 			<y>0.5</y>
+ 			<y>0.9</y>
  			<x_scale>0.7</x_scale>
  			<y_scale>0.7</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.7</time>
+ 			<time>30.7</time>
  			<x>0.5</x>
- 			<y>0.5</y>
+ 			<y>0.9</y>
  			<x_scale>0.7</x_scale>
  			<y_scale>0.7</y_scale>
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>2.8</time>
+ 			<time>30.8</time>
  			<x>0.2</x>
- 			<y>0.2</y>
+ 			<y>0.85</y>
  			<x_scale>1</x_scale>
  			<y_scale>1</y_scale>
  		</SpawnableEntity>
  		
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>34.5</time>
+ 			<x>0</x>
+ 			<y>-2</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>35</time>
+ 			<x>0</x>
+ 			<y>-2</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>35.5</time>
+ 			<x>0</x>
+ 			<y>-2</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>hut</name>
+ 			<time>39</time>
+ 			<x>0</x>
+ 			<y>-2</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>44.0</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 			<x_scale>0.5</x_scale>
+ 			<y_scale>0.5</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>44.1</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 			<x_scale>0.5</x_scale>
+ 			<y_scale>0.5</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>44.2</time>
+ 			<x>0.5</x>
+ 			<y>0.5</y>
+ 			<x_scale>0.7</x_scale>
+ 			<y_scale>0.7</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>45</time>
+ 			<x>-0.5</x>
+ 			<y>1.5</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>tower</name>
+ 			<time>45</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>49</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>55.0</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 			<x_scale>0.5</x_scale>
+ 			<y_scale>0.5</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>55</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>57</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>tower</name>
+ 			<time>60</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>tower</name>
+ 			<time>65</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>65.5</time>
+ 			<x>0</x>
+ 			<y>2</y>
+ 			<x_scale>0.5</x_scale>
+ 			<y_scale>0.5</y_scale>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>tower</name>
+ 			<time>70</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>70</time>
+ 			<x>-0.5</x>
+ 			<y>1.5</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>tower</name>
+ 			<time>49</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>hut</name>
+ 			<time>75</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ <!-- enemies don't spawn, calm before the battle -->
+ 		<SpawnableEntity>
+ 			<name>hut</name>
+ 			<time>80</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>hut</name>
+ 			<time>85</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
  	
+ <!-- boss battle commences after the short calm -->
  		
  		<SpawnableEntity>
  			<name>knight_boss</name>
- 			<time>5</time>
+ 			<time>90</time>
  			<x>-8</x>
  			<y>2.0</y>
  		</SpawnableEntity>
