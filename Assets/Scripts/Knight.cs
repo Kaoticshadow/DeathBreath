@@ -25,6 +25,9 @@ public class Knight : MonoBehaviour {
 		vMid = new Vector3 (xMid, y, location.position.z);
 		vEnd = new Vector3 (xEnd, y, location.position.z);
 		fastDuration =  duration*3f;
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().stopMusic ();
+		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().playMusic ();
+
 	}
 	
 	// Update is called once per frame
