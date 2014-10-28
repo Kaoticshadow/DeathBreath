@@ -36,6 +36,14 @@ public class FragmentableHealthScale : MonoBehaviour {
 
 		HealthScaleFragment[] fragmentPrefabs = new HealthScaleFragment[]{m_tl,m_tr,m_bl,m_br};
 
+		foreach(HealthScaleFragment fragmentPrefab in fragmentPrefabs){
+			HealthScaleFragment fragment = Instantiate(fragmentPrefab,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
+			fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
+			fragment.renderer.sortingLayerName = "UI";
+			HealthScaleFragmentList.Add(fragment);
+		}
+
+		/*
 		HealthScaleFragment fragment = Instantiate(m_tl,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
 		fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
 		HealthScaleFragmentList.Add(fragment);
@@ -48,6 +56,7 @@ public class FragmentableHealthScale : MonoBehaviour {
 		fragment = Instantiate(m_br,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
 		fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
 		HealthScaleFragmentList.Add(fragment);
+		*/
 		applySortOrder();
 	
 	}

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject archer;
+	public GameObject tower;
 	GameObject leftLevelEdge;
 	GameObject rightLevelEdge;
 	SpawnableEntityContainer m_spawnableEntityCollection;
@@ -33,6 +34,8 @@ public class LevelManager : MonoBehaviour {
 	void initializeSpawnableEntityDictionary(){
 		spawnableEntityDictionary = new Dictionary<string, GameObject>();
 		spawnableEntityDictionary.Add("archer",archer);
+		spawnableEntityDictionary.Add("tower",tower);
+
 
 	}
 }

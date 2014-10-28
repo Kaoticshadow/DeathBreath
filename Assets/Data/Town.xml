@@ -1,20 +1,26 @@
  <SpawnableEntityCollection>
  	<SpawnableEntities>
+ 	<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>2</time>
+ 			<x>0</x>
+ 			<y>-1.5</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>3</time>
+ 			<x>0</x>
+ 			<y>-2</y>
+ 		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>archer</name>
  			<time>5</time>
- 			<x>0</x>
- 			<y>-1</y>
+ 			<x>-0.5</x>
+ 			<y>1.5</y>
  		</SpawnableEntity>
  		<SpawnableEntity>
- 			<name>archer</name>
- 			<time>6</time>
- 			<x>0</x>
- 			<y>0</y>
- 		</SpawnableEntity>
- 		<SpawnableEntity>
- 			<name>archer</name>
- 			<time>7</time>
+ 			<name>tower</name>
+ 			<time>5</time>
  			<x>0</x>
  			<y>0</y>
  		</SpawnableEntity>
