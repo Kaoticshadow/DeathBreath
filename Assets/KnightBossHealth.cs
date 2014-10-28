@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bat : MonoBehaviour {
+public class KnightBossHealth : MonoBehaviour {
 
-	public float health = 0.5f;
+	public float health = 100.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,7 @@ public class Bat : MonoBehaviour {
 		{
 			//Instantiate(spicy_chicken,this.transform.localPosition,Quaternion.identity);
 			//	GameObject.FindGameObjectWithTag("PopupScore").GetComponent<PopupScore>().popScore(this.transform.position);
-			Destroy (this.gameObject);
+			Destroy (this.transform.parent.parent.gameObject);
 			//	GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
 			
 		}

@@ -51,6 +51,14 @@ public class DragonCollide : MonoBehaviour {
 				GameObject.Find("Health Bar").SendMessage("DropScale");
 				invulnerable = true;
 				invulnerableCountdown = 80;
+				if(coll.gameObject.tag == "EnemyProjectile"){
+					Destroy (coll.gameObject);
+				}
+			}
+
+			if (coll.gameObject.tag == "HealthPickup") {
+				GameObject.Find("Health Bar").SendMessage("AddScale");
+				Destroy(coll.gameObject);
 			}
 		}
 	}

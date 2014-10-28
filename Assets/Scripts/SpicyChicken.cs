@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpicyChicken : MonoBehaviour {
 
-	public float duration;
+	public float duration = 10.0f;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,4 +16,6 @@ public class SpicyChicken : MonoBehaviour {
 			Destroy(this.gameObject);
 		}	
 	}
+
+
 }

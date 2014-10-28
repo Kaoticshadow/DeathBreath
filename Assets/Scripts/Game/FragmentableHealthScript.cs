@@ -36,4 +36,12 @@ public class FragmentableHealthScript : MonoBehaviour {
 		//scale.rigidbody2D.gravityScale = 1.0f;
 		//scale.rigidbody2D.AddForce(new Vector2(100.0f,100.0f));
 	}
+
+	public void AddScale(){
+		FragmentableHealthScale scale;
+		int i = HealthScaleList.Count;
+		scale = Instantiate(fragmentableScalePrefab,m_t.localPosition + new Vector3(i/2f,0f,0f),Quaternion.identity) as FragmentableHealthScale;
+		HealthScaleList.Add(scale);
+		scale.setSortOrder(i);
+	}
 }

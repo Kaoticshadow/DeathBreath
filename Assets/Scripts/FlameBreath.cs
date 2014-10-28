@@ -26,6 +26,7 @@ public class FlameBreath : MonoBehaviour {
 			float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 			flame.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 			flame.rigidbody2D.AddForce (direction * 100f);
+			flame.power = 1;
 		}
 	}
 }
