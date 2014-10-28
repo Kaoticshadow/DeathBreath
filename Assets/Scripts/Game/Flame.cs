@@ -27,5 +27,10 @@ public class Flame : MonoBehaviour {
 				x.renderer.sortingLayerName = "Middle_player";
 				Destroy(this.gameObject);
 		}
+		if (col.gameObject.tag == "FireResist") {
+			GameObject x = (GameObject)Instantiate(smoke,this.transform.position,Quaternion.identity);
+			x.renderer.sortingLayerName = "Middle_player";
+			Destroy(this.gameObject);
+		}
 	}
 }
