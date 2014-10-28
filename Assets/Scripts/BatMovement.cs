@@ -6,6 +6,7 @@ public class BatMovement : MonoBehaviour {
 	Transform m_t;
 	float amplitude;
 	float frequency;
+	public float speed = -0.04f;
 
 
 
@@ -21,7 +22,7 @@ public class BatMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		transform.position = new Vector3(transform.position.x - .04f, transform.position.y, transform.position.z) + amplitude*(Mathf.Sin(2*Mathf.PI*frequency*Time.time) - Mathf.Sin(2*Mathf.PI*frequency*(Time.time - Time.deltaTime)))*transform.up;
+		transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z) + amplitude*(Mathf.Sin(2*Mathf.PI*frequency*Time.time) - Mathf.Sin(2*Mathf.PI*frequency*(Time.time - Time.deltaTime)))*transform.up;
 
 
 	}
