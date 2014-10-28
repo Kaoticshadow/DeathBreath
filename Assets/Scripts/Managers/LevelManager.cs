@@ -28,8 +28,8 @@ public class LevelManager : MonoBehaviour {
 				entity.spawned = true;
 				Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
 			}
-		}	
 		}
+
 
 		if(Input.GetKey(KeyCode.P))
 		{
