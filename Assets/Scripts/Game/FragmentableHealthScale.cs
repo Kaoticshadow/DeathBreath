@@ -34,17 +34,19 @@ public class FragmentableHealthScale : MonoBehaviour {
 	void InitializeFragments(){
 		//todo: not like this
 
+		HealthScaleFragment[] fragmentPrefabs = new HealthScaleFragment[]{m_tl,m_tr,m_bl,m_br};
+
 		HealthScaleFragment fragment = Instantiate(m_tl,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
-		fragment.transform.localScale = new Vector3(2,2,1);
+		fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
 		HealthScaleFragmentList.Add(fragment);
 		fragment = Instantiate(m_tr,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
-		fragment.transform.localScale = new Vector3(2,2,1);
+		fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
 		HealthScaleFragmentList.Add(fragment);
 		fragment = Instantiate(m_bl,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
-		fragment.transform.localScale = new Vector3(2,2,1);
+		fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
 		HealthScaleFragmentList.Add(fragment);
 		fragment = Instantiate(m_br,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
-		fragment.transform.localScale = new Vector3(2,2,1);
+		fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
 		HealthScaleFragmentList.Add(fragment);
 		applySortOrder();
 	
