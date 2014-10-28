@@ -29,6 +29,22 @@ public class LevelManager : MonoBehaviour {
 				Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
 			}
 		}	
+		}
+
+		if(Input.GetKey(KeyCode.P))
+		{
+			Time.timeScale = 0.0f;
+			GameObject.FindGameObjectWithTag("Player").GetComponent<DragonMove>().paused = true;
+		}
+		if(Input.GetKey (KeyCode.O))
+		{
+			Time.timeScale = 1.0f;
+			GameObject.FindGameObjectWithTag("Player").GetComponent<DragonMove>().paused = false;
+
+		}
+
+
+
 	}
 
 	void initializeSpawnableEntityDictionary(){
