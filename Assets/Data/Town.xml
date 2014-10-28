@@ -2,6 +2,14 @@
  	<SpawnableEntities>
  	
  	<SpawnableEntity>
+ 			<name>spicy_chicken</name>
+ 			<time>1</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 	
+ 	
+ 	<SpawnableEntity>
  			<name>archer</name>
  			<time>2</time>
  			<x>0</x>
