@@ -34,7 +34,7 @@ public class CutsceneManager : MonoBehaviour {
         if (timeKeeper < 3 && stage == 0)
         {
             TextMesh.text = "In King Odin's kingdom";
-            TextMesh.transform.position = new Vector3(-6.090187f, -3.3503f, -2);
+            TextMesh.transform.position = new Vector3(-8.44f, -3.3503f, -2);
         }
         if (timeKeeper > 3 && stage == 0)
             stage = 1;
@@ -50,7 +50,7 @@ public class CutsceneManager : MonoBehaviour {
         if (timeKeeper < 9 && stage == 2)
         {
             TextMesh.text = "The peasants cry out\n in BURNINATION";
-            TextMesh.transform.position = new Vector3(-9.16239f, -2.033642f, -2);
+            TextMesh.transform.position = new Vector3(-8.47f, -2.033642f, -2);
         }
         if (timeKeeper > 9 && stage == 2)
             stage = 3;
