@@ -6,15 +6,22 @@ public class GameInitializer : MonoBehaviour {
 
     //Assign your managers that you want to setup on game init
     //This allows for non cluttering of the scene file (DeathBreath.unity)
-    //public MenuManager menuManager;
+    public GameFlowManager GameFlowManager;
  
     void Awake()
     {
+        // EXAMPLE
         //if (!MenuManager.Instance)
         //{
         //    MenuManager menuMger = Instantiate(menuManager) as MenuManager;
         //    DontDestroyOnLoad(menuMger);
         //}
+
+        if (!GameFlowManager)
+        {
+            GameFlowManager gameFlow = Instantiate(GameFlowManager) as GameFlowManager;
+            DontDestroyOnLoad(gameFlow);
+        }
     }
 
     void Update()
