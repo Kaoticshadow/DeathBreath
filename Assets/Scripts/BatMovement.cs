@@ -12,8 +12,8 @@ public class BatMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		amplitude = 1.5f;
-		frequency = 1.0f;
+		amplitude = Random.Range (0.5f, 1.0f);//1.5f;
+		frequency = Random.Range (0.5f, 2.0f);//1.0f
 		m_t = this.transform;
 	
 	}

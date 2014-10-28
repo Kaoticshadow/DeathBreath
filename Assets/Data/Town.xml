@@ -1,5 +1,6 @@
  <SpawnableEntityCollection>
  	<SpawnableEntities>
+ 	
  	<SpawnableEntity>
  			<name>archer</name>
  			<time>2</time>
@@ -24,5 +25,113 @@
  			<x>0</x>
  			<y>0</y>
  		</SpawnableEntity>
+ 		
+ 			<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>10</time>
+ 			<x>0</x>
+ 			<y>-1.5</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>11</time>
+ 			<x>0</x>
+ 			<y>-2</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>15</time>
+ 			<x>-0.5</x>
+ 			<y>1.5</y>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>tower</name>
+ 			<time>15</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.0</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 			<x_scale>0.5</x_scale>
+ 			<y_scale>0.5</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.1</time>
+ 			<x>0</x>
+ 			<y>0</y>
+ 			<x_scale>0.5</x_scale>
+ 			<y_scale>0.5</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.2</time>
+ 			<x>0.5</x>
+ 			<y>0.5</y>
+ 			<x_scale>0.7</x_scale>
+ 			<y_scale>0.7</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.3</time>
+ 			<x>0.5</x>
+ 			<y>0.5</y>
+ 			<x_scale>0.7</x_scale>
+ 			<y_scale>0.7</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.4</time>
+ 			<x>0.5</x>
+ 			<y>0.5</y>
+ 			<x_scale>0.7</x_scale>
+ 			<y_scale>0.7</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.5</time>
+ 			<x>0.5</x>
+ 			<y>0.5</y>
+ 			<x_scale>0.7</x_scale>
+ 			<y_scale>0.7</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.6</time>
+ 			<x>0.7</x>
+ 			<y>0.5</y>
+ 			<x_scale>0.7</x_scale>
+ 			<y_scale>0.7</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.7</time>
+ 			<x>0.5</x>
+ 			<y>0.5</y>
+ 			<x_scale>0.7</x_scale>
+ 			<y_scale>0.7</y_scale>
+ 		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>2.8</time>
+ 			<x>0.2</x>
+ 			<y>0.2</y>
+ 			<x_scale>1</x_scale>
+ 			<y_scale>1</y_scale>
+ 		</SpawnableEntity>
+ 		
+ 	
+ 		
+ 		<SpawnableEntity>
+ 			<name>knight_boss</name>
+ 			<time>5</time>
+ 			<x>-8</x>
+ 			<y>2.0</y>
+ 		</SpawnableEntity>
+ 		
  	</SpawnableEntities>
  </SpawnableEntityCollection>

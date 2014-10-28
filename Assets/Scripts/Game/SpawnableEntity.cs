@@ -7,5 +7,8 @@ public class SpawnableEntity
 	public float time;
 	public float x;
 	public float y;
+	public float x_scale;
+	public float y_scale;
 	public bool spawned;
+
 }
