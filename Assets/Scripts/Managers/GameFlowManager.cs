@@ -28,6 +28,7 @@ public class GameFlowManager : MonoBehaviour {
         {
             case GameStates.GameInitialize:
                 // Go to intro scene with play button
+                Application.LoadLevel("Intro");
                 break;
         }
 	}
