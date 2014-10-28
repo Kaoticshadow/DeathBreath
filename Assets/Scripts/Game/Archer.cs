@@ -137,8 +137,12 @@ public class Archer : MonoBehaviour {
 	void takeDamage(float damage){
 		health -= damage;
 		if (health < 0)
+		{
+			GameObject.FindGameObjectWithTag("PopupScore").GetComponent<PopupScore>().popScore(this.transform.position);
 			Destroy (this.gameObject);
+			GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
 
+		}
 		//score++;
 	}
 

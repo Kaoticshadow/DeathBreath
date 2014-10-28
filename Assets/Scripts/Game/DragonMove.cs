@@ -6,17 +6,23 @@ public class DragonMove : MonoBehaviour {
 	Transform dragonTrans;
 
 	public float moveRate = 1.0f;
+	public bool paused;
 
 	bool turned = false;
 	// Use this for initialization
 	void Start () {
 	
 		dragonTrans = this.transform;
+		paused = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		move (getDir ());
+
+		if (paused == false) 
+		{
+			move (getDir ());
+		}
 	}
 
 	void move(Vector2 direction)
@@ -45,6 +51,9 @@ public class DragonMove : MonoBehaviour {
 		}
 		if(Input.GetKey(KeyCode.S))
 			dir.y -= 1;
+		if (Input.GetKey (KeyCode.S)) {
+						dir.y -= 1;
+				}
 
 		if (!Input.anyKey) {
 			q = Quaternion.AngleAxis (0.0f, Vector3.forward);
