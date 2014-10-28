@@ -22,6 +22,8 @@ public class KnightBossHealth : MonoBehaviour {
 			//Instantiate(spicy_chicken,this.transform.localPosition,Quaternion.identity);
 			//	GameObject.FindGameObjectWithTag("PopupScore").GetComponent<PopupScore>().popScore(this.transform.position);
 			Destroy (this.transform.parent.parent.gameObject);
+			GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().stopMusic();
+			GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().playMusic2();
 			//	GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
 			
 		}

@@ -5,6 +5,7 @@ public class Music : MonoBehaviour {
 
 	public AudioSource source1;
 	public AudioSource source2;
+	public AudioSource source3;
 
 
 
@@ -38,7 +39,14 @@ public class Music : MonoBehaviour {
 	public void stopMusic()
 	{
 		source1.Stop ();
+		source2.Stop ();
 	}
 
-
+	public void playMusic2()
+	{
+		if(source2.isPlaying == false && source1.isPlaying == false)
+		{
+			source3.Play ();
+		}
+	}
 }

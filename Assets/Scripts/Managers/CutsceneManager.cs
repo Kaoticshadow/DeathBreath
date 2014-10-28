@@ -20,6 +20,7 @@ public class CutsceneManager : MonoBehaviour {
 
     void Start()
     {
+		Screen.SetResolution (1024, 576, false);
         timeKeeper = 0;
         SpriteRenderer s = Scene1.GetComponent<SpriteRenderer>();
         s.color = new Color(s.color.r, s.color.g, s.color.b, 1); 
@@ -70,7 +71,7 @@ public class CutsceneManager : MonoBehaviour {
             s.color = new Color(s.color.r, s.color.g, s.color.b, 0);
             s = Scene2.GetComponent<SpriteRenderer>();
             s.color = new Color(s.color.r, s.color.g, s.color.b, 1);
-            TextMesh.text = "...to raid the dragon's lair\nand steal its treasure";
+            TextMesh.text = "...to raid the dragon lair\nand steal its treasure";
             TextMesh.transform.position = new Vector3(-8.372395f, -2.033642f, -2);
         }
         if (timeKeeper > 25 && stage == 4)

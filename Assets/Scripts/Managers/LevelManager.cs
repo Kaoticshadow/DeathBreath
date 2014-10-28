@@ -15,19 +15,25 @@ public class LevelManager : MonoBehaviour {
 	GameObject rightLevelEdge;
 	SpawnableEntityContainer m_spawnableEntityCollection;
 	Dictionary<string, GameObject> spawnableEntityDictionary; 
+	float time;
 
 	void Start () {
+		
+		//Screen.SetResolution (640, 360, false);
+		Screen.SetResolution (1024, 576, false);
 		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Data/Town.xml"));
 		leftLevelEdge = GameObject.Find("Left Level Edge");
 		rightLevelEdge = GameObject.Find("Right Level Edge");
-		initializeSpawnableEntityDictionary();	
+		initializeSpawnableEntityDictionary();
+		time = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		time += Time.deltaTime;
 		foreach(SpawnableEntity entity in m_spawnableEntityCollection.SpawnableEntities)
 		{
-			if(!entity.spawned && Time.time >= entity.time)
+			if(!entity.spawned && time >= entity.time)
 			{
 				entity.spawned = true;
 				GameObject spawnedObject = (GameObject)Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
