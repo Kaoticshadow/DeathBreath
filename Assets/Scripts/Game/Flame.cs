@@ -20,7 +20,7 @@ public class Flame : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D col){
-		if (col.gameObject.tag == "Enemy") {
+		if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Destructable") {
 				col.gameObject.SendMessage ("takeDamage", power);
 				//create splosions
 				GameObject x = (GameObject)Instantiate(smoke,this.transform.position,Quaternion.identity);
