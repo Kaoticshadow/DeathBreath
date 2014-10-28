@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject tower;
 	public GameObject knight_boss;
 	public GameObject goombat;
+	public GameObject hut;
 	public GameObject spicy_chicken;
 	GameObject leftLevelEdge;
 	GameObject rightLevelEdge;
@@ -61,5 +62,6 @@ public class LevelManager : MonoBehaviour {
 		spawnableEntityDictionary.Add ("knight_boss", knight_boss);
 		spawnableEntityDictionary.Add ("goombat", goombat);
 		spawnableEntityDictionary.Add("spicy_chicken",spicy_chicken);
+		spawnableEntityDictionary.Add ("hut", hut);
 	}
 }
