@@ -46,7 +46,7 @@ public class DragonCollide : MonoBehaviour {
 		if (!invulnerable) 
 		{
 			Debug.Log (coll.gameObject.name);
-			if (coll.gameObject.tag == "Enemy") {
+			if (coll.gameObject.tag == "Enemy"||coll.gameObject.tag == "EnemyProjectile") {
 				//AdjustCurrentHealth (-20);
 				GameObject.Find("Health Bar").SendMessage("DropScale");
 				invulnerable = true;

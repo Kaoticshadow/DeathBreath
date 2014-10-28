@@ -6,6 +6,7 @@ public class Flame : MonoBehaviour {
 	float lifetime = 1f;
 	float counter = 0;
 	public float power;
+	public GameObject smoke;
 	// Use this for initialization
 	void Start () {
 	
@@ -22,6 +23,8 @@ public class Flame : MonoBehaviour {
 		if (col.gameObject.tag == "Enemy") {
 				col.gameObject.SendMessage ("takeDamage", power);
 				//create splosions
+				GameObject x = (GameObject)Instantiate(smoke,this.transform.position,Quaternion.identity);
+				x.renderer.sortingLayerName = "Middle_player";
 				Destroy(this.gameObject);
 		}
 	}
