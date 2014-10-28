@@ -21,21 +21,23 @@ public class Music : MonoBehaviour {
 	void Update () {
 	
 
-		if(source1.isPlaying == false)
-		{
-			playMusic ();
-		}
+	
 
 
 	}
 
-	void playMusic()
+	public void playMusic()
 	{
 		if(source2.isPlaying == false)
 		{
 			source2.Play ();
 		}
 
+	}
+
+	public void stopMusic()
+	{
+		source1.Stop ();
 	}
 
 
