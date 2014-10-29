@@ -35,25 +35,22 @@ public class DragonMove : MonoBehaviour {
 		Quaternion q;// = Quaternion.AngleAxis (-20.0f, Vector3.forward);
 
 		if (Input.GetKey (KeyCode.A)) {
-						dir.x -= 0.8f;
+			dir.x -= 0.8f;
 			//dragonTrans.rotation = Quaternion.Euler (0f, 0f, 20.0f);
 			 q = Quaternion.AngleAxis (20.0f, Vector3.forward);
 			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
 		}
 		if (Input.GetKey (KeyCode.D)) {
-			dir.x += 1;
+			dir.x += 1.0f;
 			//dragonTrans.rotation = Quaternion.Euler (0f, 0f, -20.0f);
 			 q = Quaternion.AngleAxis (-20.0f, Vector3.forward);
 			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
 		}
 		if (Input.GetKey (KeyCode.W)) {
-			dir.y += 1;
+			dir.y += 1.0f;
 		}
 		if(Input.GetKey(KeyCode.S))
-			dir.y -= 1;
-		if (Input.GetKey (KeyCode.S)) {
-						dir.y -= 1;
-				}
+			dir.y -= 1.0f;
 
 		if (!Input.anyKey) {
 			q = Quaternion.AngleAxis (0.0f, Vector3.forward);

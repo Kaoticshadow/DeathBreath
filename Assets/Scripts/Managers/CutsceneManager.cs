@@ -45,6 +45,11 @@ public class CutsceneManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timeKeeper += Time.deltaTime;
+
+		if(Input.GetKey(KeyCode.Escape)){
+			timeKeeper += 10*Time.deltaTime;
+		}
+
         Debug.Log(timeKeeper);
         //stage 0
         if (timeKeeper < 5 && stage == 0)

@@ -35,6 +35,9 @@ public class FragmentableHealthScript : MonoBehaviour {
 		}
 		//scale.rigidbody2D.gravityScale = 1.0f;
 		//scale.rigidbody2D.AddForce(new Vector2(100.0f,100.0f));
+		if(HealthScaleList.Count == 0){
+			GameObject.Find("Level Manager").SendMessage("GameOver");
+		}
 	}
 
 	public void AddScale(){

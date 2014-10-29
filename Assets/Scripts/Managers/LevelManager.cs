@@ -61,6 +61,21 @@ public class LevelManager : MonoBehaviour {
 
 	}
 
+	void GameOver(){
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		player.GetComponent<DragonMove>().paused = true;
+		player.rigidbody2D.gravityScale = 1.0f;
+		player.rigidbody2D.AddForce(new Vector2(100f,50f));
+		player.rigidbody2D.AddTorque(-50f);
+		StartCoroutine(WaitAndLoadLevel(2.0f,"Town"));
+	}
+
+	IEnumerator WaitAndLoadLevel(float waitTime, string levelName){
+		yield return new WaitForSeconds(waitTime);
+		//todo: figure out where to go on game over
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
 	void initializeSpawnableEntityDictionary(){
 		spawnableEntityDictionary = new Dictionary<string, GameObject>();
 		spawnableEntityDictionary.Add("archer",archer);
