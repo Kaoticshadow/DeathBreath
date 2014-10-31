@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject archer;
+	public GameObject dragon;
 	public GameObject tower;
 	public GameObject knight_boss;
 	public GameObject goombat;
@@ -16,6 +17,7 @@ public class LevelManager : MonoBehaviour {
 	SpawnableEntityContainer m_spawnableEntityCollection;
 	Dictionary<string, GameObject> spawnableEntityDictionary; 
 	float time;
+	bool dragonStart = false;
 
 	void Start () {
 		
@@ -43,6 +45,17 @@ public class LevelManager : MonoBehaviour {
 
 			}
 		}
+		//dragon init
+		if (time < 2.2f) {
+			dragon.transform.position = new Vector3(-13.31006f,0.332745f,0);
+				}
+		if (time > 2.2f && !dragonStart) {
+
+			dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
+		}
+		if (time > 3f)
+						dragonStart = true;
+
 
 
 		if(Input.GetKey(KeyCode.P))
