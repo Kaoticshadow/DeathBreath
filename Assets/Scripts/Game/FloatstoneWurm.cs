@@ -18,7 +18,7 @@ public class FloatstoneWurm : MonoBehaviour {
 		bodySegment1 = Instantiate (body, this.transform.position, Quaternion.identity) as FloatstoneBody;
 		bodySegment1.target = headSegment.gameObject;
 
-		for (int x = 0; x<2; x++) {
+		for (int x = 0; x<3; x++) {
 						bodySegment2 = Instantiate (body, this.transform.position, Quaternion.identity) as FloatstoneBody;
 						bodySegment2.target = bodySegment1.gameObject;
 						bodySegment1 = Instantiate (body, this.transform.position, Quaternion.identity) as FloatstoneBody;
