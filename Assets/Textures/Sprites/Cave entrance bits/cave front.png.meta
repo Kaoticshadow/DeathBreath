@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: fdfd7aa8ead2c2d4c93e8658096b864e
+guid: 2bed37aa707114d429fae52e5897ee90
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Odin_Battle_Left
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

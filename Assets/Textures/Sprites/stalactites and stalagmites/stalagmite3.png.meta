@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 7db1add993f23ed41a85068a0a6059df
+guid: 8b1c4a16eb4fee840ae87df2033b960a
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: castle-interior-medieval
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

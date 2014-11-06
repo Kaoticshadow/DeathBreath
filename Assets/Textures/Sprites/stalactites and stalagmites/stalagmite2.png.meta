@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: b1f67bdfacc2cfb47b2ef77f03d1a07a
+guid: fe7deb5fb67833f4783638ab653b721b
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: DragonScale
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
