@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Flame : MonoBehaviour {
 
-	float lifetime = 1f;
+	public float lifetime = 1f;
 	float counter = 0;
 	public float power;
 	public GameObject smoke;

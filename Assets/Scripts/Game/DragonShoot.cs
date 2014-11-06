@@ -7,9 +7,11 @@ public class DragonShoot : MonoBehaviour {
 	public bool disableFire;
 
 	public Flame f;
+	public Flame of;
 	public float fireForce = 3600f;
 
 	public float cooldown = 0.2f;
+	int pepperLevel = 0;
 	float cooldownctr = 0;
 	bool coolingdown = false;
 	bool letgo = true;
@@ -47,6 +49,7 @@ public class DragonShoot : MonoBehaviour {
 				x.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
 				coolingdown = true;
 				x.power = fireScale;
+				fireExtraBalls();
 				
 				firectr++;
 				if(firectr>=fireCount)
@@ -66,11 +69,46 @@ public class DragonShoot : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col){
-		//dragon enters a col
+	void fireExtraBalls(){
+		switch (pepperLevel) {
+		case 0:
+			break;
+		case 1:
+			Flame x = (Flame)Instantiate (of, startloc.transform.position, Quaternion.identity);
+			x.transform.localScale = new Vector2(x.transform.localScale.x,x.transform.localScale.y*fireScale);
+			x.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			coolingdown = true;
+			x.power = fireScale;
+			break;
+		case 2: 
+			Flame x1 = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			x1.transform.localScale = new Vector2(x1.transform.localScale.x,x1.transform.localScale.y*fireScale);
+			x1.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
+			coolingdown = true;
+			x1.power = fireScale;
+			Flame x2 = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			x2.transform.localScale = new Vector2(x2.transform.localScale.x,x2.transform.localScale.y*fireScale);
+			x2.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
+			coolingdown = true;
+			x2.power = fireScale;
+			break;
+		case 3: 
+			break;
+		default:
+			break;
 
-		if (col.gameObject.tag == "firebonus")
-						fireScale += 0.2f;
+
+		}
 
 	}
+
+	public void addFireScale(float bonus){
+		fireScale += bonus;
+	}
+
+	public void addPepperLevel(){
+		pepperLevel++;
+	}
+
+
 }
