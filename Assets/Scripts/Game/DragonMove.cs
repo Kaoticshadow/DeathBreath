@@ -6,20 +6,20 @@ public class DragonMove : MonoBehaviour {
 	Transform dragonTrans;
 
 	public float moveRate = 1.0f;
-	public bool paused;
+	public bool disableControls;
 
 	bool turned = false;
 	// Use this for initialization
 	void Start () {
 	
 		dragonTrans = this.transform;
-		paused = false;
+		disableControls = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (paused == false) 
+		if (disableControls == false) 
 		{
 			move (getDir ());
 		}

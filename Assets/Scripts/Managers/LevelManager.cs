@@ -18,16 +18,22 @@ public class LevelManager : MonoBehaviour {
 	Dictionary<string, GameObject> spawnableEntityDictionary; 
 	float time;
 	bool dragonStart = false;
+	GameObject player;
+	int i;
+	Vector2 currentVector;
 
+	
 	void Start () {
 		
 		//Screen.SetResolution (640, 360, false);
 		//Screen.SetResolution (1024, 576, false);
+		player = GameObject.FindGameObjectWithTag("Player");
 		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Data/Town.xml"));
 		leftLevelEdge = GameObject.Find("Left Level Edge");
 		rightLevelEdge = GameObject.Find("Right Level Edge");
 		initializeSpawnableEntityDictionary();
 		time = 0;
+
 	}
 	
 	// Update is called once per frame
@@ -60,23 +66,22 @@ public class LevelManager : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.P))
 		{
-			Time.timeScale = 0.0f;
-			GameObject.FindGameObjectWithTag("Player").GetComponent<DragonMove>().paused = true;
+			disableControls();
 		}
 		if(Input.GetKey (KeyCode.O))
 		{
-			Time.timeScale = 1.0f;
-			GameObject.FindGameObjectWithTag("Player").GetComponent<DragonMove>().paused = false;
-
+			enableControls();
 		}
+
+
+
 
 
 
 	}
 
 	void GameOver(){
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		player.GetComponent<DragonMove>().paused = true;
+		player.GetComponent<DragonMove>().disableControls = true;
 		player.rigidbody2D.gravityScale = 1.0f;
 		player.rigidbody2D.AddForce(new Vector2(100f,50f));
 		player.rigidbody2D.AddTorque(-50f);
@@ -97,5 +102,46 @@ public class LevelManager : MonoBehaviour {
 		spawnableEntityDictionary.Add ("goombat", goombat);
 		spawnableEntityDictionary.Add("spicy_chicken",spicy_chicken);
 		spawnableEntityDictionary.Add ("hut", hut);
+	}
+
+	public void endLevel(Vector2 myVec)
+	{
+		Vector2 endVec = myVec;
+		StartCoroutine (endLevelCoroutine (myVec));
+	}
+
+	public IEnumerator endLevelCoroutine(Vector2 myVec2)
+	{
+		currentVector = new Vector2(this.transform.position.x, this.transform.position.y);
+		player.GetComponent<DragonMove> ().disableControls = true;
+		player.GetComponent<DragonShoot> ().disableFire = true;
+		//Application.loadlevel
+		yield return new WaitForSeconds (3.0f);
+		player.rigidbody2D.AddForce (myVec2);
+		player.rigidbody2D.AddTorque (10f);
+		yield return new WaitForSeconds (0.5f);
+		player.rigidbody2D.AddTorque (-10f);
+		i = Application.loadedLevel;
+		Application.LoadLevel(i + 1);
+
+	}
+
+
+
+
+
+	public void disableControls()
+	{
+		Time.timeScale = 0.0f;
+		player.GetComponent<DragonMove>().disableControls = true;
+		player.GetComponent<DragonShoot> ().disableFire = true;
+	}
+
+	public void enableControls()
+	{
+		Time.timeScale = 1.0f;
+		player.GetComponent<DragonMove>().disableControls = false;
+		player.GetComponent<DragonShoot> ().disableFire = false;
+
 	}
 }

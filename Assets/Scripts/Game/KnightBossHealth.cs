@@ -30,6 +30,7 @@ public class KnightBossHealth : MonoBehaviour {
 			//Destroy (this.transform.parent.parent.gameObject);
 			dying = true;
 			StartCoroutine("playDeathAnimation");
+			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(9.0f, 3.0f));
 
 			//	GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
 			

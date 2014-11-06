@@ -140,6 +140,8 @@ public class Archer : MonoBehaviour {
 		{
 		//	GameObject.FindGameObjectWithTag("PopupScore").GetComponent<PopupScore>().popScore(this.transform.position);
 			Destroy (this.gameObject);
+		//	GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(400.0f,300.0f));
+
 		//	GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
 
 		}

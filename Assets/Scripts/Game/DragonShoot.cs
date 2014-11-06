@@ -4,6 +4,7 @@ using System.Collections;
 public class DragonShoot : MonoBehaviour {
 
 	public KeyCode firekey = KeyCode.Space;
+	public bool disableFire;
 
 	public Flame f;
 	public float fireForce = 3600f;
@@ -25,6 +26,7 @@ public class DragonShoot : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		coolingdown = false;
+		disableFire = false;
 	}
 	
 	// Update is called once per frame
@@ -39,7 +41,7 @@ public class DragonShoot : MonoBehaviour {
 			firectr=0;
 		}
 		if (!coolingdown){
-			if (Input.GetKey (firekey)&&letgo) {
+			if (Input.GetKey (firekey)&&letgo && disableFire == false) {
 				Flame x = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 				x.transform.localScale = new Vector2(x.transform.localScale.x,x.transform.localScale.y*fireScale);
 				x.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
