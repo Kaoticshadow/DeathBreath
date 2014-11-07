@@ -97,12 +97,23 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 		this.rigidbody2D.velocity = targetVector * speed;
 		turnFraction = 0;
 
-		float angle = Vector2.Angle (Vector2.right, this.rigidbody2D.velocity);
+		//Vector3 vectorToTarget = targetTransform.position - transform.position;
+		float angle = (Mathf.Atan2(targetVector.y, targetVector.x) * Mathf.Rad2Deg); //- 90;
 		if(hackType == "head")
 		{
 			angle += 90.0f;
 		}
+		q2 = Quaternion.AngleAxis(angle, Vector3.forward);
+		//transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 1.0f);
+
+
+		/*
+		float angle = Vector2.Angle (Vector2.right, this.rigidbody2D.velocity);
+
 		q2 = Quaternion.AngleAxis (angle, Vector3.forward);
+		*/
+
+		//q2 = Quaternion.LookRotation(this.rigidbody2D.velocity);
 	}
 
 	//gross
