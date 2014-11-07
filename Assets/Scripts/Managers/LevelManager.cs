@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
 
+	public string levelName; //nasty hack to know which level we're on. Set on each prefab in the editor
 	public GameObject archer;
 	public GameObject dragon;
 	public GameObject cave_entrance;
@@ -43,7 +44,8 @@ public class LevelManager : MonoBehaviour {
 		//Screen.SetResolution (640, 360, false);
 		//Screen.SetResolution (1024, 576, false);
 		player = GameObject.FindGameObjectWithTag("Player");
-		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Town.xml"));
+		//m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Town.xml"));
+		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, levelName +".xml"));
 		leftLevelEdge = GameObject.Find("Left Level Edge");
 		rightLevelEdge = GameObject.Find("Right Level Edge");
 		initializeSpawnableEntityDictionary();
@@ -104,7 +106,7 @@ public class LevelManager : MonoBehaviour {
 		player.rigidbody2D.gravityScale = 1.0f;
 		player.rigidbody2D.AddForce(new Vector2(100f,50f));
 		player.rigidbody2D.AddTorque(-50f);
-		StartCoroutine(WaitAndLoadLevel(2.0f,"Town"));
+		StartCoroutine(WaitAndLoadLevel(2.0f,levelName));
 	}
 
 	IEnumerator WaitAndLoadLevel(float waitTime, string levelName){
