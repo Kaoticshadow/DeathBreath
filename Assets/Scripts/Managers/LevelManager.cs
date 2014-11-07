@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour {
 		//Screen.SetResolution (640, 360, false);
 		//Screen.SetResolution (1024, 576, false);
 		player = GameObject.FindGameObjectWithTag("Player");
-		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Data/Town.xml"));
+		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Town.xml"));
 		leftLevelEdge = GameObject.Find("Left Level Edge");
 		rightLevelEdge = GameObject.Find("Right Level Edge");
 		initializeSpawnableEntityDictionary();

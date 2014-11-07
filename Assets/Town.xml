@@ -295,6 +295,12 @@
  			<x>-8</x>
  			<y>2.0</y>
  		</SpawnableEntity>
+ 		<SpawnableEntity>
+ 			<name>cave_entrance</name>
+ 			<time>89</time>
+ 			<x>5</x>
+ 			<y>2.3890303</y>
+ 		</SpawnableEntity>
  		
  	</SpawnableEntities>
  </SpawnableEntityCollection>
