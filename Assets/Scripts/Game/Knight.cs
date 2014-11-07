@@ -18,6 +18,7 @@ public class Knight : MonoBehaviour {
 	float fastDuration;
 	// Use this for initialization
 	void Start () {
+		GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().setScrollingSpeed(0.0f,2.0f);
 		anim = child.GetComponent<Animator> ();
 		location = this.transform;
 		y = location.position.y;
@@ -27,7 +28,6 @@ public class Knight : MonoBehaviour {
 		fastDuration =  duration*3f;
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().stopMusic ();
 		GameObject.FindGameObjectWithTag ("Music").GetComponent<Music> ().playMusic ();
-
 	}
 	
 	// Update is called once per frame

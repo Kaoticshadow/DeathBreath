@@ -7,11 +7,27 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject archer;
 	public GameObject dragon;
+	public GameObject cave_entrance;
+	public GameObject cloud_1;
+	public GameObject cloud_2;
+	public GameObject cutefire;
+	public GameObject elite_archer;
+	public GameObject fireball;
+	public GameObject firebat;
+	public GameObject floatstone_wurm;
 	public GameObject tower;
 	public GameObject knight_boss;
 	public GameObject goombat;
 	public GameObject hut;
 	public GameObject spicy_chicken;
+	public GameObject dragon_fruit;
+	public GameObject hot_pepper;
+	public float levelScrollFactor = 1;
+	public float targetLevelScrollFactor = 1;
+	public float originLevelScrollFactor = 1;
+	float levelScrollFactorRatio = 0;
+	float levelScrollChangeDelay = 1;
+	float minimumDelay = 0.1f;
 	GameObject leftLevelEdge;
 	GameObject rightLevelEdge;
 	SpawnableEntityContainer m_spawnableEntityCollection;
@@ -19,7 +35,6 @@ public class LevelManager : MonoBehaviour {
 	float time;
 	bool dragonStart = false;
 	GameObject player;
-	int i;
 	Vector2 currentVector;
 
 	
@@ -39,6 +54,10 @@ public class LevelManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
+
+		levelScrollFactorRatio += Time.deltaTime / levelScrollChangeDelay;
+		levelScrollFactor = Mathf.Lerp(originLevelScrollFactor,targetLevelScrollFactor,levelScrollFactorRatio);
+
 		foreach(SpawnableEntity entity in m_spawnableEntityCollection.SpawnableEntities)
 		{
 			if(!entity.spawned && time >= entity.time)
@@ -96,12 +115,25 @@ public class LevelManager : MonoBehaviour {
 
 	void initializeSpawnableEntityDictionary(){
 		spawnableEntityDictionary = new Dictionary<string, GameObject>();
+
 		spawnableEntityDictionary.Add("archer",archer);
-		spawnableEntityDictionary.Add("tower",tower);
-		spawnableEntityDictionary.Add ("knight_boss", knight_boss);
-		spawnableEntityDictionary.Add ("goombat", goombat);
+		spawnableEntityDictionary.Add("cave_entrance", cave_entrance);
+		spawnableEntityDictionary.Add("cloud_1",cloud_1);
+		spawnableEntityDictionary.Add("cloud_2",cloud_2);
+		spawnableEntityDictionary.Add("cutefire", cutefire);
+		spawnableEntityDictionary.Add("dragon",dragon);
+		spawnableEntityDictionary.Add("dragon_fruit",dragon_fruit);
+		spawnableEntityDictionary.Add("elite_archer",elite_archer);
+		spawnableEntityDictionary.Add("fireball",fireball);
+		spawnableEntityDictionary.Add("firebat", firebat);
+		spawnableEntityDictionary.Add("floatstone_wurm",floatstone_wurm);
+		spawnableEntityDictionary.Add("goombat", goombat);
+		spawnableEntityDictionary.Add("hot_pepper", hot_pepper);
+		spawnableEntityDictionary.Add("hut", hut);
+		spawnableEntityDictionary.Add("knight_boss", knight_boss);
 		spawnableEntityDictionary.Add("spicy_chicken",spicy_chicken);
-		spawnableEntityDictionary.Add ("hut", hut);
+		spawnableEntityDictionary.Add("tower",tower);
+
 	}
 
 	public void endLevel(Vector2 myVec)
@@ -121,8 +153,7 @@ public class LevelManager : MonoBehaviour {
 		player.rigidbody2D.AddTorque (10f);
 		yield return new WaitForSeconds (0.5f);
 		player.rigidbody2D.AddTorque (-10f);
-		i = Application.loadedLevel;
-		Application.LoadLevel(i + 1);
+		Application.LoadLevel(Application.loadedLevel + 1);
 
 	}
 
@@ -143,5 +174,12 @@ public class LevelManager : MonoBehaviour {
 		player.GetComponent<DragonMove>().disableControls = false;
 		player.GetComponent<DragonShoot> ().disableFire = false;
 
+	}
+
+	public void setScrollingSpeed(float newSpeed, float delay)
+	{
+		levelScrollFactorRatio = 0;
+		targetLevelScrollFactor = newSpeed;
+		levelScrollChangeDelay = Mathf.Max(minimumDelay,delay);
 	}
 }
