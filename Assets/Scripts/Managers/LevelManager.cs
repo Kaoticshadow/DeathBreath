@@ -50,6 +50,11 @@ public class LevelManager : MonoBehaviour {
 		rightLevelEdge = GameObject.Find("Right Level Edge");
 		initializeSpawnableEntityDictionary();
 		time = 0;
+		if(levelName == "Cave"){
+			levelScrollFactor = 0;
+			targetLevelScrollFactor = 0;
+			originLevelScrollFactor = 0;
+		}
 
 	}
 	
@@ -72,16 +77,35 @@ public class LevelManager : MonoBehaviour {
 
 			}
 		}
-		//dragon init
-		if (time < 2.2f) {
-			dragon.transform.position = new Vector3(-13.31006f,0.332745f,0);
-				}
-		if (time > 2.2f && !dragonStart) {
 
-			dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
+		//dragon init town
+		if(levelName == "Town"){
+			if (time < 2.2f) {
+				dragon.transform.position = new Vector3(-13.31006f,0.332745f,0);
+					}
+			if (time > 2.2f && !dragonStart) {
+
+				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
+			}
+			if (time > 3f && !dragonStart){
+				dragonStart = true;
+			}
 		}
-		if (time > 3f)
-						dragonStart = true;
+
+		if(levelName == "Cave"){
+			if (time < 0.5f) {
+				dragon.transform.position = new Vector3(-13.31006f,-1.0f,0);
+			}
+			if (time > 0.5f && !dragonStart) {
+				
+				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,-1.0f,0),0.03f);
+
+			}
+			if (time > 1.3f && !dragonStart){
+				dragonStart = true;
+				setScrollingSpeed(1.0f,0.2f);
+			}
+		}
 
 
 
