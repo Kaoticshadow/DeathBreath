@@ -4,9 +4,11 @@ using System.Collections;
 public class lightningFlash : MonoBehaviour {
 	float flashcooldown = 5f;
 	float flashaway = .2f;
+	AudioSource a;
 	SpriteRenderer s;
 	// Use this for initialization
 	void Start () {
+		a = this.GetComponent<AudioSource> ();
 		s = this.GetComponent<SpriteRenderer> ();
 	}
 	
@@ -17,7 +19,7 @@ public class lightningFlash : MonoBehaviour {
 		if (flashcooldown <= 0) {
 			flashcooldown = Random.Range(0,15f);
 			s.color = new Color (1,1,1,0.75f);
-
+			a.Play();
 			//play sound
 				}
 

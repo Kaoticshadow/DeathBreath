@@ -57,9 +57,9 @@ public class Wizard : MonoBehaviour {
 
 	void move() {
 		if (player.transform.position.x > this.transform.position.x)
-						this.transform.localScale = new Vector3 (-1, 1, 1);
+			this.transform.localScale = new Vector3 (-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 		else
-			this.transform.localScale = new Vector3 (1, 1, 1);
+			this.transform.localScale = new Vector3 (Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 		
 		
 		

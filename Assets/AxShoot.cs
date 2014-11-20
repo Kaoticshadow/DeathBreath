@@ -35,7 +35,7 @@ public class AxShoot : MonoBehaviour {
 		Ax tempA = (Ax)Instantiate (a, startloc.transform.position, Quaternion.identity);
 		
 		tempA.rigidbody2D.AddTorque (-factor * 90);
-		tempA.rigidbody2D.AddForce (new Vector2(factor, 2f) *280);
+		tempA.rigidbody2D.AddForce (new Vector2(Random.Range(factor,factor-1.5f), 2f) *280);
 
 
 	}
