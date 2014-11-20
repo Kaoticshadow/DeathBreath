@@ -72,11 +72,16 @@ public class LevelManager : MonoBehaviour {
 			{
 				entity.spawned = true;
 				GameObject spawnedObject = (GameObject)Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
-				if(entity.x_scale == 0){entity.x_scale = 1;}
-				if(entity.y_scale == 0){entity.y_scale = 1;}
-				if(entity.champion > 0){spawnedObject.AddComponent("ChampionEnemy");}
-				spawnedObject.transform.localScale = new Vector3(entity.x_scale,entity.y_scale);
 
+				//gameObject scaling from script
+				if(entity.x_scale > 0 && entity.y_scale > 0){
+					spawnedObject.transform.localScale = new Vector3(entity.x_scale,entity.y_scale);
+				}
+
+				//set enemy as champion
+				if(entity.champion > 0){
+					spawnedObject.AddComponent("ChampionEnemy");
+				}
 			}
 		}
 
