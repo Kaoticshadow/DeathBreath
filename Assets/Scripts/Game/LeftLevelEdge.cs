@@ -16,7 +16,10 @@ public class LeftLevelEdge : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (!(coll.gameObject.tag == "Player")) 
 		{
-			if(coll.gameObject.GetComponent<ExtraTags>() != null && !coll.gameObject.GetComponent<ExtraTags>().tagList.Contains("Unbounded")){
+			if(coll.gameObject.GetComponent<ExtraTags>() != null && coll.gameObject.GetComponent<ExtraTags>().tagList.Contains("Unbounded")){
+				//Don't do anything
+			}
+			else{
 				Destroy(coll.gameObject);
 			}
 		}
