@@ -43,17 +43,22 @@ public class DragonMove : MonoBehaviour {
 		Vector2 dir = new Vector2 ();
 		Quaternion q;// = Quaternion.AngleAxis (-20.0f, Vector3.forward);
 
-		if (Input.GetKey (KeyCode.A) && Mathf.Abs(left.transform.localPosition.x - this.transform.localPosition.x) > leftLevelEdgeMovementPadding) {
+		if (Mathf.Abs(left.transform.localPosition.x - this.transform.localPosition.x) > leftLevelEdgeMovementPadding) {
+			if(Input.GetKey(KeyCode.A)){
+
 			dir.x -= 0.8f;
 			//dragonTrans.rotation = Quaternion.Euler (0f, 0f, 20.0f);
 			 q = Quaternion.AngleAxis (20.0f, Vector3.forward);
-			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+				dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);}
+			resetVelc();
 		}
 		if (Input.GetKey (KeyCode.D)  && Mathf.Abs(right.transform.localPosition.x - this.transform.localPosition.x) > rightLevelEdgeMovementPadding) {
+			if(Input.GetKey(KeyCode.D)){
 			dir.x += 1.0f;
 			//dragonTrans.rotation = Quaternion.Euler (0f, 0f, -20.0f);
 			 q = Quaternion.AngleAxis (-20.0f, Vector3.forward);
-			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+				dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);}
+			resetVelc();
 		}
 		if (Input.GetKey (KeyCode.W)  && Mathf.Abs(top.transform.localPosition.y - this.transform.localPosition.y) > topLevelEdgeMovementPadding) {
 			dir.y += 1.0f;
@@ -68,5 +73,10 @@ public class DragonMove : MonoBehaviour {
 		}
 
 		return dir;
+	}
+
+	void resetVelc(){
+		Debug.Log ("stopped");
+	//	this.rigidbody2D.velocity = new Vector2 (0, 0);
 	}
 }
