@@ -45,15 +45,12 @@ public class ChampionEnemy : MonoBehaviour {
 			spawnObject = dragon_fruit;
 			break;
 		}
+		this.GetComponent<Enemy> ().drop = spawnObject;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	void OnDisable() {
-		Instantiate (spawnObject, this.transform.localPosition, Quaternion.identity);
 	}
 }

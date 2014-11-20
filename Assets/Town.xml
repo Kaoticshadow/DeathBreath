@@ -131,7 +131,7 @@
  			<y>-.5</y>
  		</SpawnableEntity>
  		<SpawnableEntity>
- 			<name>Goombat</name>
+ 			<name>goombat</name>
  			<time>23.1</time>
  			<x>0</x>
  			<y>-1.5</y>

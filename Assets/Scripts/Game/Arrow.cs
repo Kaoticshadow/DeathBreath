@@ -21,8 +21,7 @@ public class Arrow : MonoBehaviour {
 						Destroy (this.gameObject);
 	}
 
-	float getAngle(Vector2 vel){
-		Debug.Log (vel);
+	float getAngle(Vector2 vel){;
 		if(vel.x < 0)
 			return Vector2.Angle(vel.normalized,Vector2.up)-90;
 		else

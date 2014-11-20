@@ -71,6 +71,7 @@ public class LevelManager : MonoBehaviour {
 			if(!entity.spawned && time >= entity.time)
 			{
 				entity.spawned = true;
+				Debug.Log(entity.name);
 				GameObject spawnedObject = (GameObject)Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
 
 				//gameObject scaling from script
