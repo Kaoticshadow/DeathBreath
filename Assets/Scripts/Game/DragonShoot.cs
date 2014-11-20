@@ -72,41 +72,87 @@ public class DragonShoot : MonoBehaviour {
 	}
 
 	void fireExtraBalls(){
+		Flame bp; //stands for bonus projectile. My fingers hurt today and I don't want to type the long variable name.
 		switch (pepperLevel) {
 		case 0:
 			break;
 		case 1:
-			Flame x = (Flame)Instantiate (smallFire, startloc.transform.position, Quaternion.identity);
-			x.transform.localScale = new Vector2(x.transform.localScale.x,x.transform.localScale.y*fireScale);
-			x.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
-			//coolingdown = true;
-			x.power = fireScale / 5f;
+			//small bonus shot
+			bp = (Flame)Instantiate (o_smallFire, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x*fireScale,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.power = fireScale / 5f;
 			break;
 		case 2:
-			Flame x3 = (Flame)Instantiate (of, startloc.transform.position, Quaternion.identity);
-			x3.transform.localScale = new Vector2(x3.transform.localScale.x,x3.transform.localScale.y*fireScale);
-			x3.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
-			//coolingdown = true;
-			x3.power = fireScale;
+			Vector3 bonusShotOffset = new Vector3(0f,0.7f,0f);
+			//bonus shot 1 (small)
+			bp = (Flame)Instantiate (smallFire, startloc.transform.position + bonusShotOffset, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x*fireScale,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.power = fireScale / 5f;
+			//bonus shot 2 (small)
+			bp = (Flame)Instantiate (smallFire, startloc.transform.position - bonusShotOffset, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x*fireScale,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.power = fireScale / 5f;
 			break;
-		case 3: 
-			Flame x1 = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
-			x1.transform.localScale = new Vector2(x1.transform.localScale.x,x1.transform.localScale.y*fireScale);
-			x1.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
-			//coolingdown = true;
-			x1.power = fireScale;
-			Flame x2 = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
-			x2.transform.localScale = new Vector2(x2.transform.localScale.x,x2.transform.localScale.y*fireScale);
-			x2.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
-			//coolingdown = true;
-			x2.power = fireScale;
+		case 3:
+			//regular bonus shot
+			bp = (Flame)Instantiate (of, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.power = fireScale;
 			break;
 		case 4: 
+			//triple shot
+			//bonus shot upwards
+			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
+			bp.power = fireScale;
+			//bonus shot downwards
+			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
+			bp.power = fireScale;
+			break;
+		case 5: 
+			//triple shot with bonus small shot
+			//bonus shot upwards
+			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
+			bp.power = fireScale;
+			//bonus shot downwards
+			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
+			bp.power = fireScale;
+			//bonus small shot
+			bp = (Flame)Instantiate (o_smallFire, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.power = fireScale / 5f;
+
 			break;
 		default:
+			//triple shot with bonus small shot
+			//bonus shot upwards
+			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
+			bp.power = fireScale;
+			//bonus shot downwards
+			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
+			bp.power = fireScale;
+			//bonus small shot
+			bp = (Flame)Instantiate (o_smallFire, startloc.transform.position, Quaternion.identity);
+			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
+			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.power = fireScale / 5f;
 			break;
-
-
 		}
 
 	}
