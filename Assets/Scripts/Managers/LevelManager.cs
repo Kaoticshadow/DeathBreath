@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour {
 	public GameObject spicy_chicken;
 	public GameObject dragon_fruit;
 	public GameObject hot_pepper;
+	public GameObject wizard;
+	public GameObject gryphon_rider;
 	public float levelScrollFactor = 1;
 	public float targetLevelScrollFactor = 1;
 	public float originLevelScrollFactor = 1;
@@ -37,7 +39,6 @@ public class LevelManager : MonoBehaviour {
 	bool dragonStart = false;
 	GameObject player;
 	Vector2 currentVector;
-
 	
 	void Start () {
 		
@@ -73,6 +74,7 @@ public class LevelManager : MonoBehaviour {
 				GameObject spawnedObject = (GameObject)Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
 				if(entity.x_scale == 0){entity.x_scale = 1;}
 				if(entity.y_scale == 0){entity.y_scale = 1;}
+				if(entity.champion > 0){spawnedObject.AddComponent("ChampionEnemy");}
 				spawnedObject.transform.localScale = new Vector3(entity.x_scale,entity.y_scale);
 
 			}
@@ -110,8 +112,6 @@ public class LevelManager : MonoBehaviour {
 
 		//sky has its own fancy init, no worries
 
-
-
 		if(Input.GetKey(KeyCode.P))
 		{
 			disableControls();
@@ -120,12 +120,6 @@ public class LevelManager : MonoBehaviour {
 		{
 			enableControls();
 		}
-
-
-
-
-
-
 	}
 
 	void GameOver(){
@@ -162,6 +156,8 @@ public class LevelManager : MonoBehaviour {
 		spawnableEntityDictionary.Add("knight_boss", knight_boss);
 		spawnableEntityDictionary.Add("spicy_chicken",spicy_chicken);
 		spawnableEntityDictionary.Add("tower",tower);
+		spawnableEntityDictionary.Add("wizard",wizard);
+		spawnableEntityDictionary.Add("gryphon_rider",gryphon_rider);
 
 	}
 

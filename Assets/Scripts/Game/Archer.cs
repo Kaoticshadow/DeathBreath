@@ -29,7 +29,7 @@ public class Archer : MonoBehaviour {
 	// 0 is slow tracking, faces forward only
 
 	//health
-	public float health = 3;
+
 
 
 
@@ -132,20 +132,6 @@ public class Archer : MonoBehaviour {
 
 		float a =  Vector3.Angle( dir,new Vector3(0,1,0))-85f;
 		return -a;
-	}
-
-	void takeDamage(float damage){
-		health -= damage;
-		if (health < 0)
-		{
-		//	GameObject.FindGameObjectWithTag("PopupScore").GetComponent<PopupScore>().popScore(this.transform.position);
-			Destroy (this.gameObject);
-		//	GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(400.0f,300.0f));
-
-		//	GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
-
-		}
-		//score++;
 	}
 
 	float getDistanceToTarget(){

@@ -10,5 +10,6 @@ public class SpawnableEntity
 	public float x_scale;
 	public float y_scale;
 	public bool spawned;
+	public int champion;
 
 }

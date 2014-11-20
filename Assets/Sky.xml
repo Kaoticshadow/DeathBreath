@@ -3,6 +3,69 @@
  	
 
  		
+ <!-- are u a wizard -->
+	<SpawnableEntity>
+		<name>wizard</name>
+		<time>6.0</time>
+		<x>0</x>
+		<y>1</y>
+		<x_scale>0.5</x_scale>
+ 		<y_scale>0.5</y_scale>
+	</SpawnableEntity>
+	
+	<SpawnableEntity>
+		<name>wizard</name>
+		<time>12.0</time>
+		<x>2</x>
+		<y>1</y>
+		<x_scale>0.5</x_scale>
+ 		<y_scale>0.5</y_scale>
+	</SpawnableEntity>
+		<SpawnableEntity>
+		<name>wizard</name>
+		<time>12.0</time>
+		<x>5</x>
+		<y>-2</y>
+		<x_scale>0.5</x_scale>
+ 		<y_scale>0.5</y_scale>
+	</SpawnableEntity>
+	
+	
+<!-- that's a weird horse  -->
+	<SpawnableEntity>
+		<name>gryphon_rider</name>
+		<time>18.0</time>
+		<x>5</x>
+		<y>2</y>
+		<x_scale>0.5</x_scale>
+ 		<y_scale>0.5</y_scale>
+	</SpawnableEntity> 
+	<SpawnableEntity>
+		<name>gryphon_rider</name>
+		<time>19.0</time>
+		<x>3</x>
+		<y>-2</y>
+		<x_scale>0.5</x_scale>
+ 		<y_scale>0.5</y_scale>
+	</SpawnableEntity> 
+	<SpawnableEntity>
+		<name>gryphon_rider</name>
+		<time>25.0</time>
+		<x>4</x>
+		<y>3</y>
+		<x_scale>0.5</x_scale>
+ 		<y_scale>0.5</y_scale>
+	</SpawnableEntity> 
+	<SpawnableEntity>
+		<name>gryphon_rider</name>
+		<time>30.0</time>
+		<x>0</x>
+		<y>1</y>
+		<x_scale>0.5</x_scale>
+ 		<y_scale>0.5</y_scale>
+	</SpawnableEntity> 
+	
+ 		
  <!-- goombat spawn swarm -->
  		<SpawnableEntity>
  			<name>goombat</name>

@@ -8,6 +8,7 @@
  			<time>8</time>
  			<x>0</x>
  			<y>-1.5</y>
+ 			<champion>1</champion>
  		</SpawnableEntity>
  		
  		<SpawnableEntity>
