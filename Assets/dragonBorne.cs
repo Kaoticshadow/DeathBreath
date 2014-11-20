@@ -13,11 +13,12 @@ public class dragonBorne : MonoBehaviour {
 	public float axfrequency = 2f;
 	float shtcd;
 	float axcd;
-	public wizFus fu;
+	public GameObject fu;
+	public GameObject fusorigin;
 	// Use this for initialization
 	void Start () {
 		stage = 0;
-		phase0Target = new Vector3 (6, 0, 0);
+		phase0Target = new Vector3 (5, 0, 0);
 		axcd = axfrequency;
 		shtcd = shoutfrequ;
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -42,7 +43,9 @@ public class dragonBorne : MonoBehaviour {
 	}
 
 	void spitforce(){
-
+		GameObject g = (GameObject)Instantiate (fu, fusorigin.transform.position, Quaternion.identity);
+		Vector2 dir = (Vector2)fusorigin.transform.position - (Vector2)player.transform.position;
+		g.GetComponent<Rigidbody2D> ().AddForce (-dir.normalized * 800f);
 	}
 
 	void phase1(){
@@ -74,6 +77,6 @@ public class dragonBorne : MonoBehaviour {
 				stage = 1;
 			}
 		}
-				this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(phase0Target.x, player.transform.position.y,0),.01f);
+				this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(5, player.transform.position.y,0),.01f);
 	}
 }
