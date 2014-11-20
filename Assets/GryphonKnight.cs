@@ -5,14 +5,26 @@ public class GryphonKnight : MonoBehaviour {
 	
 	ArrayList m_path;
 	int currentIdx = 0;
-	float speed = .01f;
-	
+	float speed = .05f;
+	public int mode;
 	
 	GameObject player;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		m_path = path1 ();
+
+
+		switch (mode) {
+		case 0:
+			m_path = path1 ();
+			break;
+		case 1:
+			m_path = path2();
+			break;
+		default:
+			break;
+
+		}
 	
 	}
 	
@@ -23,14 +35,32 @@ public class GryphonKnight : MonoBehaviour {
 	}
 	ArrayList path1(){
 		ArrayList l_path = new ArrayList ();
-		l_path.Add (new Vector3 (-1,  0, 0));
-		l_path.Add (new Vector3 ( 1,  0, 0));
-		l_path.Add (new Vector3 ( 1,  1, 0));
-		l_path.Add (new Vector3 (-1,  1, 0));
+		l_path.Add (new Vector3 (-13,  -4, 0));
+		l_path.Add (new Vector3 ( 3.5f,  -.5f, 0));
+		l_path.Add (new Vector3 ( 3.5f,  3, 0));
+		l_path.Add (new Vector3 (-3,  4, 0));
 		l_path.Add (new Vector3 ( 0,  0, 0));
-		l_path.Add (new Vector3 ( 2,  2, 0));
-		l_path.Add (new Vector3 (-1,  2, 0));
-		l_path.Add (new Vector3 (-1, -1, 0));
+		l_path.Add (new Vector3 ( 5,  3, 0));
+		l_path.Add (new Vector3 (4,  4, 0));
+		l_path.Add (new Vector3 (-9, -6, 0));
+		l_path.Add (new Vector3 (5, -6, 0));
+		l_path.Add (new Vector3 (1, 0, 0));
+		l_path.Add (new Vector3 (0, 12, 0));
+		return l_path;
+	}	
+	ArrayList path2(){
+		ArrayList l_path = new ArrayList ();
+		l_path.Add (new Vector3 (-13,  -4, 0)* -1f);
+		l_path.Add (new Vector3 ( 3.5f,  -.5f, 0)* -1f);
+		l_path.Add (new Vector3 ( 3.5f,  3, 0)* -1f);
+		l_path.Add (new Vector3 (-3,  4, 0)* -1f);
+		l_path.Add (new Vector3 ( 0,  0, 0)* -1f);
+		l_path.Add (new Vector3 ( 5,  3, 0)* -1f);
+		l_path.Add (new Vector3 (4,  4, 0)* -1f);
+		l_path.Add (new Vector3 (-9, -6, 0)* -1f);
+		l_path.Add (new Vector3 (5, -6, 0)* -1f);
+		l_path.Add (new Vector3 (-1, 0, 0));
+		l_path.Add (new Vector3 (0, 12, 0)* -1f);
 		return l_path;
 	}
 
@@ -48,7 +78,7 @@ public class GryphonKnight : MonoBehaviour {
 		
 		if(this.transform.position == go)
 			currentIdx++;
-		if(currentIdx>=m_path.Count)
-			currentIdx=0;
+		if (currentIdx >= m_path.Count)
+						Destroy (this.gameObject);//currentIdx=0;
 	}
 }

@@ -22,7 +22,9 @@ public class wizFus : MonoBehaviour {
 		if (this.rigidbody2D.velocity.magnitude > speed)
 						this.rigidbody2D.velocity = this.rigidbody2D.velocity.normalized * speed;
 
-
+		Vector3 dir = this.rigidbody2D.velocity;
+		dir = dir.normalized;
+		//rotate!
 
 	
 	}

@@ -23,7 +23,7 @@ public class AxShoot : MonoBehaviour {
 		currentCD -= Time.deltaTime;
 		if (currentCD <= 0) {
 						shoot ();
-						currentCD = shootCD;
+						currentCD = shootCD+Random.Range(0,0.5f);
 				}
 	}
 
@@ -34,7 +34,7 @@ public class AxShoot : MonoBehaviour {
 
 		Ax tempA = (Ax)Instantiate (a, startloc.transform.position, Quaternion.identity);
 		
-		tempA.rigidbody2D.AddTorque (-factor * 90);
+		tempA.rigidbody2D.AddTorque (-factor * 120);
 		tempA.rigidbody2D.AddForce (new Vector2(Random.Range(factor,factor-1.5f), 2f) *280);
 
 

@@ -5,13 +5,14 @@ public class Wizard : MonoBehaviour {
 
 	ArrayList m_path;
 	int currentIdx = 0;
-	float speed = .01f;
+	float speed = .1f;
 
 	public wizFus sht;
 	public float shootctr = 5f;
 	float currentShootCtr;
 	public GameObject shotsource;
 	GameObject player;
+	public int mode;
 
 	Animator anim;
 
@@ -21,18 +22,72 @@ public class Wizard : MonoBehaviour {
 		currentShootCtr = shootctr;
 		anim = this.GetComponent<Animator> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
+
+		switch (mode) {
+		case 0:
+			m_path = path1 ();
+			break;
+		case 1:
+			m_path = path2();
+			break;
+		default:
+			break;
+			
+		}
 	}
 
 	ArrayList path1(){
 		ArrayList l_path = new ArrayList ();
-		l_path.Add (new Vector3 (-1,  0, 0));
-		l_path.Add (new Vector3 ( 1,  0, 0));
-		l_path.Add (new Vector3 ( 1,  1, 0));
-		l_path.Add (new Vector3 (-1,  1, 0));
 		l_path.Add (new Vector3 ( 0,  0, 0));
-		l_path.Add (new Vector3 ( 2,  2, 0));
-		l_path.Add (new Vector3 (-1,  2, 0));
-		l_path.Add (new Vector3 (-1, -1, 0));
+		l_path.Add (new Vector3 ( 5,  0, 0));
+		l_path.Add (new Vector3 ( 3,  3, 0));
+		l_path.Add (new Vector3 ( 0,  5, 0));
+		l_path.Add (new Vector3 ( -3,  3, 0));
+		l_path.Add (new Vector3 ( -5,  0, 0));
+		l_path.Add (new Vector3 (-3,  -3, 0));
+		l_path.Add (new Vector3 (0, -5, 0));
+		l_path.Add (new Vector3 (3, -3, 0));
+		l_path.Add (new Vector3 ( 5,  0, 0));
+		l_path.Add (new Vector3 ( 3,  3, 0));
+		l_path.Add (new Vector3 ( 0,  5, 0));
+		l_path.Add (new Vector3 ( -3,  3, 0));
+		l_path.Add (new Vector3 ( -5,  0, 0));
+		l_path.Add (new Vector3 (-3,  -3, 0));
+		l_path.Add (new Vector3 (0, -5, 0));
+		l_path.Add (new Vector3 (3, -3, 0));
+		l_path.Add (new Vector3 ( 5,  0, 0));
+		l_path.Add (new Vector3 (20,  0, 0));
+		return l_path;
+	}
+
+	ArrayList path2(){
+		ArrayList l_path = new ArrayList ();
+		l_path.Add (new Vector3 ( 0,  0, 0));
+
+		l_path.Add (new Vector3 ( -5,  0, 0));
+		l_path.Add (new Vector3 ( -3,  3, 0));
+		l_path.Add (new Vector3 ( 0,  5, 0));
+		l_path.Add (new Vector3 ( 3,  3, 0));
+		l_path.Add (new Vector3 ( 5,  0, 0));
+		l_path.Add (new Vector3 (3,  -3, 0));
+		l_path.Add (new Vector3 (0, -5, 0));
+		l_path.Add (new Vector3 (-3, 3, 0));
+
+		l_path.Add (new Vector3 ( -5,  0, 0));
+		l_path.Add (new Vector3 ( -3,  3, 0));
+		l_path.Add (new Vector3 ( 0,  5, 0));
+		l_path.Add (new Vector3 ( 3,  3, 0));
+		l_path.Add (new Vector3 ( 5,  0, 0));
+		l_path.Add (new Vector3 (3,  -3, 0));
+		l_path.Add (new Vector3 (0, -5, 0));
+		l_path.Add (new Vector3 (-3, 3, 0));
+
+
+
+
+
+		l_path.Add (new Vector3 ( -5,  0, 0));
+		l_path.Add (new Vector3 (-20,  0, 0));
 		return l_path;
 	}
 	
@@ -71,7 +126,7 @@ public class Wizard : MonoBehaviour {
 
 		if(this.transform.position == go)
 			currentIdx++;
-		if(currentIdx>=m_path.Count)
-			currentIdx=0;
+		if (currentIdx >= m_path.Count)
+			Destroy (this.gameObject); // currentIdx = 0;
 	}
 }

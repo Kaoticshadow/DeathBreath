@@ -29,4 +29,9 @@ public class lightningFlash : MonoBehaviour {
 			s.color = new Color (0,0,0,0);
 				}
 	}
+
+	void flash(){
+
+		flashcooldown = 0;
+	}
 }
