@@ -17,6 +17,7 @@ public class FragmentableHealthScript : MonoBehaviour {
 		for(int i=0;i<5;i++)
 		{
 			scale = Instantiate(fragmentableScalePrefab,m_t.localPosition + new Vector3(i/2f,0f,0f),Quaternion.identity) as FragmentableHealthScale;
+			scale.transform.parent = this.transform;
 			HealthScaleList.Add(scale);
 			scale.setSortOrder(i);
 		}

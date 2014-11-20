@@ -92,6 +92,7 @@ public class LevelManager : MonoBehaviour {
 			}
 		}
 
+		//dragon init town
 		if(levelName == "Cave"){
 			if (time < 0.5f) {
 				dragon.transform.position = new Vector3(-13.31006f,-1.0f,0);
@@ -106,6 +107,8 @@ public class LevelManager : MonoBehaviour {
 				setScrollingSpeed(1.0f,0.2f);
 			}
 		}
+
+		//sky has its own fancy init, no worries
 
 
 

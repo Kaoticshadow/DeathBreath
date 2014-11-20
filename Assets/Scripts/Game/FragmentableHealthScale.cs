@@ -40,6 +40,7 @@ public class FragmentableHealthScale : MonoBehaviour {
 			HealthScaleFragment fragment = Instantiate(fragmentPrefab,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
 			fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
 			fragment.renderer.sortingLayerName = "UI";
+			fragment.transform.parent=this.transform;
 			HealthScaleFragmentList.Add(fragment);
 		}
 
