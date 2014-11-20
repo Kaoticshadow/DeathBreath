@@ -40,7 +40,14 @@ public class DragonCollide : MonoBehaviour {
 			}
 	}
 }
-
+	void takeDamage(){
+		if (!invulnerable) 
+		{
+				GameObject.Find("Health Bar").SendMessage("DropScale");
+				invulnerable = true;
+				invulnerableCountdown = 80;
+		}
+	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (!invulnerable) 
