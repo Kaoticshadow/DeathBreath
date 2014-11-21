@@ -123,7 +123,6 @@ public class dragonBorne : MonoBehaviour {
 		else {
 			if(!phase2ready)
 				shtcd = 3f;
-
 				this.transform.position = Vector3.Lerp (this.transform.position, entry.transform.position, 0.01f);
 				phase2ready = true;
 				this.transform.localScale = new Vector3(1,1,1);
@@ -180,6 +179,8 @@ public class dragonBorne : MonoBehaviour {
 		openingcd -= Time.deltaTime;
 		if(openingcd<0&&rain!=null){
 			fusruda.GetComponent<ParticleSystem>().Emit(200);
+			
+			player.rigidbody2D.AddForce(new Vector2(-200,0));
 			rain.GetComponent<ParticleSystem>().Stop();
 			if(openingcd<0){
 				destroyeverything();

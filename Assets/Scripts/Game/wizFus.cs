@@ -8,6 +8,8 @@ public class wizFus : MonoBehaviour {
 	float start = .7f;
 	float speed = 7f;
 	Vector2 targetVelocity;
+	public GameObject smokel;
+	float fftimer = 1.2f;
 	float velocityChangeFactor = 0.05f;
 	// Use this for initialization
 	void Start () {
@@ -16,7 +18,7 @@ public class wizFus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		fftimer -= Time.deltaTime;
 		start -= Time.deltaTime;
 		if (start <= 0){
 			//this.rigidbody2D.AddForce ((target.position - this.transform.position).normalized * speed)
@@ -48,6 +50,26 @@ public class wizFus : MonoBehaviour {
 		this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
 
+	void takeDamage(float f){
+		return;
+	}
+
+	void OnTriggerEnter2D (Collider2D col){
+		if (col.gameObject.tag == "Enemy"&&fftimer<0) {
+			try{
+				col.gameObject.SendMessage ("takeDamage", 1);
+			}
+			catch(UnityException e){}
+			//create splosions
+			GameObject x = (GameObject)Instantiate(smokel,this.transform.position,Quaternion.identity);
+			x.renderer.sortingLayerName = "Middle_player";
+			Destroy(this.gameObject);
+		}
+		if (col.gameObject.tag == "Player") {
+			Destroy(this.gameObject);
+		}
+	}
+	
 	//collide w/ enemies
 	///collide with boundaries and selfdestruct
 }

@@ -6,14 +6,14 @@
  <!-- are u a wizard -->
 	<SpawnableEntity>
 		<name>dragonborne</name>
-		<time>6.0</time>
-		<x>0</x>
-		<y>1</y>
+		<time>90.0</time>
+		<x>22</x>
+		<y>0</y>
 	</SpawnableEntity>
 	
 	<SpawnableEntity>
 		<name>wizard</name>
-		<time>12.0</time>
+		<time>13.0</time>
 		<x>2</x>
 		<y>1</y>
 		<x_scale>0.5</x_scale>
@@ -21,7 +21,7 @@
 	</SpawnableEntity>
 		<SpawnableEntity>
 		<name>wizard</name>
-		<time>12.0</time>
+		<time>13.0</time>
 		<x>5</x>
 		<y>-2</y>
 		<x_scale>0.5</x_scale>
