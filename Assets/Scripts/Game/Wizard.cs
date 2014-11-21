@@ -23,6 +23,9 @@ public class Wizard : MonoBehaviour {
 		anim = this.GetComponent<Animator> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 
+		if (this.transform.position.x < 0)
+						mode = 1;
+
 		switch (mode) {
 		case 0:
 			m_path = path1 ();
