@@ -39,6 +39,9 @@ public class dragonBorne : MonoBehaviour {
 		shtcd = shoutfrequ;
 		phasectr = phase1Dur;
 		player = GameObject.FindGameObjectWithTag ("Player");
+		exitSpot = GameObject.FindGameObjectWithTag ("Exit");
+		entry = GameObject.FindGameObjectWithTag ("Entry");
+		rain = GameObject.FindGameObjectWithTag ("Rain");
 	}
 
 	
@@ -187,6 +190,6 @@ public class dragonBorne : MonoBehaviour {
 				stage = 1;
 			}
 		}
-				this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(5, player.transform.position.y,0),.01f);
+		this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(5, entry.transform.position.y,0),.01f);
 	}
 }
