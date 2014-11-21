@@ -10,6 +10,7 @@ public class wizFus : MonoBehaviour {
 	Vector2 targetVelocity;
 	public GameObject smokel;
 	float fftimer = 1.2f;
+	float lifetime = 2f;
 	float velocityChangeFactor = 0.05f;
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class wizFus : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		fftimer -= Time.deltaTime;
+		lifetime -= Time.deltaTime;
 		start -= Time.deltaTime;
 		if (start <= 0){
 			//this.rigidbody2D.AddForce ((target.position - this.transform.position).normalized * speed)
@@ -29,6 +31,11 @@ public class wizFus : MonoBehaviour {
 			this.transform.position = startspot.position;
 		}
 
+		if (lifetime < 0)
+						this.transform.localScale = Vector3.Lerp (this.transform.localScale, new Vector3 (0, 0, 0), .1f);
+
+		if(this.transform.localScale.magnitude < 0.1f)
+			Destroy(this.gameObject);
 
 
 		//if (this.rigidbody2D.velocity.magnitude > speed){
