@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour {
 	GameObject rightLevelEdge;
 	SpawnableEntityContainer m_spawnableEntityCollection;
 	Dictionary<string, GameObject> spawnableEntityDictionary; 
-	float time;
+	public float time;
 	bool dragonStart = false;
 	GameObject player;
 	Vector2 currentVector;
@@ -211,6 +211,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void setScrollingSpeed(float newSpeed, float delay)
 	{
+		originLevelScrollFactor = levelScrollFactor;
 		levelScrollFactorRatio = 0;
 		targetLevelScrollFactor = newSpeed;
 		levelScrollChangeDelay = Mathf.Max(minimumDelay,delay);
