@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: cc3eea1dd128cd44c847410f07e79315
+guid: b950f327cd41adf4f91dc79bd86590b3
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: greenbutton
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
