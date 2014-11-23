@@ -496,7 +496,7 @@
  		
  		<SpawnableEntity>
  			<name>knight_boss</name>
- 			<time>65</time>
+ 			<time>90</time>
  			<x>-8</x>
  			<y>2.0</y>
  		</SpawnableEntity>
