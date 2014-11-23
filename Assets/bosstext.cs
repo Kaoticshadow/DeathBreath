@@ -6,15 +6,19 @@ public class bosstext : MonoBehaviour {
 	float lifecount = 5f;
 	float fadeout = 0.5f;
 	float alpha = 0;
+	public string name = "";
 	GUIText x;
 	// Use this for initialization
 	void Start () {
-		x = this.guiText;
+		x = this.GetComponent<GUIText>();
 		this.transform.position = new Vector3 (0.5f, 0.2373428f, 0);
+		//name = "boss name";
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		x.text = name;
 		if (firstcount > 0) {
 			firstcount -= Time.deltaTime;
 			x.color = new Color(1,1,1,alpha);
@@ -34,11 +38,8 @@ public class bosstext : MonoBehaviour {
 			}
 
 
-				}
+		}
 	}
 
-	void setText(string s){
-		x.text = s;
 
-	}
 }

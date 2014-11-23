@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class blackCard : MonoBehaviour {
-	float duration = 1.5f;//5f;
+	float duration = 1f;//5f;
 	SpriteRenderer s;
 	Color c;
 	// Use this for initialization
