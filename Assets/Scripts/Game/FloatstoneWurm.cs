@@ -19,7 +19,7 @@ public class FloatstoneWurm : MonoBehaviour {
 
 		for (int x = 1; x<=bodySegmentCount; x++) {
 			bodySegment = Instantiate (body, this.transform.position + offset*(x*1.0f), Quaternion.identity) as FloatstoneWurmSegment;
-
+			bodySegment.bodyRotation = x*60f;
 		}
 
 		tailSegment = Instantiate (tail, this.transform.position + offset*(bodySegmentCount*1.0f), Quaternion.identity) as FloatstoneWurmSegment;
