@@ -5,7 +5,7 @@
  		
  <!-- wizard pack mode 0-->
 
-	
+	<!--
 	<SpawnableEntity>
 		<name>wizard</name>
 		<time>12.5</time>
@@ -35,7 +35,7 @@
 
 	 <!-- wizard pack mode 1-->
 
-	
+	<!---
 	<SpawnableEntity>
 		<name>wizard</name>
 		<time>12.5</time>
@@ -64,7 +64,8 @@
 	
 	
 <!-- that's a weird horse  -->
-	<SpawnableEntity>
+
+	<!---	<SpawnableEntity>
 		<name>gryphon_rider</name>
 		<time>6.0</time>
 		<x>5</x>
@@ -100,7 +101,8 @@
 	
  		
  <!-- goombat spawn swarm -->
- 		<SpawnableEntity>
+ 	
+	<!---	<SpawnableEntity>
  			<name>goombat</name>
  			<time>30.0</time>
  			<x>0</x>
@@ -176,7 +178,8 @@
  		
  	<!-- offset these downwards -->
  <!-- goombat spawn swarm -->
- 		<SpawnableEntity>
+ 
+	<!---		<SpawnableEntity>
  			<name>goombat</name>
  			<time>30.0</time>
  			<x>0</x>
@@ -254,7 +257,7 @@
  <!-- boss battle commences after the short calm - do not edit location -->
 	<SpawnableEntity>
 		<name>dragonborne</name>
-		<time>90.0</time>
+		<time>10.0</time>
 		<x>22</x>
 		<y>0</y>
 	</SpawnableEntity>
