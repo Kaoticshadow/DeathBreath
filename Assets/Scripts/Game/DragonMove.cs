@@ -63,7 +63,8 @@ public class DragonMove : MonoBehaviour {
 		
 		if (!Input.anyKey) {
 			q = Quaternion.AngleAxis (0.0f, Vector3.forward);
-			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+			//dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+			dragonTrans.rotation = Quaternion.Lerp(dragonTrans.rotation,q,Time.deltaTime*3.0f);
 		}
 
 	}
