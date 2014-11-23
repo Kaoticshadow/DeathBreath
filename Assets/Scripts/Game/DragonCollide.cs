@@ -53,11 +53,9 @@ public class DragonCollide : MonoBehaviour {
 		if (!invulnerable) 
 		{
 			Debug.Log (coll.gameObject.name);
-			if (coll.gameObject.tag == "Enemy"||coll.gameObject.tag == "EnemyProjectile") {
+			if (coll.gameObject.tag == "Enemy"||coll.gameObject.tag == "EnemyProjectile"||coll.gameObject.tag == "EnemyTerrain") {
 				//AdjustCurrentHealth (-20);
-				GameObject.Find("Health Bar").SendMessage("DropScale");
-				invulnerable = true;
-				invulnerableCountdown = 80;
+				takeDamage();
 				if(coll.gameObject.tag == "EnemyProjectile"){
 					Destroy (coll.gameObject);
 				}
