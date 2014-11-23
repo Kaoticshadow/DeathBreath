@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject wizard;
 	public GameObject gryphon_rider;
 	public GameObject dragonborne;
+	public GameObject catapult;
 	public float levelScrollFactor = 1;
 	public float targetLevelScrollFactor = 1;
 	public float originLevelScrollFactor = 1;
@@ -166,7 +167,7 @@ public class LevelManager : MonoBehaviour {
 		spawnableEntityDictionary.Add("wizard",wizard);
 		spawnableEntityDictionary.Add("gryphon_rider",gryphon_rider);
 		spawnableEntityDictionary.Add("dragonborne", dragonborne);
-
+		spawnableEntityDictionary.Add ("catapult", catapult);
 	}
 
 	public void endLevel(Vector2 myVec)
