@@ -10,6 +10,7 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 	public float turnFraction;
 	public float speed = 0.04f;
 	public string hackType = "body"; // eww
+	public float bodyRotation = 0f;
 	//public float destinationMoveSpeed = 0.08f;
 	List<Vector2> destinations;
 	int destinationIndex;
@@ -102,6 +103,10 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 		if(hackType == "head")
 		{
 			angle += 90.0f;
+		}
+		if(hackType == "body")
+		{
+			angle += bodyRotation;
 		}
 		q2 = Quaternion.AngleAxis(angle, Vector3.forward);
 		//transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 1.0f);
