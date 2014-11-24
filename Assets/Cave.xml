@@ -1,7 +1,14 @@
  <SpawnableEntityCollection>
  	<SpawnableEntities>
  	
-
+<SpawnableEntity>
+ 			<name>goombat</name>
+ 			<time>3.0</time>
+ 			<x>0</x>
+ 			<y>1</y>
+ 			<x_scale>0.5</x_scale>
+ 			<y_scale>0.5</y_scale>
+ 		</SpawnableEntity>
  		
  <!-- goombat spawn swarm -->
  		<SpawnableEntity>
