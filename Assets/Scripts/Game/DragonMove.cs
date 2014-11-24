@@ -47,12 +47,12 @@ public class DragonMove : MonoBehaviour {
 		if (Mathf.Abs(left.transform.localPosition.x - this.transform.localPosition.x) > leftLevelEdgeMovementPadding && Input.GetKey(KeyCode.A)) {
 			this.rigidbody2D.AddForce(new Vector2(-moveForce * Time.deltaTime, 0f ));
 			q = Quaternion.AngleAxis (20.0f, Vector3.forward);
-			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 4.0f);
 		}
 		if (Mathf.Abs(right.transform.localPosition.x - this.transform.localPosition.x) > rightLevelEdgeMovementPadding && Input.GetKey (KeyCode.D)) {
 			this.rigidbody2D.AddForce(new Vector2(moveForce * Time.deltaTime, 0f));
 			q = Quaternion.AngleAxis (-20.0f, Vector3.forward);
-			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 4.0f);
 		}
 		if (Input.GetKey (KeyCode.W)  && Mathf.Abs(top.transform.localPosition.y - this.transform.localPosition.y) > topLevelEdgeMovementPadding) {
 			this.rigidbody2D.AddForce(new Vector2(0f,moveForce * Time.deltaTime));
@@ -61,11 +61,10 @@ public class DragonMove : MonoBehaviour {
 			this.rigidbody2D.AddForce(new Vector2(0f,-moveForce * Time.deltaTime));
 		}
 		
-		if (!Input.anyKey) {
-			q = Quaternion.AngleAxis (0.0f, Vector3.forward);
-			//dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
-			dragonTrans.rotation = Quaternion.Lerp(dragonTrans.rotation,q,Time.deltaTime*3.0f);
-		}
+		//rotate back
+		q = Quaternion.AngleAxis (0.0f, Vector3.forward);
+		dragonTrans.rotation = Quaternion.Lerp(dragonTrans.rotation,q,Time.deltaTime*3.0f);
+		//}
 
 	}
 
