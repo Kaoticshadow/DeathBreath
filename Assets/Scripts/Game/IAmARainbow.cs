@@ -9,6 +9,7 @@ public class IAmARainbow : MonoBehaviour {
 	Vector3 targetColor;
 	List<Vector3> colors;
 	int colorIndex;
+	public float rateOfChange = 0.25f;
 
 	// Use this for initialization
 	void Start () {
@@ -58,7 +59,7 @@ public class IAmARainbow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentColor = Vector3.Lerp (currentColor, targetColor, 0.25f);
+		currentColor = Vector3.Lerp (currentColor, targetColor, rateOfChange);
 		if (Vector3.Distance(currentColor, targetColor) < 0.05f) {
 			//targetColor = new Vector3(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f));
 			colorIndex = (colorIndex+1) % colors.Count;

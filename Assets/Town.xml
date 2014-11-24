@@ -4,8 +4,15 @@
  <!-- 4 seconds free time to figure out controls -->
  
  		<SpawnableEntity>
- 			<name>archer</name>
+ 			<name>catapult</name>
  			<time>5</time>
+ 			<x>0</x>
+ 			<y>-1.5</y>
+ 		</SpawnableEntity>
+ 		
+ 		<SpawnableEntity>
+ 			<name>archer</name>
+ 			<time>6</time>
  			<x>0</x>
  			<y>-1.5</y>
  		</SpawnableEntity>
@@ -33,14 +40,6 @@
  			<y_scale>0.5</y_scale>
  		</SpawnableEntity>
  		
- <!-- first champion -->
- 		<SpawnableEntity>
- 			<name>archer</name>
- 			<time>8</time>
- 			<x>0</x>
- 			<y>-1.5</y>
- 			<champion>1</champion>
- 		</SpawnableEntity>
  		
  		<SpawnableEntity>
  			<name>goombat</name>

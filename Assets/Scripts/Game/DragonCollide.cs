@@ -62,4 +62,18 @@ public class DragonCollide : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (!invulnerable) 
+		{
+			Debug.Log (coll.gameObject.name);
+			if (coll.gameObject.tag == "Enemy"||coll.gameObject.tag == "EnemyProjectile"||coll.gameObject.tag == "EnemyTerrain") {
+				//AdjustCurrentHealth (-20);
+				takeDamage();
+				if(coll.gameObject.tag == "EnemyProjectile"){
+					Destroy (coll.gameObject);
+				}
+			}
+		}
+	}
 }

@@ -7,11 +7,11 @@ public class DragonMove : MonoBehaviour {
 
 	public float moveRate = 1.0f;
 	public bool disableControls;
-	public float topLevelEdgeMovementPadding;
-	public float bottomLevelEdgeMovementPadding;
-	public float leftLevelEdgeMovementPadding;
-	public float rightLevelEdgeMovementPadding;
-	GameObject top,bottom,left,right;
+	//public float topLevelEdgeMovementPadding;
+	//public float bottomLevelEdgeMovementPadding;
+	//public float leftLevelEdgeMovementPadding;
+	//public float rightLevelEdgeMovementPadding;
+	//GameObject top,bottom,left,right;
 	public float moveForce = 100f;
 
 	bool turned = false;
@@ -20,10 +20,10 @@ public class DragonMove : MonoBehaviour {
 	
 		dragonTrans = this.transform;
 		disableControls = false;
-		top = GameObject.Find ("Top Level Edge");
-		bottom = GameObject.Find ("Bottom Level Edge");
-		left = GameObject.Find ("Left Level Edge");
-		right = GameObject.Find ("Right Level Edge");
+		//top = GameObject.Find ("Top Level Edge");
+		//bottom = GameObject.Find ("Bottom Level Edge");
+		//left = GameObject.Find ("Left Level Edge");
+		//right = GameObject.Find ("Right Level Edge");
 	}
 	
 	// Update is called once per frame
@@ -44,31 +44,31 @@ public class DragonMove : MonoBehaviour {
 	void forceMove(){
 		Quaternion q;// = Quaternion.AngleAxis (-20.0f, Vector3.forward);
 
-		if (Mathf.Abs(left.transform.localPosition.x - this.transform.localPosition.x) > leftLevelEdgeMovementPadding && Input.GetKey(KeyCode.A)) {
+		if (Input.GetKey(KeyCode.A)) {
 			this.rigidbody2D.AddForce(new Vector2(-moveForce * Time.deltaTime, 0f ));
 			q = Quaternion.AngleAxis (20.0f, Vector3.forward);
-			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 4.0f);
 		}
-		if (Mathf.Abs(right.transform.localPosition.x - this.transform.localPosition.x) > rightLevelEdgeMovementPadding && Input.GetKey (KeyCode.D)) {
+		if (Input.GetKey (KeyCode.D)) {
 			this.rigidbody2D.AddForce(new Vector2(moveForce * Time.deltaTime, 0f));
 			q = Quaternion.AngleAxis (-20.0f, Vector3.forward);
-			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
+			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 4.0f);
 		}
-		if (Input.GetKey (KeyCode.W)  && Mathf.Abs(top.transform.localPosition.y - this.transform.localPosition.y) > topLevelEdgeMovementPadding) {
+		if (Input.GetKey (KeyCode.W)) {
 			this.rigidbody2D.AddForce(new Vector2(0f,moveForce * Time.deltaTime));
 		}
-		if (Input.GetKey (KeyCode.S) && Mathf.Abs (bottom.transform.localPosition.y - this.transform.localPosition.y) > bottomLevelEdgeMovementPadding) {
+		if (Input.GetKey (KeyCode.S)) {
 			this.rigidbody2D.AddForce(new Vector2(0f,-moveForce * Time.deltaTime));
 		}
 		
-		if (!Input.anyKey) {
-			q = Quaternion.AngleAxis (0.0f, Vector3.forward);
-			//dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 1.0f);
-			dragonTrans.rotation = Quaternion.Lerp(dragonTrans.rotation,q,Time.deltaTime*3.0f);
-		}
+		//rotate back
+		q = Quaternion.AngleAxis (0.0f, Vector3.forward);
+		dragonTrans.rotation = Quaternion.Lerp(dragonTrans.rotation,q,Time.deltaTime*3.0f);
+		//}
 
 	}
 
+	/*
 	Vector2 getDir(){
 		Vector2 dir = new Vector2 ();
 		Quaternion q;// = Quaternion.AngleAxis (-20.0f, Vector3.forward);
@@ -104,6 +104,7 @@ public class DragonMove : MonoBehaviour {
 
 		return dir;
 	}
+	*/
 
 	void resetVelc(){
 		Debug.Log ("stopped");

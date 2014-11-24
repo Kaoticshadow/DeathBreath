@@ -224,5 +224,30 @@ public class CutsceneManager : MonoBehaviour {
 				Application.LoadLevel("Cave");
 			}
 		}
+
+		if (cutsceneNumber == 4) {
+			//stage 0
+			if (timeKeeper < 5 && stage == 0)
+			{
+				TextMesh.text = "Empowered by a thousand dragon souls...";
+			}
+			if (timeKeeper > 5 && stage == 0)
+				stage = 1;
+			
+			//stage 1
+			if (timeKeeper < 10 && stage == 1)
+			{
+				TextMesh.text = "...Deathy approaches king odin's palace!";
+			}
+			if (timeKeeper > 10 && stage == 1)
+				stage = 2;
+
+			}
+
+		//stage 3
+		if (timeKeeper < 15 && stage == 2)
+		{
+			Application.LoadLevel("throneroom");
+		}
 	}
 }
