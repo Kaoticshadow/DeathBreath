@@ -13,7 +13,7 @@ public class DragonShoot : MonoBehaviour {
 	public float fireForce = 3600f;
 
 	public float cooldown = 0.2f;
-	int pepperLevel = 0;
+	public int pepperLevel = 0;
 	float cooldownctr = 0;
 	bool coolingdown = false;
 	bool letgo = true;
@@ -159,10 +159,13 @@ public class DragonShoot : MonoBehaviour {
 
 	public void addFireScale(float bonus){
 		fireScale += bonus;
+		GameObject.Find ("Spicy Chicken Text").SendMessage ("addChicken");
+
 	}
 
 	public void addPepperLevel(){
 		pepperLevel++;
+		GameObject.Find ("Hot Pepper Text").SendMessage ("addPepper");
 	}
 
 
