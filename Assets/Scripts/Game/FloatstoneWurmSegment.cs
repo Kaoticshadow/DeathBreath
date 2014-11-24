@@ -11,6 +11,7 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 	public float speed = 0.04f;
 	public string hackType = "body"; // eww
 	public float bodyRotation = 0f;
+	public FloatstoneWurm mainBody;
 	//public float destinationMoveSpeed = 0.08f;
 	List<Vector2> destinations;
 	int destinationIndex;
@@ -75,7 +76,7 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 
 		this.transform.rotation = Quaternion.Slerp(q1,q2,turnFraction);
 
-		if (Vector2.Distance (this.transform.position, destination) < 0.5f) {
+		if (Vector2.Distance (this.transform.position, destination) < 0.5f && !mainBody.dying) {
 			chooseNextDestination();
 		}
 		turnFraction+= Time.deltaTime * 3;
@@ -144,6 +145,11 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 		destinations.Add (GameObject.Find ("d3").transform.localPosition);
 		destinations.Add (GameObject.Find ("d4").transform.localPosition);
 		*/
+	}
+
+	void takeDamage(float damage){
+		mainBody.SendMessage("takeDamage",damage);
+		//this.transform.parent.parent.SendMessage("takeDamage",damage);
 	}
 
 

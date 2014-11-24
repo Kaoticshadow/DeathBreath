@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject wizard;
 	public GameObject gryphon_rider;
 	public GameObject dragonborne;
+	public GameObject catapult;
 	public float levelScrollFactor = 1;
 	public float targetLevelScrollFactor = 1;
 	public float originLevelScrollFactor = 1;
@@ -39,7 +40,7 @@ public class LevelManager : MonoBehaviour {
 	public float time;
 	bool dragonStart = false;
 	GameObject player;
-	Vector2 currentVector;
+	//Vector2 currentVector;
 	
 	void Start () {
 		
@@ -88,13 +89,13 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		//dragon init town
-		if(levelName == "Town"){
+		if(levelName == "Town"||levelName == "Throne"||levelName == "Sky"){
 			if (time < 2.2f) {
-				dragon.transform.position = new Vector3(-13.31006f,0.332745f,0);
+				player.transform.position = new Vector3(-13.31006f,0.332745f,0);
 					}
 			if (time > 2.2f && !dragonStart) {
 
-				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
+				player.transform.position = Vector3.Lerp(player.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
 			}
 			if (time > 3f && !dragonStart){
 				dragonStart = true;
@@ -166,7 +167,7 @@ public class LevelManager : MonoBehaviour {
 		spawnableEntityDictionary.Add("wizard",wizard);
 		spawnableEntityDictionary.Add("gryphon_rider",gryphon_rider);
 		spawnableEntityDictionary.Add("dragonborne", dragonborne);
-
+		spawnableEntityDictionary.Add ("catapult", catapult);
 	}
 
 	public void endLevel(Vector2 myVec)
@@ -177,22 +178,19 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator endLevelCoroutine(Vector2 myVec2)
 	{
-		currentVector = new Vector2(this.transform.position.x, this.transform.position.y);
+		//currentVector = new Vector2(this.transform.position.x, this.transform.position.y);
 		player.GetComponent<DragonMove> ().disableControls = true;
 		player.GetComponent<DragonShoot> ().disableFire = true;
 		//Application.loadlevel
-		yield return new WaitForSeconds (3.0f);
-		player.rigidbody2D.AddForce (myVec2);
+		//yield return new WaitForSeconds (3.0f);
+		//player.rigidbody2D.AddForce (myVec2);
+		player.rigidbody2D.AddForce(new Vector2(100f,0f));
 		player.rigidbody2D.AddTorque (10f);
 		yield return new WaitForSeconds (0.5f);
 		player.rigidbody2D.AddTorque (-10f);
 		Application.LoadLevel(Application.loadedLevel + 1);
 
 	}
-
-
-
-
 
 	public void disableControls()
 	{
