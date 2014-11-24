@@ -4,6 +4,7 @@ using System.Collections;
 public class dragonBorne : MonoBehaviour {
 	int stage;
 	GameObject player;
+	public GameObject fus;
 	public GameObject rain;
 	public GameObject fusruda;
 	public GameObject fusrudaback;
@@ -33,6 +34,8 @@ public class dragonBorne : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		fus = GameObject.FindGameObjectWithTag ("fussound");
 		stage = 0;
 		phase0Target = new Vector3 (5, 0, 0);
 		axcd = axfrequency;
@@ -64,6 +67,7 @@ public class dragonBorne : MonoBehaviour {
 		GameObject[] x = GameObject.FindGameObjectsWithTag ("Lightning");
 		foreach (GameObject y in x)
 						Destroy (y);
+		fus.SendMessage ("pplay");
 		Destroy(rain);
 	}
 
@@ -83,6 +87,7 @@ public class dragonBorne : MonoBehaviour {
 		Vector2 dir = (Vector2)player.transform.position - (Vector2)fusorigin.transform.position;
 		Debug.Log (dir);
 		g.GetComponent<Rigidbody2D> ().AddForce (dir.normalized * 800f);
+		fus.SendMessage ("pplay");
 	}
 
 	void phase2(){
