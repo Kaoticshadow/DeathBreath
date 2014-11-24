@@ -242,12 +242,14 @@ public class CutsceneManager : MonoBehaviour {
 			if (timeKeeper > 10 && stage == 1)
 				stage = 2;
 
+			//stage 3
+			if (timeKeeper < 15 && stage == 2)
+			{
+				Application.LoadLevel("throneroom");
 			}
 
-		//stage 3
-		if (timeKeeper < 15 && stage == 2)
-		{
-			Application.LoadLevel("throneroom");
-		}
+			}
+
+
 	}
 }

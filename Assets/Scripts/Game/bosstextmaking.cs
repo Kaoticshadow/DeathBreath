@@ -8,6 +8,8 @@ public class bosstextmaking : MonoBehaviour {
 	void Start () {
 		bosstext x = (bosstext)Instantiate (b, this.transform.position, Quaternion.identity);
 		x.name = bossname;
+
+
 	}
 	
 	// Update is called once per frame
