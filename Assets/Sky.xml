@@ -1,4 +1,4 @@
- <SpawnableEntityCollection>
+<SpawnableEntityCollection>
  	<SpawnableEntities>
  	
 
@@ -336,13 +336,11 @@
             <y_scale>0.5</y_scale>
             <champion>1</champion>
         </SpawnableEntity>   
-     
-
-
-        <!-- boss battle commences after the short calm - do not edit location -->
+    
+     <!-- boss battle commences after the short calm - do not edit location -->
 	<SpawnableEntity>
 		<name>dragonborne</name>
-		<time>10.0</time>
+		<time>90.0</time>
 		<x>22</x>
 		<y>0</y>
 	</SpawnableEntity>
