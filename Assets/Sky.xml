@@ -3,68 +3,212 @@
  	
 
  		
- <!-- wizard pack mode 0-->
-
-
+ <!-- wizard pack -->
 	<SpawnableEntity>
 		<name>wizard</name>
 		<time>12.5</time>
-		<x>5</x>
-		<y>-2</y>
+		<x>10</x>
+		<y>-1</y>
 		<x_scale>0.5</x_scale>
  		<y_scale>0.5</y_scale>
 	</SpawnableEntity>
 		<SpawnableEntity>
 		<name>wizard</name>
-		<time>13.0</time>
+		<time>15.0</time>
 		<x>5</x>
-		<y>-2</y>
+		<y>2</y>
 		<x_scale>0.5</x_scale>
  		<y_scale>0.5</y_scale>
 	</SpawnableEntity>
 		<SpawnableEntity>
 		<name>wizard</name>
-		<time>13.5</time>
-		<x>5</x>
-		<y>-2</y>
+		<time>20</time>
+		<x>-2</x>
+		<y>-4</y>
 		<x_scale>0.5</x_scale>
  		<y_scale>0.5</y_scale>
 		<champion>1</champion>
 	</SpawnableEntity>
+   <SpawnableEntity>
+        <name>wizard</name>
+        <time>40</time>
+        <x>4</x>
+        <y>-2</y>
+        <x_scale>0.5</x_scale>
+        <y_scale>0.5</y_scale>
+    </SpawnableEntity>
+    <SpawnableEntity>
+        <name>wizard</name>
+        <time>46</time>
+        <x>-2</x>
+        <y>-1</y>
+        <x_scale>0.5</x_scale>
+        <y_scale>0.5</y_scale>
+        <champion>1</champion>
+     </SpawnableEntity>
+        <SpawnableEntity>
+            <name>wizard</name>
+            <time>50</time>
+            <x>2</x>
+            <y>0</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>wizard</name>
+            <time>64</time>
+            <x>2</x>
+            <y>0</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>wizard</name>
+            <time>65</time>
+            <x>-22</x>
+            <y>4</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>wizard</name>
+            <time>66</time>
+            <x>2</x>
+            <y>-2</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>wizard</name>
+            <time>85</time>
+            <x>2</x>
+            <y>1</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
 
 
-	 <!-- wizard pack mode 1-->
 
-
+        <!-- FireBats pack 01-->
+    <SpawnableEntity>
+		<name>firebat</name>
+		<time>10.0</time>
+		<x>20</x>
+		<y>-2</y>
+		<x_scale>2.0</x_scale>
+ 		<y_scale>2.0</y_scale>
+	</SpawnableEntity>
 	<SpawnableEntity>
-		<name>wizard</name>
-		<time>12.5</time>
-		<x>-22</x>
-		<y>-2</y>
-		<x_scale>0.5</x_scale>
- 		<y_scale>0.5</y_scale>
+		<name>firebat</name>
+		<time>20.0</time>
+		<x>5</x>
+		<y>4</y>
+		<x_scale>2.0</x_scale>
+ 		<y_scale>2.0</y_scale>
 	</SpawnableEntity>
-		<SpawnableEntity>
-		<name>wizard</name>
-		<time>13.0</time>
-		<x>-22</x>
+	<SpawnableEntity>
+		<name>firebat</name>
+		<time>36.0</time>
+		<x>5</x>
 		<y>-2</y>
-		<x_scale>0.5</x_scale>
- 		<y_scale>0.5</y_scale>
-	</SpawnableEntity>
-		<SpawnableEntity>
-		<name>wizard</name>
-		<time>13.5</time>
-		<x>-22</x>
-		<y>-2</y>
-		<x_scale>0.5</x_scale>
- 		<y_scale>0.5</y_scale>
-		<champion>1</champion>
-	</SpawnableEntity>
-	
-	
-<!-- that's a weird horse  -->
+		<x_scale>2.0</x_scale>
+ 		<y_scale>2.0</y_scale>
+	</SpawnableEntity>-->
+    <SpawnableEntity>
+        <name>firebat</name>
+        <time>38.0</time>
+        <x>5</x>
+        <y>0</y>
+        <x_scale>2.0</x_scale>
+        <y_scale>2.0</y_scale>
+    </SpawnableEntity>-->
+        <SpawnableEntity>
+            <name>firebat</name>
+            <time>48.0</time>
+            <x>5</x>
+            <y>-2</y>
+            <x_scale>2.0</x_scale>
+            <y_scale>2.0</y_scale>
+        </SpawnableEntity>-->
+        <SpawnableEntity>
+            <name>firebat</name>
+            <time>56.0</time>
+            <x>5</x>
+            <y>1</y>
+            <x_scale>2.0</x_scale>
+            <y_scale>2.0</y_scale>
+        </SpawnableEntity>-->
+        <SpawnableEntity>
+            <name>firebat</name>
+            <time>78.0</time>
+            <x>5</x>
+            <y>-5</y>
+            <x_scale>2.0</x_scale>
+            <y_scale>2.0</y_scale>
+        </SpawnableEntity>-->
+        <SpawnableEntity>
+            <name>firebat</name>
+            <time>84.0</time>
+            <x>5</x>
+            <y>3</y>
+            <x_scale>2.0</x_scale>
+            <y_scale>2.0</y_scale>
+        </SpawnableEntity>-->
 
+
+        <!-- Goombats Pack-->
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>70</time>
+            <x>0</x>
+            <y>1</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>70.6</time>
+            <x>0</x>
+            <y>1.75</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>70.5</time>
+            <x>0</x>
+            <y>1.5</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>70.7</time>
+            <x>0</x>
+            <y>2</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>70.7</time>
+            <x>0</x>
+            <y>3</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>70.8</time>
+            <x>0</x>
+            <y>3.1</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+
+        
+        
+        <!-- that's a weird horse  -->
 	<SpawnableEntity>
 		<name>gryphon_rider</name>
 		<time>6.0</time>
@@ -92,26 +236,47 @@
 	</SpawnableEntity> 
 	<SpawnableEntity>
 		<name>gryphon_rider</name>
-		<time>48.0</time>
+		<time>44.0</time>
 		<x>-20</x>
 		<y>5</y>
 		<x_scale>0.5</x_scale>
  		<y_scale>0.5</y_scale>
-	</SpawnableEntity> 
-	
- 		
+	</SpawnableEntity>
+    <SpawnableEntity>
+        <name>gryphon_rider</name>
+        <time>52.0</time>
+        <x>-20</x>
+        <y>5</y>
+        <x_scale>0.5</x_scale>
+        <y_scale>0.5</y_scale>
+    </SpawnableEntity>
+    <SpawnableEntity>
+        <name>gryphon_rider</name>
+        <time>62.0</time>
+        <x>3</x>
+        <y>5</y>
+        <x_scale>0.5</x_scale>
+        <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>gryphon_rider</name>
+            <time>75.0</time>
+            <x>-20</x>
+            <y>5</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+            <champion>1</champion>
+        </SpawnableEntity>   
+     
 
- 		
- 	
- <!-- boss battle commences after the short calm - do not edit location -->
+
+        <!-- boss battle commences after the short calm - do not edit location -->
 	<SpawnableEntity>
 		<name>dragonborne</name>
-		<time>10.0</time>
+		<time>90.0</time>
 		<x>22</x>
 		<y>0</y>
 	</SpawnableEntity>
-
-
  		
  	</SpawnableEntities>
  </SpawnableEntityCollection>
