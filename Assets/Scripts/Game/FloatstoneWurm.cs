@@ -8,8 +8,9 @@ public class FloatstoneWurm : MonoBehaviour {
 	public FloatstoneWurmSegment tail;
 	public int bodySegmentCount = 6;
 	public float health = 10f;
-	bool dying;
+	public bool dying;
 	List<SpriteRenderer> boss_sprites;
+	FloatstoneWurmSegment headSegment;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,7 @@ public class FloatstoneWurm : MonoBehaviour {
 		boss_sprites = new List<SpriteRenderer>();
 
 		Vector3 offset = new Vector3 (2.5f, 0f, 0f);
-		FloatstoneWurmSegment headSegment;
+
 		FloatstoneWurmSegment bodySegment;
 		FloatstoneWurmSegment tailSegment;
 
@@ -52,24 +53,48 @@ public class FloatstoneWurm : MonoBehaviour {
 		{
 			dying = true;
 			StartCoroutine("playDeathAnimation");
-			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));	
 		}
 	}
 
 	IEnumerator playDeathAnimation(){
-		//this.transform.parent.GetComponent<Animator>().enabled = false;
+
+		StartCoroutine(FlashSprites (boss_sprites, 7, 0.2f, true));
+
 		foreach(SpriteRenderer spriteRender in boss_sprites){
 			Rigidbody2D spriteBody = spriteRender.gameObject.GetComponent<Rigidbody2D>();
 			if(spriteBody != null){
 				spriteBody.velocity = new Vector2(0f,0f);
 			}
+			Collider2D spriteCollider = spriteRender.gameObject.GetComponent<Collider2D>();
+			if(spriteCollider != null){
+				spriteCollider.enabled = false;
+			}
 		}
-		StartCoroutine(FlashSprites (boss_sprites, 15, 0.4f, true));
+		headSegment.rigidbody2D.velocity = new Vector2(0f,0f);
+
+		yield return new WaitForSeconds(1f);
+
+		//headSegment.rigidbody2D.velocity = new Vector2(0f,-1f);
+		headSegment.rigidbody2D.gravityScale = 1.0f;
+
+		foreach(SpriteRenderer spriteRender in boss_sprites){
+			Rigidbody2D spriteBody = spriteRender.gameObject.GetComponent<Rigidbody2D>();
+			if(spriteBody != null){
+				yield return new WaitForSeconds(1f);
+				//spriteBody.velocity = new Vector2(0f,-1f);
+				spriteBody.rigidbody2D.gravityScale = 1.0f;
+			}
+		}
+
+
+
+
 		yield return new WaitForSeconds(3.0f);
+		GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));	
 		//GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().stopMusic();
 		//GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().playMusic2();
 		yield return new WaitForSeconds(1f);
-		this.transform.parent.rigidbody2D.AddForce(new Vector2(0f,-100f));
+		//this.transform.parent.rigidbody2D.AddForce(new Vector2(0f,-100f));
 		yield return new WaitForSeconds(10.0f);
 		Destroy (this.transform.parent.parent.gameObject);
 	}

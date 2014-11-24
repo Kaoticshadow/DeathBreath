@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour {
 	public float time;
 	bool dragonStart = false;
 	GameObject player;
-	Vector2 currentVector;
+	//Vector2 currentVector;
 	
 	void Start () {
 		
@@ -178,22 +178,19 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator endLevelCoroutine(Vector2 myVec2)
 	{
-		currentVector = new Vector2(this.transform.position.x, this.transform.position.y);
+		//currentVector = new Vector2(this.transform.position.x, this.transform.position.y);
 		player.GetComponent<DragonMove> ().disableControls = true;
 		player.GetComponent<DragonShoot> ().disableFire = true;
 		//Application.loadlevel
-		yield return new WaitForSeconds (3.0f);
-		player.rigidbody2D.AddForce (myVec2);
+		//yield return new WaitForSeconds (3.0f);
+		//player.rigidbody2D.AddForce (myVec2);
+		player.rigidbody2D.AddForce(new Vector2(100f,0f));
 		player.rigidbody2D.AddTorque (10f);
 		yield return new WaitForSeconds (0.5f);
 		player.rigidbody2D.AddTorque (-10f);
 		Application.LoadLevel(Application.loadedLevel + 1);
 
 	}
-
-
-
-
 
 	public void disableControls()
 	{
