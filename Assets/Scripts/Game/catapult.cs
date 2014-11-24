@@ -4,6 +4,8 @@ using System.Collections;
 public class catapult : MonoBehaviour {
 	float firingtime;
 	public GameObject boulder;
+	public float xFireForce = -270f;
+	public float yFireForce = 400f;
 	bool shot = false;
 	// Use this for initialization
 	void Start () {
@@ -20,8 +22,8 @@ public class catapult : MonoBehaviour {
 						if (this.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("shootcatapult") && !shot) {
 								Debug.Log ("hi");
 								shot = true;
-								boulder.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (-300, 570));
-								boulder.GetComponent<Rigidbody2D> ().gravityScale = 1.5f;
+								boulder.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (xFireForce, yFireForce));
+								boulder.GetComponent<Rigidbody2D> ().gravityScale = 1f;
 
 						}
 
