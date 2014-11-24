@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour {
 		//Screen.SetResolution (640, 360, false);
 		//Screen.SetResolution (1024, 576, false);
 		player = GameObject.FindGameObjectWithTag("Player");
+		player.layer = 0; //default; no collision with player boundaries
 		//m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Town.xml"));
 		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, levelName +".xml"));
 		leftLevelEdge = GameObject.Find("Left Level Edge");
@@ -99,6 +100,7 @@ public class LevelManager : MonoBehaviour {
 			}
 			if (time > 3f && !dragonStart){
 				dragonStart = true;
+				player.layer = 9; //player layer; collision with player boundaries
 			}
 		}
 
@@ -114,6 +116,7 @@ public class LevelManager : MonoBehaviour {
 			}
 			if (time > 1.3f && !dragonStart){
 				dragonStart = true;
+				player.layer = 9; //player layer; collision with player boundaries
 				setScrollingSpeed(1.0f,0.2f);
 			}
 		}
