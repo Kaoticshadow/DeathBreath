@@ -289,7 +289,7 @@
      <SpawnableEntity>
         <name>gryphon_rider</name>
         <time>30</time>
-        <x>-2</x>
+        <x>2</x>
         <y>3</y>
         <x_scale>0.5</x_scale>
         <y_scale>0.5</y_scale>
