@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour {
 
 	public string levelName; //nasty hack to know which level we're on. Set on each prefab in the editor
+	public GameObject playerBoundaries;
 	public GameObject archer;
 	public GameObject dragon;
 	public GameObject cave_entrance;
@@ -43,11 +44,13 @@ public class LevelManager : MonoBehaviour {
 	//Vector2 currentVector;
 	
 	void Start () {
+
+		playerBoundaries.SetActive (false);
 		
 		//Screen.SetResolution (640, 360, false);
 		//Screen.SetResolution (1024, 576, false);
 		player = GameObject.FindGameObjectWithTag("Player");
-		player.layer = 0; //default; no collision with player boundaries
+		//player.layer = 0; //default; no collision with player boundaries
 		//m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Town.xml"));
 		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, levelName +".xml"));
 		leftLevelEdge = GameObject.Find("Left Level Edge");
@@ -100,7 +103,7 @@ public class LevelManager : MonoBehaviour {
 			}
 			if (time > 3f && !dragonStart){
 				dragonStart = true;
-				player.layer = 9; //player layer; collision with player boundaries
+				playerBoundaries.SetActive (true); //collision with player boundaries
 			}
 		}
 
@@ -116,7 +119,7 @@ public class LevelManager : MonoBehaviour {
 			}
 			if (time > 1.3f && !dragonStart){
 				dragonStart = true;
-				player.layer = 9; //player layer; collision with player boundaries
+				playerBoundaries.SetActive (true); //collision with player boundaries
 				setScrollingSpeed(1.0f,0.2f);
 			}
 		}
@@ -135,6 +138,7 @@ public class LevelManager : MonoBehaviour {
 
 	void GameOver(){
 		player.GetComponent<DragonMove>().disableControls = true;
+		playerBoundaries.SetActive (false);
 		player.rigidbody2D.gravityScale = 1.0f;
 		player.rigidbody2D.AddForce(new Vector2(100f,50f));
 		player.rigidbody2D.AddTorque(-50f);
@@ -184,6 +188,7 @@ public class LevelManager : MonoBehaviour {
 		//currentVector = new Vector2(this.transform.position.x, this.transform.position.y);
 		player.GetComponent<DragonMove> ().disableControls = true;
 		player.GetComponent<DragonShoot> ().disableFire = true;
+		playerBoundaries.SetActive (false); //collision with player boundaries
 		//Application.loadlevel
 		//yield return new WaitForSeconds (3.0f);
 		//player.rigidbody2D.AddForce (myVec2);
