@@ -76,7 +76,7 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 
 		this.transform.rotation = Quaternion.Slerp(q1,q2,turnFraction);
 
-		if (Vector2.Distance (this.transform.position, destination) < 0.5f) {
+		if (Vector2.Distance (this.transform.position, destination) < 0.5f && !mainBody.dying) {
 			chooseNextDestination();
 		}
 		turnFraction+= Time.deltaTime * 3;
