@@ -29,6 +29,14 @@
  		<y_scale>0.5</y_scale>
 		<champion>1</champion>
 	</SpawnableEntity>
+        <SpawnableEntity>
+            <name>wizard</name>
+            <time>25</time>
+            <x>4</x>
+            <y>2</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
    <SpawnableEntity>
         <name>wizard</name>
         <time>40</time>
@@ -40,7 +48,7 @@
     <SpawnableEntity>
         <name>wizard</name>
         <time>46</time>
-        <x>-2</x>
+        <x>-22</x>
         <y>-1</y>
         <x_scale>0.5</x_scale>
         <y_scale>0.5</y_scale>
@@ -80,11 +88,21 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>wizard</name>
+            <time>74</time>
+            <x>3</x>
+            <y>4</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+            <champion>1</champion>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>wizard</name>
             <time>85</time>
             <x>2</x>
             <y>1</y>
             <x_scale>0.5</x_scale>
             <y_scale>0.5</y_scale>
+            <champion>1</champion>
         </SpawnableEntity>
 
 
@@ -121,6 +139,7 @@
         <y>0</y>
         <x_scale>2.0</x_scale>
         <y_scale>2.0</y_scale>
+        <champion>1</champion>
     </SpawnableEntity>-->
         <SpawnableEntity>
             <name>firebat</name>
@@ -153,6 +172,7 @@
             <y>3</y>
             <x_scale>2.0</x_scale>
             <y_scale>2.0</y_scale>
+            <champion>1</champion>
         </SpawnableEntity>-->
 
 
@@ -178,8 +198,8 @@
             <time>70.5</time>
             <x>0</x>
             <y>1.5</y>
-            <x_scale>0.5</x_scale>
-            <y_scale>0.5</y_scale>
+            <x_scale>1</x_scale>
+            <y_scale>1</y_scale>
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
@@ -194,18 +214,69 @@
             <time>70.7</time>
             <x>0</x>
             <y>3</y>
-            <x_scale>0.5</x_scale>
-            <y_scale>0.5</y_scale>
+            <x_scale>1</x_scale>
+            <y_scale>1</y_scale>
+            <champion>1</champion>
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
             <time>70.8</time>
             <x>0</x>
             <y>3.1</y>
+            <x_scale>1</x_scale>
+            <y_scale>1</y_scale>
+        </SpawnableEntity>
+
+        <!-- Goombats Pack 2-->
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>61.0</time>
+            <x>0</x>
+            <y>1</y>
+            <x_scale>1</x_scale>
+            <y_scale>1</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>61.1</time>
+            <x>0</x>
+            <y>1.75</y>
+            <x_scale>1</x_scale>
+            <y_scale>1</y_scale>
+            <champion>1</champion>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>61.2</time>
+            <x>0</x>
+            <y>1.5</y>
             <x_scale>0.5</x_scale>
             <y_scale>0.5</y_scale>
         </SpawnableEntity>
-
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>61.3</time>
+            <x>0</x>
+            <y>2</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>61.4</time>
+            <x>0</x>
+            <y>3</y>
+            <x_scale>1</x_scale>
+            <y_scale>1</y_scale>
+        </SpawnableEntity>
+        <SpawnableEntity>
+            <name>goombat</name>
+            <time>61.5</time>
+            <x>0</x>
+            <y>3.1</y>
+            <x_scale>0.5</x_scale>
+            <y_scale>0.5</y_scale>
+        </SpawnableEntity>
         
         
         <!-- that's a weird horse  -->
@@ -225,8 +296,17 @@
 		<x_scale>0.5</x_scale>
  		<y_scale>0.5</y_scale>
  			<champion>1</champion>
-	</SpawnableEntity> 
-	<SpawnableEntity>
+	</SpawnableEntity>
+     <SpawnableEntity>
+        <name>gryphon_rider</name>
+        <time>30</time>
+        <x>-2</x>
+        <y>3</y>
+        <x_scale>0.5</x_scale>
+        <y_scale>0.5</y_scale>
+        <champion>1</champion>
+     </SpawnableEntity>
+        <SpawnableEntity>
 		<name>gryphon_rider</name>
 		<time>41.0</time>
 		<x>-14</x>
