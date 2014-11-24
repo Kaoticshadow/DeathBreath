@@ -39,7 +39,7 @@ public class Credits : MonoBehaviour {
             off = 0.0f;
         }
 
-        if (GUI.Button(new Rect(50f, Screen.height - 50f, 100, 50), "Back", guiButton))
+        if (GUI.Button(new Rect(50f, Screen.height - 50f, 100, 50), "BACK", guiButton))
         {
             Application.LoadLevel("StartMenu");
         }

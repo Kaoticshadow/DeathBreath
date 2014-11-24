@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ax : MonoBehaviour {
-	float lifetime = 5f;
+public class xwisedeath : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,8 +10,7 @@ public class Ax : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		lifetime -= Time.deltaTime;
-		if (lifetime < 0)
+		if (this.transform.position.x < -78)
 						Destroy (this.gameObject);
 	}
 }
