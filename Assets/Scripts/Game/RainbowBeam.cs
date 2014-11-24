@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class RainbowBeam : MonoBehaviour {
 
 	public float beamDamagePerSecond = 1f;
+	public float beamRange = 10f;
+	public int collisionLevel = 10;
 	GameObject HitObj;
 	float Distance = 0f;
 	GameObject rainbowLine;
@@ -89,12 +91,14 @@ public class RainbowBeam : MonoBehaviour {
 		if(Input.GetKey(KeyCode.R)){
 
 			rainbowRenderer.enabled = true;
-			RaycastHit2D hit = Physics2D.Raycast(GameObject.Find("FlameBreathOrigin").transform.position, Vector2.right);
+			RaycastHit2D hit = Physics2D.Raycast(GameObject.Find("FlameBreathOrigin").transform.position, Vector2.right,beamRange,collisionLevel);
 			// Making a new ray that will go straight down from the gameobject the code is attached to
 
 			//Debugging is optional but I like to see the red raycast line and it makes it easy to see what it's hitting
-			HitObj = hit.transform.gameObject;
-			HitObj.SendMessage("takeDamage",beamDamagePerSecond * Time.deltaTime);
+			if(hit.transform.gameObject != null){
+				HitObj = hit.transform.gameObject;
+				HitObj.SendMessage("takeDamage",beamDamagePerSecond * Time.deltaTime);
+			}
 			// Again optional unless you want to access the hit with more detail
 			Distance = Mathf.Abs(hit.point.y - transform.position.y);
 			// grabbing the distance in a 2d plane AS A FLOAT
