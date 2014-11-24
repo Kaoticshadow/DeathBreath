@@ -11,7 +11,7 @@ public class stalagmite : MonoBehaviour {
 	void Start () {
 		loose = false;
 		player = GameObject.FindGameObjectWithTag("Player");
-		actualLaunchDistance = stalagmiteLaunchDistance * Random.Range(0.8f,1.2f);
+		actualLaunchDistance = stalagmiteLaunchDistance; //* Random.Range(0.8f,1.2f);
 	}
 	
 	// Update is called once per frame
@@ -22,9 +22,5 @@ public class stalagmite : MonoBehaviour {
 		if(loose){
 			rigidbody2D.AddForce(new Vector2(0f,100f*Time.deltaTime));
 		}
-	}
-
-	void OnCollision2D(Collision2D col){
-
 	}
 }
