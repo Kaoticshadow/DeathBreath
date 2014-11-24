@@ -353,7 +353,7 @@
         <!-- boss battle commences after the short calm - do not edit location -->
 	<SpawnableEntity>
 		<name>dragonborne</name>
-		<time>90.0</time>
+		<time>10.0</time>
 		<x>22</x>
 		<y>0</y>
 	</SpawnableEntity>
