@@ -6,15 +6,18 @@ public class DragonCollide : MonoBehaviour {
 	public int currentHealth = 100;
 	public int maxHealth = 100;
 	public int blinkduration = 10;
-	public int invincibilityDuration = 80;
+	public int invincibilityFrames = 80;
+	public float invincibilityDuration = 1.5f;
+	public float invulnerableCountdown = 0f;
 
-	int invulnerableCountdown;
+	//int invulnerableCountdown;
 	//int blinkCount= 0;
 	bool invulnerable;
 	Renderer[] m_sprites;
 	// Use this for initialization
 	void Start () {
 		invulnerable = false;
+		invincibilityFrames = 0;
 		invulnerableCountdown = 0;
 		m_sprites = this.GetComponentsInChildren<Renderer>();
 	
@@ -23,29 +26,31 @@ public class DragonCollide : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (invulnerable) {
-			if(invulnerableCountdown % blinkduration == 0){
+
+			if(invincibilityFrames % blinkduration == 0){
 				foreach(Renderer r in m_sprites) {
 						r.enabled = !r.enabled;
 				}
 			}
+			invincibilityFrames ++;
 		}
-	invulnerableCountdown--;
 
-	if (invulnerableCountdown <= 0) {
+		invulnerableCountdown -= Time.deltaTime;
+
+		if (invulnerable && invulnerableCountdown <= 0) {
 			invulnerable = false;
-			if(invulnerableCountdown % blinkduration == 0){
-				foreach(Renderer r in m_sprites) {
-					r.enabled = true;
-				}
+			foreach(Renderer r in m_sprites) {
+				r.enabled = true;
 			}
+		}
 	}
-}
+
 	void takeDamage(){
 		if (!invulnerable) 
 		{
-				GameObject.Find("Health Bar").SendMessage("DropScale");
-				invulnerable = true;
-				invulnerableCountdown = 80;
+			GameObject.Find("Health Bar").SendMessage("DropScale");
+			invulnerable = true;
+			invulnerableCountdown = invincibilityDuration;
 		}
 	}
 
