@@ -52,7 +52,8 @@ public class LevelManager : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		//player.layer = 0; //default; no collision with player boundaries
 		//m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Town.xml"));
-		m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, levelName +".xml"));
+		if (levelName != "Throne")
+			m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, levelName +".xml"));
 		leftLevelEdge = GameObject.Find("Left Level Edge");
 		rightLevelEdge = GameObject.Find("Right Level Edge");
 		initializeSpawnableEntityDictionary();
@@ -72,25 +73,25 @@ public class LevelManager : MonoBehaviour {
 		levelScrollFactorRatio += Time.deltaTime / levelScrollChangeDelay;
 		levelScrollFactor = Mathf.Lerp(originLevelScrollFactor,targetLevelScrollFactor,levelScrollFactorRatio);
 
-		foreach(SpawnableEntity entity in m_spawnableEntityCollection.SpawnableEntities)
-		{
-			if(!entity.spawned && time >= entity.time)
-			{
-				entity.spawned = true;
-				Debug.Log(entity.name);
-				GameObject spawnedObject = (GameObject)Instantiate (spawnableEntityDictionary[entity.name], rightLevelEdge.transform.position + new Vector3(entity.x,entity.y,0), rightLevelEdge.transform.rotation);
+		if (levelName != "Throne") {
+						foreach (SpawnableEntity entity in m_spawnableEntityCollection.SpawnableEntities) {
+								if (!entity.spawned && time >= entity.time) {
+										entity.spawned = true;
+										Debug.Log (entity.name);
+										GameObject spawnedObject = (GameObject)Instantiate (spawnableEntityDictionary [entity.name], rightLevelEdge.transform.position + new Vector3 (entity.x, entity.y, 0), rightLevelEdge.transform.rotation);
 
-				//gameObject scaling from script
-				if(entity.x_scale > 0 && entity.y_scale > 0){
-					spawnedObject.transform.localScale = new Vector3(entity.x_scale,entity.y_scale);
-				}
+										//gameObject scaling from script
+										if (entity.x_scale > 0 && entity.y_scale > 0) {
+												spawnedObject.transform.localScale = new Vector3 (entity.x_scale, entity.y_scale);
+										}
 
-				//set enemy as champion
-				if(entity.champion > 0){
-					spawnedObject.AddComponent("ChampionEnemy");
+										//set enemy as champion
+										if (entity.champion > 0) {
+												spawnedObject.AddComponent ("ChampionEnemy");
+										}
+								}
+						}
 				}
-			}
-		}
 
 		//dragon init town
 		if(levelName == "Town"||levelName == "Throne"||levelName == "Sky"){
