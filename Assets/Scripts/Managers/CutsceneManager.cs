@@ -225,6 +225,39 @@ public class CutsceneManager : MonoBehaviour {
 			}
 		}
 
+		if (cutsceneNumber == 3) {
+			//stage 0
+			if (timeKeeper < 5 && stage == 0)
+			{
+				TextMesh.text = "Odin's knights have delivered the egg...";
+			}
+			if (timeKeeper > 5 && stage == 0)
+				stage = 1;
+			
+			//stage 1
+			if (timeKeeper < 10 && stage == 1)
+			{
+				TextMesh.text = "...and the mystical skyway has closed";
+			}
+			if (timeKeeper > 10 && stage == 1)
+				stage = 2;
+
+			//stage 1
+			if (timeKeeper < 15 && stage == 2)
+			{
+				TextMesh.text = "Now deathy must traverse the maelstrom";
+			}
+			if (timeKeeper > 15 && stage == 2)
+				stage = 3;
+			
+			//stage 3
+			if (timeKeeper < 20 && stage == 3)
+			{
+				Application.LoadLevel("Sky");
+			}
+
+		}
+
 		if (cutsceneNumber == 4) {
 			//stage 0
 			if (timeKeeper < 5 && stage == 0)
