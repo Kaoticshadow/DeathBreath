@@ -89,13 +89,13 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		//dragon init town
-		if(levelName == "Town"){
+		if(levelName == "Town"||levelName == "Throne"||levelName == "Sky"){
 			if (time < 2.2f) {
-				dragon.transform.position = new Vector3(-13.31006f,0.332745f,0);
+				player.transform.position = new Vector3(-13.31006f,0.332745f,0);
 					}
 			if (time > 2.2f && !dragonStart) {
 
-				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
+				player.transform.position = Vector3.Lerp(player.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
 			}
 			if (time > 3f && !dragonStart){
 				dragonStart = true;
