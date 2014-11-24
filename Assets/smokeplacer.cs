@@ -8,8 +8,8 @@ public class smokeplacer : MonoBehaviour {
 		if (Application.loadedLevelName == "Sky") {
 			
 			GameObject g = GameObject.FindGameObjectWithTag ("Level Center");
+			this.transform.localPosition = g.transform.position+ new Vector3(1.4f, -2.7f, 0f);
 			this.transform.parent = g.transform;
-			this.transform.localPosition = g.transform.position + new Vector3(4f, -3.9f, 0f);
 			
 		}
 	}
