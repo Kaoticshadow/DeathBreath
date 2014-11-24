@@ -27,7 +27,7 @@ public class wizFus : MonoBehaviour {
 			targetVelocity = (target.position - this.transform.position).normalized * speed;
 			this.rigidbody2D.velocity = Vector2.Lerp(this.rigidbody2D.velocity,targetVelocity,velocityChangeFactor);
 		}
-		else if (start > 0){
+		else if (start > 0 && startspot != null){
 			this.transform.position = startspot.position;
 		}
 
