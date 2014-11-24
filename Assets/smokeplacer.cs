@@ -9,7 +9,7 @@ public class smokeplacer : MonoBehaviour {
 			
 			GameObject g = GameObject.FindGameObjectWithTag ("Level Center");
 			this.transform.parent = g.transform;
-			this.transform.localPosition = g.transform.position + new Vector3(4f, -2f, 0f);
+			this.transform.localPosition = g.transform.position + new Vector3(4f, -3.9f, 0f);
 			
 		}
 	}
