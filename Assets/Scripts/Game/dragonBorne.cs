@@ -5,6 +5,7 @@ public class dragonBorne : MonoBehaviour {
 	int stage;
 	GameObject player;
 	public GameObject fus;
+	GameObject music;
 	public GameObject rain;
 	public GameObject fusruda;
 	public GameObject fusrudaback;
@@ -34,7 +35,9 @@ public class dragonBorne : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		music = GameObject.FindGameObjectWithTag ("skybossmusic");
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<AudioSource> ().Stop ();
+		music.GetComponent<AudioSource> ().Play ();
 		fus = GameObject.FindGameObjectWithTag ("fussound");
 		stage = 0;
 		phase0Target = new Vector3 (5, 0, 0);
