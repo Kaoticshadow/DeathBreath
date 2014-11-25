@@ -18,10 +18,12 @@ public class talkinghead : MonoBehaviour {
 		blurb.text = "";
 		texts = new ArrayList ();
 		texts.Add ("Deathy!");
-		texts.Add ("You've freed the souls...");
-		texts.Add ("...of all the dragons Odin has enslaved!");	
+		texts.Add ("You've freed the souls of \n\n all the dragons Odin has enslaved!");
 		texts.Add("We will give you all of our power...");
-		texts.Add ("...to defeat the lightning lord!");
+		texts.Add("...to help rescue your egg.");
+		texts.Add ("You may not have realized...");
+		texts.Add("That egg contains the Dragon of Destiny...");
+		texts.Add ("The only being who can defeat \n\nthe Lightning Lord!");
 		counter = stringduration;
 
 	}

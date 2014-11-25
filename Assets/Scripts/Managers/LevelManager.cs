@@ -133,7 +133,7 @@ public class LevelManager : MonoBehaviour {
 			if (time > 1.3f && !dragonStart){
 				dragonStart = true;
 				playerBoundaries.SetActive (true); //collision with player boundaries
-				//setScrollingSpeed(1.0f,0.2f);
+				//setScrollingSpeed(10.0f,0.2f);
 			}
 		}
 

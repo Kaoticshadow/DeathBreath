@@ -18,12 +18,13 @@ public class EggOfDestiny : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (col.gameObject.tag == "Player") {
+		if (col.gameObject.tag == "Player" && !winning) {
 			PlayWinningAnimation ();
 		}		
 	}
 
 	void PlayWinningAnimation(){
+		winning = true;
 		GameObject DragonOfDestiny = Instantiate (eggHatching, this.transform.position, Quaternion.identity) as GameObject;
 		StartCoroutine ("playDeathAnimation");
 	}
