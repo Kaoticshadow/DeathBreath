@@ -6,6 +6,7 @@ public class OdinWindSpawner : MonoBehaviour {
 	public Animator odinAnimator;
 	public GameObject spawnWind;
 	public GameObject spawnTrigger;
+	public GameObject spawnlightning;
 	public float cooldownDuration = 1f;
 	public int cycleFireballcount = 3;
 	public bool hackupIgnoreFirstFireball = true;
@@ -34,15 +35,45 @@ public class OdinWindSpawner : MonoBehaviour {
 				cooldown = cooldownDuration;
 			}
 			else{
-				spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
-				spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,400f));
-				spawnedWind.rigidbody2D.AddTorque(-1000f);
-				spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
-				spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,150f));
-				spawnedWind.rigidbody2D.AddTorque(-1000f);
-				spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
-		        spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,-100f));
-		        spawnedWind.rigidbody2D.AddTorque(-1000f);
+				float x = Random.Range(0,1);
+				if(x<0.1f){				
+					spawnedWind = Instantiate(spawnlightning,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
+					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,400f));
+					spawnedWind.rigidbody2D.AddTorque(-1000f);
+				}
+				else{
+					spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
+					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,400f));
+					spawnedWind.rigidbody2D.AddTorque(-1000f);
+				}
+				
+				x = Random.Range(0,1);
+				if(x<0.1f){				
+					spawnedWind = Instantiate(spawnlightning,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
+					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,150f));
+					spawnedWind.rigidbody2D.AddTorque(-1000f);
+				}
+				else{
+					spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
+					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,150f));
+					spawnedWind.rigidbody2D.AddTorque(-1000f);
+				}
+
+
+
+				
+				x = Random.Range(0,1);
+				if(x<0.1f){				
+					spawnedWind = Instantiate(spawnlightning,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
+					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,-100f));
+					spawnedWind.rigidbody2D.AddTorque(-1000f);
+				}
+				else{
+					spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
+					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,-100f));
+					spawnedWind.rigidbody2D.AddTorque(-1000f);
+				}
+
 				cooldown = cooldownDuration;
 			}
 			balls++;
