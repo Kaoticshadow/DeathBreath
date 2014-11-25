@@ -12,11 +12,23 @@ public class Credits : MonoBehaviour {
                             "====VECTOR ART====","", "Tim Smith","", "Tiffany Ip", "", "",
                             "====PIXEL ART====","", "Tiffany Ip", "", "",
                             "====ANIMATIONS & CUTSCENES====","", "Tim Smith", "", "",
-                            "====SOUND EFFECTS====", "","Tim Smith","", "Louis McLean", "","Tiffany Ip", "", "", "", "",
+                            "====SOUND EFFECTS====", "","Tim Smith","", "Louis McLean", "","Tiffany Ip", "", "",
+                            "====TESTING====", "", "Marco Sabini", "", "", "", "",
                             "EXTERNAL SOURCES", "","", 
-                            "====FONTS====", "","SF Movie Poster Bold (Free)","", "EXOCET (Free)", "", "",
-                            "====MUSIC====", "", "", 
-                            "====SOUND EFFECTS====", "" };
+                            "====FONTS====", "","SF Movie Poster Bold (Free)","", "Exocet (Free)", "", "",
+                            "====MUSIC====", "", "Figaro Castle (FF6)", "", 
+                                                 "Victory Fanfare (FF6)", "",
+                                                 "The Unforgiven (FF6)",  "",
+                                                 "Omen (FF6)",  "",
+                                                 "Birth of A God (FF7)",  "",
+                                                 "Area 1 (Power Rangers SNES)",  "",
+                                                 "Boss Fight (Chrono Trigger)",  "",
+                                                 "Limestone Cavern (Legend of Dragoon)",  "",
+                                                 "Title Screen (Myth)",  "",
+                                                 "Electroheart (Amaranthe)",  "",
+                                                 "Main Theme (Skyrim)",  "",
+                                                 "Hunting High and Low (Stratovarius)",  "",
+                                                 "Hot Butter (Popcorn)"};
     GUIStyle guiScroll = new GUIStyle();
     GUIStyle guiButton = new GUIStyle();
 
@@ -43,7 +55,7 @@ public class Credits : MonoBehaviour {
             GUI.Label(new Rect(Screen.width/4, roff, Screen.width / 2, 1000), scrollText[i], guiScroll);
             GUI.color = new Color(1, 1, 1, 1);
         }
-        if (off < -5000)
+        if (off < -3800)
         {
             off = 0.0f;
         }
