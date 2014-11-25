@@ -245,7 +245,7 @@ public class CutsceneManager : MonoBehaviour {
 			//stage 1
 			if (timeKeeper < 22 && stage == 2)
 			{
-				TextMesh.text = "Now deathy must traverse the maelstrom";
+				TextMesh.text = "deathy must traverse the maelstrom";
 			}
 			if (timeKeeper > 22 && stage == 2)
 				stage = 3;
