@@ -32,15 +32,22 @@ public class EggOfDestiny : MonoBehaviour {
 	IEnumerator playDeathAnimation(){
 		//this.GetComponent<Animator>().enabled = false;
 
-		yield return new WaitForSeconds(4.0f);
+		yield return new WaitForSeconds(8.0f);
+		Instantiate (explosionPrefab, odin.transform.position, Quaternion.identity);
+		yield return new WaitForSeconds(1.0f);
 		Instantiate (explosionPrefab, odin.transform.position, Quaternion.identity);
 		yield return new WaitForSeconds(0.5f);
+		Instantiate (explosionPrefab, odin.transform.position, Quaternion.identity);
+		yield return new WaitForSeconds(0.5f);
+		Instantiate (explosionPrefab, odin.transform.position, Quaternion.identity);
+		yield return new WaitForSeconds(0.5f);
+		Instantiate (explosionPrefab, odin.transform.position, Quaternion.identity);
 		Destroy (odin);
 
 
 		//GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().stopMusic();
 		//GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().playMusic2();
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(10.0f);
 		Application.LoadLevel ("Credits");
 //		GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));
 		//this.transform.parent.rigidbody2D.AddForce(new Vector2(0f,-100f));
