@@ -10,7 +10,7 @@ public class wizFus : MonoBehaviour {
 	Vector2 targetVelocity;
 	public GameObject smokel;
 	float fftimer = 1.2f;
-	float lifetime = 2f;
+	float lifetime = 3.5f;
 	float velocityChangeFactor = 0.05f;
 	// Use this for initialization
 	void Start () {
