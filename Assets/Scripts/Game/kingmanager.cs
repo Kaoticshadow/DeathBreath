@@ -24,4 +24,9 @@ public class kingmanager : MonoBehaviour {
 		hit = true;
 
 	}
+
+	void HitByARainbow(float t){
+		manager.SendMessage ("hit");
+		hit = true;
+	}
 }
