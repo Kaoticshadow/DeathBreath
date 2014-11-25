@@ -17,9 +17,11 @@ public class talkinghead : MonoBehaviour {
 	void Start () {
 		blurb.text = "";
 		texts = new ArrayList ();
-		texts.Add ("string1");
-		texts.Add ("string2");
-		texts.Add ("");
+		texts.Add ("Deathy!");
+		texts.Add ("You've freed the souls...");
+		texts.Add ("...of all the dragons Odin has enslaved!");	
+		texts.Add("We will give you all of our power...");
+		texts.Add ("...to defeat the lightning lord!");
 		counter = stringduration;
 
 	}
@@ -34,7 +36,7 @@ public class talkinghead : MonoBehaviour {
 			if(counter<0){
 
 				idx++;
-				if(idx == texts.Count-1){
+				if(idx == texts.Count){
 					Application.LoadLevel("Cutscene4");
 					Destroy(this.gameObject);
 
