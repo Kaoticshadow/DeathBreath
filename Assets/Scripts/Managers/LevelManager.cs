@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour {
 
 	public string levelName; //nasty hack to know which level we're on. Set on each prefab in the editor
+	public GameObject persistentInformationManager;
 	public GameObject playerBoundaries;
 	public GameObject archer;
 	public GameObject dragon;
@@ -28,6 +29,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject gryphon_rider;
 	public GameObject dragonborne;
 	public GameObject catapult;
+
 	public float levelScrollFactor = 1;
 	public float targetLevelScrollFactor = 1;
 	public float originLevelScrollFactor = 1;
@@ -44,6 +46,10 @@ public class LevelManager : MonoBehaviour {
 	//Vector2 currentVector;
 	
 	void Start () {
+
+		if(GameObject.FindGameObjectWithTag("PersistentInformationManager") == null){
+			Instantiate(persistentInformationManager);
+		}
 
 		playerBoundaries.SetActive (false);
 		
@@ -143,7 +149,9 @@ public class LevelManager : MonoBehaviour {
 		player.rigidbody2D.gravityScale = 1.0f;
 		player.rigidbody2D.AddForce(new Vector2(100f,50f));
 		player.rigidbody2D.AddTorque(-50f);
-		StartCoroutine(WaitAndLoadLevel(2.0f,levelName));
+		GameObject.FindGameObjectWithTag("PersistentInformationManager").GetComponent<PersistentInformation>().levelToLoad = levelName;
+		//StartCoroutine(WaitAndLoadLevel(2.0f,levelName));
+		StartCoroutine(WaitAndLoadLevel(2.0f,"Death"));
 	}
 
 	IEnumerator WaitAndLoadLevel(float waitTime, string levelName){
