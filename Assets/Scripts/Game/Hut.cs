@@ -18,7 +18,7 @@ public class Hut : MonoBehaviour {
 		hot_pepper = levelManager.hot_pepper;
 
 		//determine pickup type
-		int caseSwitch = Random.Range (0, 3);
+		int caseSwitch = Random.Range (0, 9);
 		switch (caseSwitch)
 		{
 		case 0:
@@ -30,7 +30,7 @@ public class Hut : MonoBehaviour {
 		case 2:
 			spawnObject = dragon_fruit;
 			break;
-		case 3:
+		default:
 			spawnObject = null;
 			break;
 		}
