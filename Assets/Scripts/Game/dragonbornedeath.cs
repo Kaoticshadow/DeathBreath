@@ -11,7 +11,13 @@ public class dragonbornedeath : MonoBehaviour {
 	float cd = 1;
 	bool start = false;
 	bool dying;
+	bool firstdeath = true;
 	List<SpriteRenderer> boss_sprites;
+
+	public talkinghead christopherwalken;
+	float deathtimer = 7f;
+
+
 	// Use this for initialization
 	void Start () {
 		e = this.GetComponent<Enemy> ();
@@ -28,7 +34,18 @@ public class dragonbornedeath : MonoBehaviour {
 	void Update () {
 		//checkDeath ();
 		if (dying) {
-			dragonsoul temp = Instantiate(ds, this.transform.position,Quaternion.identity) as dragonsoul;
+			if(firstdeath){
+				firstdeath = false;
+				this.GetComponent<dragonBorne>().enabled = false;
+			}
+			deathtimer-=Time.deltaTime;
+			if(deathtimer<0){
+				talkinghead x = (talkinghead)Instantiate(christopherwalken,new Vector3(20,0,0),Quaternion.identity);
+
+				Destroy (this.gameObject);
+			}
+
+			dragonsoul temp = Instantiate(ds, this.transform.position,Random.rotation) as dragonsoul;
 			temp.target = player;
 			Vector3 dir = player.transform.position-this.transform.position ;
 			temp.rigidbody2D.AddForce((dir.normalized + new Vector3(Random.Range(-dir.normalized.x,dir.normalized.x)*.5f,Random.Range(-dir.normalized.y,dir.normalized.y)*3,0)*50)*10);
@@ -89,7 +106,12 @@ public class dragonbornedeath : MonoBehaviour {
 				} else {
 					// for changing the alpha
 					//sprites[i].color = new Color(sprites[i].color.r, sprites[i].color.g, sprites[i].color.b, 0.1f);
-					sprites[i].color = new Color(1.0f,0.3f,0.3f,1f);
+					//Debug.Log(sprites[i]);
+					//Debug.Log(i);
+						sprites[i].color = new Color(1.0f,0.3f,0.3f,1f);
+					
+					if(i==11)//magic number!
+						sprites[i].color = new Color(1.0f,0.3f,0.3f,0);
 				}
 			}
 			
@@ -105,6 +127,9 @@ public class dragonbornedeath : MonoBehaviour {
 					// for changing the alpha
 					//sprites[i].color = new Color(sprites[i].color.r, sprites[i].color.g, sprites[i].color.b, 1);
 					sprites[i].color = new Color(1f,1f,1f,1f);
+					
+					if(i==11)//magic number!
+						sprites[i].color = new Color(1.0f,0.3f,0.3f,0);
 				}
 			}
 			
