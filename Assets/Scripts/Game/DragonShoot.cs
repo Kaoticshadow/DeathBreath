@@ -51,7 +51,7 @@ public class DragonShoot : MonoBehaviour {
 				x.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
 				coolingdown = true;
 				x.power = fireScale;
-				fireExtraBalls();
+				//fireExtraBalls();
 				
 				firectr++;
 				if(firectr>=fireCount)

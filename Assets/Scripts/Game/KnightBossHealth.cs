@@ -40,6 +40,13 @@ public class KnightBossHealth : MonoBehaviour {
 	IEnumerator playDeathAnimation(){
 		this.transform.parent.GetComponent<Animator>().enabled = false;
 		StartCoroutine(FlashSprites (boss_sprites, 15, 0.4f, true));
+		foreach(SpriteRenderer spriteRender in boss_sprites){
+			Rigidbody2D spriteBody = spriteRender.gameObject.GetComponent<Rigidbody2D>();
+			Collider2D spriteCollider = spriteRender.gameObject.GetComponent<Collider2D>();
+			if(spriteCollider != null){
+				spriteCollider.enabled = false;
+			}
+		}
 		yield return new WaitForSeconds(3.0f);
 		GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().stopMusic();
 		GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().playMusic2();

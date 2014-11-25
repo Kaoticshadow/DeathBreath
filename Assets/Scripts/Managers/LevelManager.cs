@@ -206,10 +206,10 @@ public class LevelManager : MonoBehaviour {
 		//Application.loadlevel
 		//yield return new WaitForSeconds (3.0f);
 		//player.rigidbody2D.AddForce (myVec2);
-		player.rigidbody2D.AddForce(new Vector2(100f,0f));
-		player.rigidbody2D.AddTorque (10f);
-		yield return new WaitForSeconds (0.5f);
-		player.rigidbody2D.AddTorque (-10f);
+		player.rigidbody2D.velocity = new Vector2(10f,0f);
+		//player.rigidbody2D.AddTorque (10f);
+		//yield return new WaitForSeconds (0.5f);
+		//player.rigidbody2D.AddTorque (-10f);
 		yield return new WaitForSeconds (1.5f);
 		Application.LoadLevel(Application.loadedLevel + 1);
 
