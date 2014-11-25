@@ -7,6 +7,7 @@ public class PersistentInformation : MonoBehaviour {
 	public string levelToLoad;
 	// Use this for initialization
 	void Start () {
+		DontDestroyOnLoad(this.gameObject);
 		levelToLoad = Application.loadedLevelName;
 	}
 	

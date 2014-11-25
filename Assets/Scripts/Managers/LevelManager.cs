@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject gryphon_rider;
 	public GameObject dragonborne;
 	public GameObject catapult;
+	public PersistentInformation persistentInformation;
 
 	public float levelScrollFactor = 1;
 	public float targetLevelScrollFactor = 1;
@@ -48,7 +49,11 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
 
 		if(GameObject.FindGameObjectWithTag("PersistentInformationManager") == null){
-			Instantiate(persistentInformationManager);
+			GameObject infoManager = Instantiate(persistentInformationManager) as GameObject;
+			persistentInformation = infoManager.GetComponent<PersistentInformation>();
+		}
+		else{
+			persistentInformation = GameObject.FindGameObjectWithTag("PersistentInformationManager").GetComponent<PersistentInformation>();
 		}
 
 		playerBoundaries.SetActive (false);
@@ -149,7 +154,7 @@ public class LevelManager : MonoBehaviour {
 		player.rigidbody2D.gravityScale = 1.0f;
 		player.rigidbody2D.AddForce(new Vector2(100f,50f));
 		player.rigidbody2D.AddTorque(-50f);
-		GameObject.FindGameObjectWithTag("PersistentInformationManager").GetComponent<PersistentInformation>().levelToLoad = levelName;
+		persistentInformation.levelToLoad = levelName;
 		//StartCoroutine(WaitAndLoadLevel(2.0f,levelName));
 		StartCoroutine(WaitAndLoadLevel(2.0f,"Death"));
 	}
@@ -157,7 +162,7 @@ public class LevelManager : MonoBehaviour {
 	IEnumerator WaitAndLoadLevel(float waitTime, string levelName){
 		yield return new WaitForSeconds(waitTime);
 		//todo: figure out where to go on game over
-		Application.LoadLevel(Application.loadedLevel);
+		Application.LoadLevel(levelName);
 	}
 
 	void initializeSpawnableEntityDictionary(){
