@@ -86,7 +86,7 @@ public class CutsceneManager : MonoBehaviour {
 				s.color = new Color(s.color.r, s.color.g, s.color.b, 0);
 				s = Scene2.GetComponent<SpriteRenderer>();
 				s.color = new Color(s.color.r, s.color.g, s.color.b, 1);
-	            TextMesh.text = "Wise King Odin sends his knights...";
+	            TextMesh.text = "King Odin sends his knights...";
 	            //TextMesh.transform.position = new Vector3(-8.372395f, -2.033642f, -2);
 	        }
 	        if (timeKeeper > 20 && stage == 3)
@@ -104,7 +104,7 @@ public class CutsceneManager : MonoBehaviour {
 			//stage 5
 	        if (timeKeeper < 30 && stage == 5)
 	        {
-	            TextMesh.text = "and steal its precious treasure!";
+	            TextMesh.text = "to steal its precious treasure!";
 	            
 	        }
 	        if (timeKeeper > 30 && stage == 5)

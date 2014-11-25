@@ -24,8 +24,9 @@ public class RainbowBeam : MonoBehaviour {
 	GameObject coverParticles;
 	Vector3 beamStartTarget;
 	Vector3 beamEndTarget;
-
-
+	float maxbreath = 0.5f;
+	float currentbreath = 0.5f;
+	bool canshoot = true;
 	// Use this for initialization
 	void Start () {
 		beamStartTarget = new Vector3 ();
@@ -88,37 +89,52 @@ public class RainbowBeam : MonoBehaviour {
 		//	i++;
 		//}
 
-		if(Input.GetKey(KeyCode.R)){
+		if (Input.GetKey (KeyCode.R)&&canshoot) {
 
-			rainbowRenderer.enabled = true;
-			RaycastHit2D hit = Physics2D.Raycast(GameObject.Find("FlameBreathOrigin").transform.position, Vector2.right,beamRange,collisionLevel);
+						currentbreath -= Time.deltaTime;
+						if(currentbreath<0)
+							canshoot = false;
+						rainbowRenderer.enabled = true;
+						RaycastHit2D hit = Physics2D.Raycast (GameObject.Find ("FlameBreathOrigin").transform.position, Vector2.right, beamRange, collisionLevel);
 
-			if(hit.transform != null){
-				HitObj = hit.transform.gameObject;
-				//HitObj.SendMessage("takeDamage",beamDamagePerSecond * Time.deltaTime);
-				HitObj.SendMessage("HitByARainbow",Time.deltaTime);
-			}
-			else{
-				hit.point = GameObject.Find("FlameBreathOrigin").transform.position + new Vector3(beamRange,0f,0f);
-			}
+						if (hit.transform != null) {
+								HitObj = hit.transform.gameObject;
+								//HitObj.SendMessage("takeDamage",beamDamagePerSecond * Time.deltaTime);
+								HitObj.SendMessage ("HitByARainbow", Time.deltaTime);
+						} else {
+								hit.point = GameObject.Find ("FlameBreathOrigin").transform.position + new Vector3 (beamRange, 0f, 0f);
+						}
 
-			Distance = Mathf.Abs(hit.point.y - transform.position.y);
+						Distance = Mathf.Abs (hit.point.y - transform.position.y);
 
 
-			rainbowRenderer.material = new Material(Shader.Find("Particles/Additive"));
-			rainbowRenderer.sortingLayerName = "Middle_player";
-			rainbowRenderer.SetColors(c2,c1);
-			rainbowRenderer.SetPosition(0, GameObject.Find("FlameBreathOrigin").transform.position);
-			//rainbowRenderer.SetPosition(1, hit.point + new Vector2(0f,Mathf.Sin(Time.time)));
-			rainbowRenderer.SetPosition(1, hit.point);
-			rainbowRenderer.SetWidth(0.03f,0.5f);
+						rainbowRenderer.material = new Material (Shader.Find ("Particles/Additive"));
+						rainbowRenderer.sortingLayerName = "Middle_player";
+						rainbowRenderer.SetColors (c2, c1);
+						rainbowRenderer.SetPosition (0, GameObject.Find ("FlameBreathOrigin").transform.position);
+						//rainbowRenderer.SetPosition(1, hit.point + new Vector2(0f,Mathf.Sin(Time.time)));
+						rainbowRenderer.SetPosition (1, hit.point);
+						rainbowRenderer.SetWidth (0.03f, 0.5f);
 
-			particles.transform.position = hit.point;
-			coverParticles.transform.position = hit.point;
-			particles.GetComponent<ParticleSystem> ().emissionRate = 200;
-			coverParticles.GetComponent<ParticleSystem> ().emissionRate = 200;
+						particles.transform.position = hit.point;
+						coverParticles.transform.position = hit.point;
+						particles.GetComponent<ParticleSystem> ().emissionRate = 200;
+						coverParticles.GetComponent<ParticleSystem> ().emissionRate = 200;
 		
-		}
+				} else {
+					currentbreath += Time.deltaTime;
+					if(currentbreath>maxbreath){
+						canshoot=true;
+				currentbreath = maxbreath;
+			}
+						
+
+			rainbowRenderer.SetWidth(0,0);
+			particles.GetComponent<ParticleSystem> ().emissionRate = 0;
+			coverParticles.GetComponent<ParticleSystem> ().emissionRate = 0;
+				
+
+				}
 
 		if(Input.GetKeyUp(KeyCode.R)){
 			particles.GetComponent<ParticleSystem> ().emissionRate = 0;
