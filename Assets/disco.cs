@@ -8,13 +8,13 @@ public class disco : MonoBehaviour {
 	void Start () {
 		r = g = b = 0;
 		s = this.GetComponent<SpriteRenderer> ();
-		this.rigidbody2D.angularVelocity = Random.Range(550,600);// (-300f);
+		//this.rigidbody2D.angularVelocity = Random.Range(550,600);// (-300f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		this.rigidbody2D.AddTorque (-300f);
+		this.rigidbody2D.AddTorque (-100f * Time.deltaTime);
 		if (r > 1)
 						r = 0;
 		if (g > 1)
