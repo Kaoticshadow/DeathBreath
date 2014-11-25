@@ -3,11 +3,20 @@ using System.Collections;
 
 public class Credits : MonoBehaviour {
 
-    public string[] scrollText;
     public Font textFont;
     public float off;
     public float speed = 10f;
 
+    string[] scrollText = { "CREDITS", "","", "====PROGRAMMERS====","", "Louis McLean","", "Tim Smith","","Tiffany Ip","", "Marco Sabini", "", "",
+                            "====CREATIVE WRITER====", "","Louis McLean", "", "",
+                            "====VECTOR ART====","", "Tim Smith","", "Tiffany Ip", "", "",
+                            "====PIXEL ART====","", "Tiffany Ip", "", "",
+                            "====ANIMATIONS & CUTSCENES====","", "Tim Smith", "", "",
+                            "====SOUND EFFECTS====", "","Tim Smith","", "Louis McLean", "","Tiffany Ip", "", "", "", "",
+                            "EXTERNAL SOURCES", "","", 
+                            "====FONTS====", "","SF Movie Poster Bold (Free)","", "EXOCET (Free)", "", "",
+                            "====MUSIC====", "", "", 
+                            "====SOUND EFFECTS====", "" };
     GUIStyle guiScroll = new GUIStyle();
     GUIStyle guiButton = new GUIStyle();
 
@@ -29,12 +38,12 @@ public class Credits : MonoBehaviour {
         for (int i = 0; i < scrollText.Length; i++)
         {
             float roff = (scrollText.Length * 20) + (i * 20 + off);
-            float alpha = Mathf.Sin(((roff+Screen.height/6) / Screen.height) * 180 * Mathf.Deg2Rad);
+            float alpha = Mathf.Sin((roff / Screen.height) * 180 * Mathf.Deg2Rad);
             GUI.color = new Color(1, 1, 1, alpha);
-            GUI.Label(new Rect(Screen.width/4, (roff + Screen.height/2), Screen.width / 2, 1000), scrollText[i], guiScroll);
+            GUI.Label(new Rect(Screen.width/4, roff, Screen.width / 2, 1000), scrollText[i], guiScroll);
             GUI.color = new Color(1, 1, 1, 1);
         }
-        if (off < -1000)
+        if (off < -5000)
         {
             off = 0.0f;
         }
