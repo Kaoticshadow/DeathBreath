@@ -49,11 +49,12 @@ public class firerainbow : MonoBehaviour {
 	//	particles = GameObject.Find ("Rainbow Particles");
 	//	coverParticles = GameObject.Find ("Rainbow Cover Particles");
 		
-		rainbowLine = new GameObject();
-		rainbowLine.AddComponent<LineRenderer>();
-		rainbowRenderer = rainbowLine.GetComponent<LineRenderer> ();
+		//rainbowLine = new GameObject();
+	//	this.gameObject.AddComponent<LineRenderer>();
+		rainbowRenderer = this.gameObject.GetComponent<LineRenderer>();
 		rainbowRenderer.sortingLayerName = "UI";
 		rainbowRenderer.sortingOrder = 12;
+
 		c1 = Color.blue;
 		c2 = Color.red;
 		c1target = Color.red;
@@ -79,13 +80,16 @@ public class firerainbow : MonoBehaviour {
 			colorIndex2 = (colorIndex2 + 1) % (colors.Count);
 			c1target = colors[colorIndex1];
 			c2target = colors[colorIndex2];
+
+
 		}
-		
+
 		//int i = 0;
 		
 		c1 = Color.Lerp (c1, c1target, counter);
 		c2 = Color.Lerp (c2, c2target, counter);
-		
+		c1 = new Color (c1.r, c1.g, c1.b, 1);
+		c2 = new Color (c2.r, c2.g, c2.b, 1);
 		//while (i < lengthOfLineRenderer) {
 		//	Vector3 pos = new Vector3(i * 0.5F, Mathf.Sin(i + Time.time), 0);
 		//	rainbowRenderer.SetPosition(i, pos);
