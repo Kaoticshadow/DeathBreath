@@ -35,14 +35,14 @@ public class OdinWindSpawner : MonoBehaviour {
 			}
 			else{
 				spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
-				spawnedWind.rigidbody2D.AddForce(new Vector2(-750f,150f));
-				spawnedWind.rigidbody2D.AddTorque(1000f);
+				spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,400f));
+				spawnedWind.rigidbody2D.AddTorque(-1000f);
 				spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
-				spawnedWind.rigidbody2D.AddForce(new Vector2(-750f,0f));
-				spawnedWind.rigidbody2D.AddTorque(1000f);
+				spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,150f));
+				spawnedWind.rigidbody2D.AddTorque(-1000f);
 				spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
-		        spawnedWind.rigidbody2D.AddForce(new Vector2(-750f,-150f));
-		        spawnedWind.rigidbody2D.AddTorque(1000f);
+		        spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,-100f));
+		        spawnedWind.rigidbody2D.AddTorque(-1000f);
 				cooldown = cooldownDuration;
 			}
 			balls++;

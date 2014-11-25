@@ -7,7 +7,7 @@ public class odinStart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.GetComponent<SinHeight> ().enabled = false;
+		this.GetComponent<SinHeightPositiveOnly> ().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -15,7 +15,7 @@ public class odinStart : MonoBehaviour {
 		startTimer -= Time.deltaTime;
 
 		if (startTimer < 0) {
-			this.GetComponent<SinHeight> ().enabled = true;
+			this.GetComponent<SinHeightPositiveOnly> ().enabled = true;
 			
 			this.GetComponent<odinStart> ().enabled = false;
 
