@@ -102,20 +102,6 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>hut</name>
-            <time>23</time>
-            <x>0.5</x>
-            <y>0</y>
-            <x_scale>0.8</x_scale>
-            <y_scale>0.8</y_scale>
-        </SpawnableEntity>
-        <SpawnableEntity>
-            <name>hut</name>
-            <time>24</time>
-            <x>0</x>
-            <y>-0.5</y>
-        </SpawnableEntity>
-        <SpawnableEntity>
-            <name>hut</name>
             <time>25</time>
             <x>0</x>
             <y>-2</y>
@@ -575,12 +561,6 @@
             <time>72</time>
             <x>2.5</x>
             <y>0</y>
-        </SpawnableEntity>
-        <SpawnableEntity>
-            <name>hut</name>
-            <time>72</time>
-            <x>-0.5</x>
-            <y>-2</y>
         </SpawnableEntity>
         <SpawnableEntity>
             <name>hut</name>
