@@ -243,33 +243,9 @@
         <!-- firebat & goombat cluster-->
         <SpawnableEntity>
             <name>firebat</name>
-            <time>40</time>
-            <x>0.7</x>
-            <y>1</y>
-            <x_scale>1</x_scale>
-            <y_scale>1</y_scale>
-        </SpawnableEntity>
-        <SpawnableEntity>
-            <name>firebat</name>
             <time>40.1</time>
             <x>0.2</x>
             <y>0</y>
-            <x_scale>1</x_scale>
-            <y_scale>1</y_scale>
-        </SpawnableEntity>
-        <SpawnableEntity>
-            <name>firebat</name>
-            <time>40.2</time>
-            <x>0.3</x>
-            <y>0.5</y>
-            <x_scale>1</x_scale>
-            <y_scale>1</y_scale>
-        </SpawnableEntity>
-        <SpawnableEntity>
-            <name>goombat</name>
-            <time>40.3</time>
-            <x>0</x>
-            <y>2</y>
             <x_scale>1</x_scale>
             <y_scale>1</y_scale>
         </SpawnableEntity>
