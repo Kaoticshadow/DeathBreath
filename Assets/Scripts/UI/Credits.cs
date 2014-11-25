@@ -7,7 +7,16 @@ public class Credits : MonoBehaviour {
     public float off;
     public float speed = 10f;
 
-    string[] scrollText = { "CREDITS", "", "PROGRAMMERS", "Louis McLean", "Timothy Smith", "Tiffany Ip", "Marco Sabini", "", "CREATIVE WRITER", "Louis McLean", "", "VECTOR ART", "Timothy Smith", "Tiffany Ip", "", "PIXEL ART", "Tiffany Ip", "", "ANIMATIONS & CUTSCENES", "Timothy Smith", "", "SOUND EFFECTS", "Timothy Smith", "Louis McLean", "Tiffany Ip", "", "", "", "EXTERNAL SOURCES", "", "FONTS", "SF Movie Poster Bold (Free)", "EXOCET (Free)", "", "MUSIC", "", "", "SOUND EFFECTS", "" };
+    string[] scrollText = { "CREDITS", "","", "====PROGRAMMERS====","", "Louis McLean","", "Tim Smith","","Tiffany Ip","", "Marco Sabini", "", "",
+                            "====CREATIVE WRITER====", "","Louis McLean", "", "",
+                            "====VECTOR ART====","", "Tim Smith","", "Tiffany Ip", "", "",
+                            "====PIXEL ART====","", "Tiffany Ip", "", "",
+                            "====ANIMATIONS & CUTSCENES====","", "Tim Smith", "", "",
+                            "====SOUND EFFECTS====", "","Tim Smith","", "Louis McLean", "","Tiffany Ip", "", "", "", "",
+                            "EXTERNAL SOURCES", "","", 
+                            "====FONTS====", "","SF Movie Poster Bold (Free)","", "EXOCET (Free)", "", "",
+                            "====MUSIC====", "", "", 
+                            "====SOUND EFFECTS====", "" };
     GUIStyle guiScroll = new GUIStyle();
     GUIStyle guiButton = new GUIStyle();
 
@@ -34,7 +43,7 @@ public class Credits : MonoBehaviour {
             GUI.Label(new Rect(Screen.width/4, roff, Screen.width / 2, 1000), scrollText[i], guiScroll);
             GUI.color = new Color(1, 1, 1, 1);
         }
-        if (off < -1500)
+        if (off < -5000)
         {
             off = 0.0f;
         }
