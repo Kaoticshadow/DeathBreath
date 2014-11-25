@@ -53,6 +53,7 @@ public class firerainbow : MonoBehaviour {
 		rainbowLine.AddComponent<LineRenderer>();
 		rainbowRenderer = rainbowLine.GetComponent<LineRenderer> ();
 		rainbowRenderer.sortingLayerName = "UI";
+		rainbowRenderer.sortingOrder = 12;
 		c1 = Color.blue;
 		c2 = Color.red;
 		c1target = Color.red;
