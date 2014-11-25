@@ -111,7 +111,7 @@ public class LevelManager : MonoBehaviour {
 					}
 			if (time > 2.2f && !dragonStart) {
 
-				player.transform.position = Vector3.Lerp(player.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
+				player.transform.position = Vector3.Lerp(player.transform.position,new Vector3(-3.307484f,0.332745f,0),0.05f);
 			}
 			if (time > 3f && !dragonStart){
 				dragonStart = true;
@@ -126,7 +126,7 @@ public class LevelManager : MonoBehaviour {
 			}
 			if (time > 0.5f && !dragonStart) {
 				
-				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,-1.0f,0),0.03f);
+				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-3.307484f,-1.0f,0),0.05f);
 
 			}
 			if (time > 1.3f && !dragonStart){

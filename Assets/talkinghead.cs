@@ -34,8 +34,11 @@ public class talkinghead : MonoBehaviour {
 			if(counter<0){
 
 				idx++;
-				if(idx == texts.Count-1)
+				if(idx == texts.Count-1){
+					Application.LoadLevel("Cutscene4");
 					Destroy(this.gameObject);
+
+				}
 				counter = stringduration;
 			}
 
