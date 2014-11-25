@@ -19,7 +19,7 @@ public class Hut : MonoBehaviour {
 		hot_pepper = levelManager.hot_pepper;
 
 		//determine pickup type
-		int caseSwitch = Random.Range (0, 9);
+		int caseSwitch = Random.Range (0, 7);
 		switch (caseSwitch)
 		{
 		case 0:
