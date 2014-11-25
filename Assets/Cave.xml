@@ -165,7 +165,7 @@
  <!-- goombat spawn swarm -->
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.0</time>
+ 			<time>22.0</time>
  			<x>0.4</x>
  			<y>1</y>
  			<x_scale>0.5</x_scale>
@@ -173,7 +173,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.1</time>
+ 			<time>22.1</time>
  			<x>0</x>
  			<y>1</y>
  			<x_scale>0.5</x_scale>
@@ -181,7 +181,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.2</time>
+ 			<time>22.2</time>
  			<x>0.3</x>
  			<y>0.5</y>
  			<x_scale>0.7</x_scale>
@@ -189,7 +189,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.3</time>
+ 			<time>22.3</time>
  			<x>0.2</x>
  			<y>0</y>
  			<x_scale>0.7</x_scale>
@@ -197,7 +197,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.4</time>
+ 			<time>22.4</time>
  			<x>0.5</x>
  			<y>-1</y>
  			<x_scale>0.7</x_scale>
@@ -205,7 +205,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.5</time>
+ 			<time>22.5</time>
  			<x>0.7</x>
  			<y>-1</y>
  			<x_scale>0.7</x_scale>
@@ -213,7 +213,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.6</time>
+ 			<time>22.6</time>
  			<x>0.7</x>
  			<y>-1.5</y>
  			<x_scale>0.7</x_scale>
@@ -221,7 +221,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.7</time>
+ 			<time>22.7</time>
  			<x>1</x>
  			<y>-2</y>
  			<x_scale>0.7</x_scale>
@@ -229,7 +229,7 @@
  		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>goombat</name>
- 			<time>26.8</time>
+ 			<time>22.8</time>
  			<x>2</x>
  			<y>-1</y>
  			<x_scale>1</x_scale>
@@ -243,7 +243,7 @@
         <!-- firebat & goombat cluster-->
         <SpawnableEntity>
             <name>firebat</name>
-            <time>53</time>
+            <time>40</time>
             <x>0.7</x>
             <y>1</y>
             <x_scale>1</x_scale>
@@ -251,7 +251,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>firebat</name>
-            <time>53.1</time>
+            <time>40.1</time>
             <x>0.2</x>
             <y>0</y>
             <x_scale>1</x_scale>
@@ -259,7 +259,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>firebat</name>
-            <time>53.2</time>
+            <time>40.2</time>
             <x>0.3</x>
             <y>0.5</y>
             <x_scale>1</x_scale>
@@ -267,7 +267,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
-            <time>53.3</time>
+            <time>40.3</time>
             <x>0</x>
             <y>2</y>
             <x_scale>1</x_scale>
@@ -275,7 +275,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
-            <time>53.4</time>
+            <time>40.4</time>
             <x>1</x>
             <y>3</y>
             <x_scale>1</x_scale>
@@ -283,7 +283,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
-            <time>53.5</time>
+            <time>40.5</time>
             <x>0.5</x>
             <y>4</y>
             <x_scale>1</x_scale>
@@ -291,7 +291,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
-            <time>53.6</time>
+            <time>40.6</time>
             <x>1.2</x>
             <y>3</y>
             <x_scale>1</x_scale>
@@ -299,7 +299,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
-            <time>53.7</time>
+            <time>40.7</time>
             <x>0.2</x>
             <y>2</y>
             <x_scale>1</x_scale>
@@ -307,7 +307,7 @@
         </SpawnableEntity>
         <SpawnableEntity>
             <name>goombat</name>
-            <time>53.8</time>
+            <time>40.8</time>
             <x>0.4</x>
             <y>1</y>
             <x_scale>1</x_scale>
