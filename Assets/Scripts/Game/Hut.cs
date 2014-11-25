@@ -7,6 +7,7 @@ public class Hut : MonoBehaviour {
 	public GameObject spicy_chicken;
 	public GameObject dragon_fruit;
 	public GameObject hot_pepper;
+	public GameObject busted_hut;
 	GameObject spawnObject;
 	LevelManager levelManager;
 
@@ -18,7 +19,7 @@ public class Hut : MonoBehaviour {
 		hot_pepper = levelManager.hot_pepper;
 
 		//determine pickup type
-		int caseSwitch = Random.Range (0, 3);
+		int caseSwitch = Random.Range (0, 7);
 		switch (caseSwitch)
 		{
 		case 0:
@@ -30,8 +31,8 @@ public class Hut : MonoBehaviour {
 		case 2:
 			spawnObject = dragon_fruit;
 			break;
-		case 3:
-			spawnObject = null;
+		default:
+			spawnObject = busted_hut;
 			break;
 		}
 	}
@@ -43,10 +44,14 @@ public class Hut : MonoBehaviour {
 
 	void takeDamage(float damage){
 		health -= damage;
+		GameObject spawnedObject;
 		if (health < 0)
 		{
 			if(spawnObject != null){
-				Instantiate(spawnObject,this.transform.localPosition,Quaternion.identity);
+				spawnedObject = Instantiate(spawnObject,this.transform.localPosition,Quaternion.identity) as GameObject;
+				if(spawnObject == busted_hut){
+					spawnedObject.transform.localScale = this.transform.localScale;
+				}
 			}
 			//	GameObject.FindGameObjectWithTag("PopupScore").GetComponent<PopupScore>().popScore(this.transform.position);
 			Destroy (this.gameObject);

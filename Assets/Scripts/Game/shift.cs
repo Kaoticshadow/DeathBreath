@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class shift : MonoBehaviour {
-	float countdown = 5;
+	float countdown = 13;
 	// Use this for initialization
 	void Start () {
 	

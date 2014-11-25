@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class LevelManager : MonoBehaviour {
 
 	public string levelName; //nasty hack to know which level we're on. Set on each prefab in the editor
+	public GameObject persistentInformationManager;
 	public GameObject playerBoundaries;
 	public GameObject archer;
 	public GameObject dragon;
@@ -28,6 +29,8 @@ public class LevelManager : MonoBehaviour {
 	public GameObject gryphon_rider;
 	public GameObject dragonborne;
 	public GameObject catapult;
+	public PersistentInformation persistentInformation;
+
 	public float levelScrollFactor = 1;
 	public float targetLevelScrollFactor = 1;
 	public float originLevelScrollFactor = 1;
@@ -44,6 +47,14 @@ public class LevelManager : MonoBehaviour {
 	//Vector2 currentVector;
 	
 	void Start () {
+
+		if(GameObject.FindGameObjectWithTag("PersistentInformationManager") == null){
+			GameObject infoManager = Instantiate(persistentInformationManager) as GameObject;
+			persistentInformation = infoManager.GetComponent<PersistentInformation>();
+		}
+		else{
+			persistentInformation = GameObject.FindGameObjectWithTag("PersistentInformationManager").GetComponent<PersistentInformation>();
+		}
 
 		playerBoundaries.SetActive (false);
 		
@@ -100,7 +111,7 @@ public class LevelManager : MonoBehaviour {
 					}
 			if (time > 2.2f && !dragonStart) {
 
-				player.transform.position = Vector3.Lerp(player.transform.position,new Vector3(-4.307484f,0.332745f,0),0.03f);
+				player.transform.position = Vector3.Lerp(player.transform.position,new Vector3(-3.307484f,0.332745f,0),0.05f);
 			}
 			if (time > 3f && !dragonStart){
 				dragonStart = true;
@@ -115,7 +126,7 @@ public class LevelManager : MonoBehaviour {
 			}
 			if (time > 0.5f && !dragonStart) {
 				
-				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-4.307484f,-1.0f,0),0.03f);
+				dragon.transform.position = Vector3.Lerp(dragon.transform.position,new Vector3(-3.307484f,-1.0f,0),0.05f);
 
 			}
 			if (time > 1.3f && !dragonStart){
@@ -143,13 +154,15 @@ public class LevelManager : MonoBehaviour {
 		player.rigidbody2D.gravityScale = 1.0f;
 		player.rigidbody2D.AddForce(new Vector2(100f,50f));
 		player.rigidbody2D.AddTorque(-50f);
-		StartCoroutine(WaitAndLoadLevel(2.0f,levelName));
+		persistentInformation.levelToLoad = levelName;
+		//StartCoroutine(WaitAndLoadLevel(2.0f,levelName));
+		StartCoroutine(WaitAndLoadLevel(2.0f,"Death"));
 	}
 
 	IEnumerator WaitAndLoadLevel(float waitTime, string levelName){
 		yield return new WaitForSeconds(waitTime);
 		//todo: figure out where to go on game over
-		Application.LoadLevel(Application.loadedLevel);
+		Application.LoadLevel(levelName);
 	}
 
 	void initializeSpawnableEntityDictionary(){
@@ -193,10 +206,11 @@ public class LevelManager : MonoBehaviour {
 		//Application.loadlevel
 		//yield return new WaitForSeconds (3.0f);
 		//player.rigidbody2D.AddForce (myVec2);
-		player.rigidbody2D.AddForce(new Vector2(100f,0f));
-		player.rigidbody2D.AddTorque (10f);
-		yield return new WaitForSeconds (0.5f);
-		player.rigidbody2D.AddTorque (-10f);
+		player.rigidbody2D.velocity = new Vector2(10f,0f);
+		//player.rigidbody2D.AddTorque (10f);
+		//yield return new WaitForSeconds (0.5f);
+		//player.rigidbody2D.AddTorque (-10f);
+		yield return new WaitForSeconds (1.5f);
 		Application.LoadLevel(Application.loadedLevel + 1);
 
 	}

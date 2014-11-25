@@ -30,7 +30,7 @@ public class KnightBossHealth : MonoBehaviour {
 			//Destroy (this.transform.parent.parent.gameObject);
 			dying = true;
 			StartCoroutine("playDeathAnimation");
-			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));
+
 
 			//	GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
 			
@@ -40,12 +40,20 @@ public class KnightBossHealth : MonoBehaviour {
 	IEnumerator playDeathAnimation(){
 		this.transform.parent.GetComponent<Animator>().enabled = false;
 		StartCoroutine(FlashSprites (boss_sprites, 15, 0.4f, true));
+		foreach(SpriteRenderer spriteRender in boss_sprites){
+			Rigidbody2D spriteBody = spriteRender.gameObject.GetComponent<Rigidbody2D>();
+			Collider2D spriteCollider = spriteRender.gameObject.GetComponent<Collider2D>();
+			if(spriteCollider != null){
+				spriteCollider.enabled = false;
+			}
+		}
 		yield return new WaitForSeconds(3.0f);
 		GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().stopMusic();
 		GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().playMusic2();
 		yield return new WaitForSeconds(1f);
 		this.transform.parent.rigidbody2D.AddForce(new Vector2(0f,-100f));
 		yield return new WaitForSeconds(10.0f);
+		GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));
 		Destroy (this.transform.parent.parent.gameObject);
 	}
 

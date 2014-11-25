@@ -28,7 +28,10 @@ public class DragonMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		
+		if (Input.GetKeyDown (KeyCode.L)) {
+			GameObject.Find ("Health Bar").SendMessage ("AddScale");
+		}
 		if (disableControls == false) 
 		{
 			//move (getDir ());

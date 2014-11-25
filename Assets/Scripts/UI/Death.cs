@@ -11,6 +11,12 @@ public class Death : MonoBehaviour {
         }
         else if (Input.anyKeyDown)
         {
+			if(GameObject.FindGameObjectWithTag("PersistentInformationManager") == null){
+				Application.LoadLevel("StartMenu");
+			}
+			else{
+				Application.LoadLevel(GameObject.FindGameObjectWithTag("PersistentInformationManager").GetComponent<PersistentInformation>().levelToLoad);
+			}
             //load whatever level you failed. 
         }
     }
