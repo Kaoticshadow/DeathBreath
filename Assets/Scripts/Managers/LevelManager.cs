@@ -69,10 +69,10 @@ public class LevelManager : MonoBehaviour {
 		rightLevelEdge = GameObject.Find("Right Level Edge");
 		initializeSpawnableEntityDictionary();
 		time = 0;
-		if(levelName == "Cave"){
-			levelScrollFactor = 0;
-			targetLevelScrollFactor = 0;
-			originLevelScrollFactor = 0;
+		//if(levelName == "Cave"){
+		//		levelScrollFactor = 0;
+		//	targetLevelScrollFactor = 1;
+		//	originLevelScrollFactor = 0;
 		}
 
 	}
