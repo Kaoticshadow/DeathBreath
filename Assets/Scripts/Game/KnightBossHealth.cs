@@ -6,7 +6,7 @@ public class KnightBossHealth : MonoBehaviour {
 	public float health = 100.0f;
 	bool dying;
 	SpriteRenderer[] boss_sprites;
-
+	public GameObject paren;
 	// Use this for initialization
 	void Start () {
 		//get all the sprites that form the boss
@@ -29,6 +29,7 @@ public class KnightBossHealth : MonoBehaviour {
 
 			//Destroy (this.transform.parent.parent.gameObject);
 			dying = true;
+			paren.SendMessage("die");
 			StartCoroutine("playDeathAnimation");
 
 

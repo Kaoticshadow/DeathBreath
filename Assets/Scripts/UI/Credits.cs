@@ -28,7 +28,8 @@ public class Credits : MonoBehaviour {
                                                  "Electroheart (Amaranthe)",  "",
                                                  "Main Theme (Skyrim)",  "",
                                                  "Hunting High and Low (Stratovarius)",  "",
-                                                 "Hot Butter (Popcorn)"};
+                                                 "Hot Butter (Popcorn)","",
+												 "Gamve Over (Super Castlevania IV)"};
     GUIStyle guiScroll = new GUIStyle();
     GUIStyle guiButton = new GUIStyle();
 
