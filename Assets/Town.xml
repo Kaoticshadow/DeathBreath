@@ -565,12 +565,6 @@
         <SpawnableEntity>
             <name>hut</name>
             <time>72</time>
-            <x>-0.5</x>
-            <y>-2</y>
-        </SpawnableEntity>
-        <SpawnableEntity>
-            <name>hut</name>
-            <time>72</time>
             <x>1</x>
             <y>0.8</y>
             <x_scale>0.5</x_scale>
