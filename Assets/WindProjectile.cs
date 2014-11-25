@@ -5,7 +5,7 @@ public class WindProjectile : MonoBehaviour {
 
 	public bool destroyableByRainbow = false;
 	float rainbowTimer = 0f;
-	float rainbowLife = 0.15f;
+	float rainbowLife = 0.08f;
 
 	// Use this for initialization
 	void Start () {
