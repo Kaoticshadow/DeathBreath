@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour {
 		//		levelScrollFactor = 0;
 		//	targetLevelScrollFactor = 1;
 		//	originLevelScrollFactor = 0;
-		}
+		//}
 
 	}
 	
@@ -123,6 +123,7 @@ public class LevelManager : MonoBehaviour {
 		if(levelName == "Cave"){
 			if (time < 0.5f) {
 				dragon.transform.position = new Vector3(-13.31006f,-1.0f,0);
+				//setScrollingSpeed(0.0f,0.2f);
 			}
 			if (time > 0.5f && !dragonStart) {
 				
@@ -132,7 +133,7 @@ public class LevelManager : MonoBehaviour {
 			if (time > 1.3f && !dragonStart){
 				dragonStart = true;
 				playerBoundaries.SetActive (true); //collision with player boundaries
-				setScrollingSpeed(1.0f,0.2f);
+				//setScrollingSpeed(1.0f,0.2f);
 			}
 		}
 
