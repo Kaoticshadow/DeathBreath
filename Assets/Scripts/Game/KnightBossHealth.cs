@@ -30,7 +30,7 @@ public class KnightBossHealth : MonoBehaviour {
 			//Destroy (this.transform.parent.parent.gameObject);
 			dying = true;
 			StartCoroutine("playDeathAnimation");
-			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));
+
 
 			//	GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>().increaseScore(100);
 			
@@ -46,6 +46,7 @@ public class KnightBossHealth : MonoBehaviour {
 		yield return new WaitForSeconds(1f);
 		this.transform.parent.rigidbody2D.AddForce(new Vector2(0f,-100f));
 		yield return new WaitForSeconds(10.0f);
+		GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));
 		Destroy (this.transform.parent.parent.gameObject);
 	}
 
