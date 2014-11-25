@@ -111,7 +111,7 @@ public class firerainbow : MonoBehaviour {
 		//	Distance = Mathf.Abs(hit.point.y - transform.position.y);
 			// grabbing the distance in a 2d plane AS A FLOAT
 			
-			rainbowRenderer.material = new Material(Shader.Find("Particles/Additive"));
+			rainbowRenderer.material = new Material(Shader.Find("Particles/Alpha Blended"));
 			rainbowRenderer.SetColors(c2,c1);
 			rainbowRenderer.SetPosition(0, this.transform.position);
 			//rainbowRenderer.SetPosition(1, hit.point + new Vector2(0f,Mathf.Sin(Time.time)));
