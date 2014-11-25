@@ -92,18 +92,21 @@ public class RainbowBeam : MonoBehaviour {
 
 			rainbowRenderer.enabled = true;
 			RaycastHit2D hit = Physics2D.Raycast(GameObject.Find("FlameBreathOrigin").transform.position, Vector2.right,beamRange,collisionLevel);
-			// Making a new ray that will go straight down from the gameobject the code is attached to
 
-			//Debugging is optional but I like to see the red raycast line and it makes it easy to see what it's hitting
-			if(hit.transform.gameObject != null){
+			if(hit.transform != null){
 				HitObj = hit.transform.gameObject;
-				HitObj.SendMessage("takeDamage",beamDamagePerSecond * Time.deltaTime);
+				//HitObj.SendMessage("takeDamage",beamDamagePerSecond * Time.deltaTime);
+				HitObj.SendMessage("HitByARainbow",Time.deltaTime);
 			}
-			// Again optional unless you want to access the hit with more detail
+			else{
+				hit.point = GameObject.Find("FlameBreathOrigin").transform.position + new Vector3(beamRange,0f,0f);
+			}
+
 			Distance = Mathf.Abs(hit.point.y - transform.position.y);
-			// grabbing the distance in a 2d plane AS A FLOAT
+
 
 			rainbowRenderer.material = new Material(Shader.Find("Particles/Additive"));
+			rainbowRenderer.sortingLayerName = "Middle_player";
 			rainbowRenderer.SetColors(c2,c1);
 			rainbowRenderer.SetPosition(0, GameObject.Find("FlameBreathOrigin").transform.position);
 			//rainbowRenderer.SetPosition(1, hit.point + new Vector2(0f,Mathf.Sin(Time.time)));
