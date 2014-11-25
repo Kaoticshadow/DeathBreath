@@ -35,11 +35,11 @@ public class OdinWindSpawner : MonoBehaviour {
 				cooldown = cooldownDuration;
 			}
 			else{
-				float x = Random.Range(0,1);
+				float x = Random.Range(0f,1f);
 				if(x<0.1f){				
 					spawnedWind = Instantiate(spawnlightning,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
 					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,400f));
-					spawnedWind.rigidbody2D.AddTorque(-1000f);
+					//spawnedWind.rigidbody2D.AddTorque(-1000f);
 				}
 				else{
 					spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
@@ -47,11 +47,11 @@ public class OdinWindSpawner : MonoBehaviour {
 					spawnedWind.rigidbody2D.AddTorque(-1000f);
 				}
 				
-				x = Random.Range(0,1);
+				x = Random.Range(0f,1f);
 				if(x<0.1f){				
 					spawnedWind = Instantiate(spawnlightning,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
 					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,150f));
-					spawnedWind.rigidbody2D.AddTorque(-1000f);
+					//spawnedWind.rigidbody2D.AddTorque(-1000f);
 				}
 				else{
 					spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
@@ -62,11 +62,11 @@ public class OdinWindSpawner : MonoBehaviour {
 
 
 				
-				x = Random.Range(0,1);
+				x = Random.Range(0f,1f);
 				if(x<0.1f){				
 					spawnedWind = Instantiate(spawnlightning,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
 					spawnedWind.rigidbody2D.AddForce(new Vector2(-600f,-100f));
-					spawnedWind.rigidbody2D.AddTorque(-1000f);
+					//spawnedWind.rigidbody2D.AddTorque(-1000f);
 				}
 				else{
 					spawnedWind = Instantiate(spawnWind,spawnTrigger.transform.position,Quaternion.identity) as GameObject;
