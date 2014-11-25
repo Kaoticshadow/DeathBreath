@@ -115,7 +115,7 @@ public class firerainbow : MonoBehaviour {
 			rainbowRenderer.SetColors(c2,c1);
 			rainbowRenderer.SetPosition(0, this.transform.position);
 			//rainbowRenderer.SetPosition(1, hit.point + new Vector2(0f,Mathf.Sin(Time.time)));
-			rainbowRenderer.SetPosition(1, this.transform.position+new Vector3(f.ammo,0,0));
+			rainbowRenderer.SetPosition(1, this.transform.position+new Vector3(f.ammo-0.2f,0,0));
 			rainbowRenderer.SetWidth(0.5f,0.5f);
 			
 
