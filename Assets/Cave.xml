@@ -297,7 +297,7 @@
  		
  		<SpawnableEntity>
  			<name>floatstone_wurm</name>
- 			<time>90</time>
+ 			<time>88</time>
  			<x>16</x>
  			<y>2.0</y>
  		</SpawnableEntity>
