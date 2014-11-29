@@ -11,7 +11,8 @@ public class firerainbow : MonoBehaviour {
 	float Distance = 0f;
 	GameObject rainbowLine;
 	int lengthOfLineRenderer = 20;
-	LineRenderer rainbowRenderer;
+	//LineRenderer rainbowRenderer;
+	SpriteRenderer sprite;
 	Color c1;
 	Color c2;
 	Color c1target;
@@ -22,15 +23,17 @@ public class firerainbow : MonoBehaviour {
 	int colorIndex2;
 	GameObject particles;
 	GameObject coverParticles;
-	Vector3 beamStartTarget;
-	Vector3 beamEndTarget;
+	float originalScale;
+	//Vector3 beamStartTarget;
+	//Vector3 beamEndTarget;
 	FlameBreath f;
 	
 	
 	// Use this for initialization
 	void Start () {
-		beamStartTarget = new Vector3 ();
-		beamEndTarget = new Vector3 ();
+		originalScale = this.transform.localScale.x;
+		//beamStartTarget = new Vector3 ();
+		//beamEndTarget = new Vector3 ();
 		colors = new List<Color> ();
 		f = GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<FlameBreath> ();
 		Debug.Log (f);
@@ -51,9 +54,11 @@ public class firerainbow : MonoBehaviour {
 		
 		//rainbowLine = new GameObject();
 	//	this.gameObject.AddComponent<LineRenderer>();
-		rainbowRenderer = this.gameObject.GetComponent<LineRenderer>();
-		rainbowRenderer.sortingLayerName = "UI";
-		rainbowRenderer.sortingOrder = 12;
+		//rainbowRenderer = this.gameObject.GetComponent<LineRenderer>();
+		//rainbowRenderer.sortingLayerName = "UI";
+		//rainbowRenderer.sortingOrder = 12;
+
+		sprite = this.gameObject.GetComponent<SpriteRenderer>();
 
 		c1 = Color.blue;
 		c2 = Color.red;
@@ -98,7 +103,7 @@ public class firerainbow : MonoBehaviour {
 		
 		//if(Input.GetKey(KeyCode.R)){
 			
-			rainbowRenderer.enabled = true;
+			//rainbowRenderer.enabled = true;
 		//	RaycastHit2D hit = Physics2D.Raycast(GameObject.Find("FlameBreathOrigin").transform.position, Vector2.right,beamRange,collisionLevel);
 			// Making a new ray that will go straight down from the gameobject the code is attached to
 			
@@ -111,17 +116,14 @@ public class firerainbow : MonoBehaviour {
 		//	Distance = Mathf.Abs(hit.point.y - transform.position.y);
 			// grabbing the distance in a 2d plane AS A FLOAT
 			
-			rainbowRenderer.material = new Material(Shader.Find("Particles/Alpha Blended"));
-			rainbowRenderer.SetColors(c2,c1);
-			rainbowRenderer.SetPosition(0, this.transform.position);
+			//rainbowRenderer.material = new Material(Shader.Find("Particles/Alpha Blended"));
+			//rainbowRenderer.SetColors(c2,c1);
+			//rainbowRenderer.SetPosition(0, this.transform.position);
 			//rainbowRenderer.SetPosition(1, hit.point + new Vector2(0f,Mathf.Sin(Time.time)));
-			rainbowRenderer.SetPosition(1, this.transform.position+new Vector3(f.ammo-0.2f,0,0));
-			rainbowRenderer.SetWidth(0.5f,0.5f);
-			
+			//rainbowRenderer.SetPosition(1, this.transform.position+new Vector3(f.ammo-0.2f,0,0));
+			//rainbowRenderer.SetWidth(0.5f,0.5f);
 
-
-		
-
-		
+			sprite.color = c1;
+			this.transform.localScale = new Vector3(originalScale * f.ammo - 0.2f, this.transform.localScale.y, this.transform.localScale.z);
 	}
 }
