@@ -21,7 +21,7 @@ public class FlameBreath : MonoBehaviour {
 		string s = t.text;
 		s = s.Substring (1, s.Length-1);
 		ammomax = (float.Parse (s)/4 )+1;
-		if (Input.GetKey (KeyCode.R) &&( ammo > 0.1f )&& canfire) {
+		if ((Input.GetKey (KeyCode.R) || Input.GetKey (KeyCode.RightControl) ) &&( ammo > 0.1f )&& canfire) {
 			if(ammo<0.2f){
 				canfire= false;
 			}

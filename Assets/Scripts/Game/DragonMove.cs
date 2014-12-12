@@ -47,20 +47,20 @@ public class DragonMove : MonoBehaviour {
 	void forceMove(){
 		Quaternion q;// = Quaternion.AngleAxis (-20.0f, Vector3.forward);
 
-		if (Input.GetKey(KeyCode.A)) {
+		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
 			this.rigidbody2D.AddForce(new Vector2(-moveForce * Time.deltaTime, 0f ));
 			q = Quaternion.AngleAxis (20.0f, Vector3.forward);
 			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 4.0f);
 		}
-		if (Input.GetKey (KeyCode.D)) {
+		if (Input.GetKey (KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
 			this.rigidbody2D.AddForce(new Vector2(moveForce * Time.deltaTime, 0f));
 			q = Quaternion.AngleAxis (-20.0f, Vector3.forward);
 			dragonTrans.rotation = Quaternion.Slerp (dragonTrans.rotation, q, Time.deltaTime * 4.0f);
 		}
-		if (Input.GetKey (KeyCode.W)) {
+		if (Input.GetKey (KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
 			this.rigidbody2D.AddForce(new Vector2(0f,moveForce * Time.deltaTime));
 		}
-		if (Input.GetKey (KeyCode.S)) {
+		if (Input.GetKey (KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
 			this.rigidbody2D.AddForce(new Vector2(0f,-moveForce * Time.deltaTime));
 		}
 		
