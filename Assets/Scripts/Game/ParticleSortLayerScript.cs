@@ -3,8 +3,9 @@ using System.Collections;
 
 public class ParticleSortLayerScript : MonoBehaviour {
 
-	public string sortingLayerName = "Middle";
-	public int sortingLayerOrder = 0;
+	public string sortingLayerName = "Foreground";
+	public int sortingLayerOrder = 1;
+	public float lifeTime = 10.0f;
 	
 	// Use this for initialization
 	void Start () {
