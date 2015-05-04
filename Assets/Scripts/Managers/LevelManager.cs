@@ -63,8 +63,14 @@ public class LevelManager : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		//player.layer = 0; //default; no collision with player boundaries
 		//m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, "Town.xml"));
-		if (levelName != "Throne")
-			m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, levelName +".xml"));
+		//if (levelName != "Throne")
+			//m_spawnableEntityCollection = SpawnableEntityContainer.Load(Path.Combine(Application.dataPath, levelName +".xml"));
+
+		if(Resources.Load(levelName) != null){
+			TextAsset levelXML = Resources.Load(levelName) as TextAsset;
+			m_spawnableEntityCollection = SpawnableEntityContainer.LoadFromText(levelXML.ToString());
+		}
+
 		leftLevelEdge = GameObject.Find("Left Level Edge");
 		rightLevelEdge = GameObject.Find("Right Level Edge");
 		initializeSpawnableEntityDictionary();
