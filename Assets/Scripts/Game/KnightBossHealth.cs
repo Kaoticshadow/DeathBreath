@@ -52,7 +52,7 @@ public class KnightBossHealth : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().stopMusic();
 		GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().playMusic2();
 		yield return new WaitForSeconds(1f);
-		this.transform.parent.rigidbody2D.AddForce(new Vector2(0f,-100f));
+		this.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,-100f));
 		yield return new WaitForSeconds(10.0f);
 		GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().endLevel(new Vector2(900.0f, 300.0f));
 		Destroy (this.transform.parent.parent.gameObject);

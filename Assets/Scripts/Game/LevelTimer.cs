@@ -11,6 +11,6 @@ public class LevelTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.guiText.text = levelManager.time.ToString();	
+		this.GetComponent<GUIText>().text = levelManager.time.ToString();	
 	}
 }

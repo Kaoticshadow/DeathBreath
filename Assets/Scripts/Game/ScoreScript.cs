@@ -9,14 +9,14 @@ public class ScoreScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		this.guiText.text = "Score: 0";
+		this.GetComponent<GUIText>().text = "Score: 0";
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		this.guiText.text = "Score: " + Score;
+		this.GetComponent<GUIText>().text = "Score: " + Score;
 	}
 
 

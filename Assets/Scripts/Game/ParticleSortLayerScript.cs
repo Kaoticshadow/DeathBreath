@@ -11,8 +11,8 @@ public class ParticleSortLayerScript : MonoBehaviour {
 	void Start () {
 		//Change Foreground to the layer you want it to display on
 		//You could prob. make a public variable for this
-		particleSystem.renderer.sortingLayerName = sortingLayerName;
-		particleSystem.renderer.sortingOrder = sortingLayerOrder;
+		GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = sortingLayerName;
+		GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = sortingLayerOrder;
 	}
 	
 	// Update is called once per frame

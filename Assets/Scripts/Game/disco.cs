@@ -14,7 +14,7 @@ public class disco : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		this.rigidbody2D.AddTorque (100f * Time.deltaTime);
+		this.GetComponent<Rigidbody2D>().AddTorque (100f * Time.deltaTime);
 		if (r > 1)
 						r = 0;
 		if (g > 1)

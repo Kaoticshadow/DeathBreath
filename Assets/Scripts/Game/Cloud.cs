@@ -6,7 +6,7 @@ public class Cloud : MonoBehaviour {
 	public float speed;
 	// Use this for initialization
 	void Start () {
-		this.rigidbody2D.velocity = new Vector2 (speed, 0);
+		this.GetComponent<Rigidbody2D>().velocity = new Vector2 (speed, 0);
 	
 	}
 	

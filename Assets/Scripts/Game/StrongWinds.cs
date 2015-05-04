@@ -23,9 +23,9 @@ public class StrongWinds : MonoBehaviour {
 		}						
 
 		if (started) {
-			player.rigidbody2D.AddForce (new Vector2 (-Mathf.Abs (Mathf.Sin (Time.time) * windForce * Time.deltaTime), Mathf.Sin (Time.time) * Time.deltaTime));
+			player.GetComponent<Rigidbody2D>().AddForce (new Vector2 (-Mathf.Abs (Mathf.Sin (Time.time) * windForce * Time.deltaTime), Mathf.Sin (Time.time) * Time.deltaTime));
 			if (player.transform.position.y > playerMaxY) {
-					player.rigidbody2D.AddForce (new Vector2 (-windForce * Time.deltaTime, 0f));
+					player.GetComponent<Rigidbody2D>().AddForce (new Vector2 (-windForce * Time.deltaTime, 0f));
 			}
 		}
 	}

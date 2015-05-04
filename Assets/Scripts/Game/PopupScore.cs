@@ -11,7 +11,7 @@ public class PopupScore : MonoBehaviour {
 	void Start () {
 	
 		scoreScaling = new Vector3 (0, 1, 0);
-		this.guiText.text = "";
+		this.GetComponent<GUIText>().text = "";
 	
 	}
 	
@@ -24,7 +24,7 @@ public class PopupScore : MonoBehaviour {
 
 	IEnumerator Wait()
 	{
-		this.guiText.text = "+100!";
+		this.GetComponent<GUIText>().text = "+100!";
 		Debug.Log ("before 2 second wait");
 		yield return new WaitForSeconds(2);
 		Debug.Log ("Waited 2 seconds");
@@ -34,7 +34,7 @@ public class PopupScore : MonoBehaviour {
 	public void popScore(Vector3 myVec)
 	{
 		Instantiate (pop, (myVec + scoreScaling), Quaternion.identity);
-		this.guiText.text = " +100!";
+		this.GetComponent<GUIText>().text = " +100!";
 		StartCoroutine (Wait ());
 
 	}

@@ -16,7 +16,7 @@ public class ArcLightningScript : MonoBehaviour {
 		sourceTransform = GameObject.Find ("Odin").transform;
 		visible = false;
 		timer = 0;
-		this.gameObject.renderer.enabled = false;
+		this.gameObject.GetComponent<Renderer>().enabled = false;
 	
 	}
 	
@@ -36,7 +36,7 @@ public class ArcLightningScript : MonoBehaviour {
 		if (timer >= duration) {
 
 			transform.localScale = new Vector2 (transform.localScale.x, 0);
-			this.gameObject.renderer.enabled = !this.gameObject.renderer.enabled;
+			this.gameObject.GetComponent<Renderer>().enabled = !this.gameObject.GetComponent<Renderer>().enabled;
 			timer = 0;
 		}
 	}

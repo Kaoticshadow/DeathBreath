@@ -6,7 +6,7 @@ public class cutefire : MonoBehaviour {
 	public float lifetime = 5f;
 	// Use this for initialization
 	void Start () {
-		this.rigidbody2D.AddTorque (Random.Range (2000f, 5000f));
+		this.GetComponent<Rigidbody2D>().AddTorque (Random.Range (2000f, 5000f));
 	
 	}
 	

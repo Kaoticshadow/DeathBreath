@@ -48,7 +48,7 @@ public class dragonbornedeath : MonoBehaviour {
 			dragonsoul temp = Instantiate(ds, this.transform.position,Random.rotation) as dragonsoul;
 			temp.target = player;
 			Vector3 dir = player.transform.position-this.transform.position ;
-			temp.rigidbody2D.AddForce((dir.normalized + new Vector3(Random.Range(-dir.normalized.x,dir.normalized.x)*.5f,Random.Range(-dir.normalized.y,dir.normalized.y)*3,0)*50)*10);
+			temp.GetComponent<Rigidbody2D>().AddForce((dir.normalized + new Vector3(Random.Range(-dir.normalized.x,dir.normalized.x)*.5f,Random.Range(-dir.normalized.y,dir.normalized.y)*3,0)*50)*10);
 		}
 	}
 

@@ -48,7 +48,7 @@ public class DragonShoot : MonoBehaviour {
 			if (Input.GetKey (firekey)&&letgo && disableFire == false) {
 				Flame x = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 				x.transform.localScale = new Vector2(x.transform.localScale.x,x.transform.localScale.y*fireScale);
-				x.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+				x.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, 0));
 				coolingdown = true;
 				x.power = fireScale;
 				//fireExtraBalls();
@@ -80,7 +80,7 @@ public class DragonShoot : MonoBehaviour {
 			//small bonus shot
 			bp = (Flame)Instantiate (o_smallFire, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x*fireScale,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, 0));
 			bp.power = fireScale / 5f;
 			break;
 		case 2:
@@ -88,19 +88,19 @@ public class DragonShoot : MonoBehaviour {
 			//bonus shot 1 (small)
 			bp = (Flame)Instantiate (smallFire, startloc.transform.position + bonusShotOffset, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x*fireScale,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, 0));
 			bp.power = fireScale / 5f;
 			//bonus shot 2 (small)
 			bp = (Flame)Instantiate (smallFire, startloc.transform.position - bonusShotOffset, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x*fireScale,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, 0));
 			bp.power = fireScale / 5f;
 			break;
 		case 3:
 			//regular bonus shot
 			bp = (Flame)Instantiate (of, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, 0));
 			bp.power = fireScale;
 			break;
 		case 4: 
@@ -108,12 +108,12 @@ public class DragonShoot : MonoBehaviour {
 			//bonus shot upwards
 			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, fireForce*0.7f));
 			bp.power = fireScale;
 			//bonus shot downwards
 			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, -fireForce*0.7f));
 			bp.power = fireScale;
 			break;
 		case 5: 
@@ -121,17 +121,17 @@ public class DragonShoot : MonoBehaviour {
 			//bonus shot upwards
 			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, fireForce*0.7f));
 			bp.power = fireScale;
 			//bonus shot downwards
 			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, -fireForce*0.7f));
 			bp.power = fireScale;
 			//bonus small shot
 			bp = (Flame)Instantiate (o_smallFire, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, 0));
 			bp.power = fireScale / 5f;
 
 			break;
@@ -140,17 +140,17 @@ public class DragonShoot : MonoBehaviour {
 			//bonus shot upwards
 			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, fireForce*0.7f));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, fireForce*0.7f));
 			bp.power = fireScale;
 			//bonus shot downwards
 			bp = (Flame)Instantiate (f, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, -fireForce*0.7f));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, -fireForce*0.7f));
 			bp.power = fireScale;
 			//bonus small shot
 			bp = (Flame)Instantiate (o_smallFire, startloc.transform.position, Quaternion.identity);
 			bp.transform.localScale = new Vector2(bp.transform.localScale.x,bp.transform.localScale.y*fireScale);
-			bp.rigidbody2D.AddForce (new Vector2 (fireForce, 0));
+			bp.GetComponent<Rigidbody2D>().AddForce (new Vector2 (fireForce, 0));
 			bp.power = fireScale / 5f;
 			break;
 		}

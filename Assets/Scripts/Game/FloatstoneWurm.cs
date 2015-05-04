@@ -70,19 +70,19 @@ public class FloatstoneWurm : MonoBehaviour {
 				spriteCollider.enabled = false;
 			}
 		}
-		headSegment.rigidbody2D.velocity = new Vector2(0f,0f);
+		headSegment.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
 
 		yield return new WaitForSeconds(1f);
 
 		//headSegment.rigidbody2D.velocity = new Vector2(0f,-1f);
-		headSegment.rigidbody2D.gravityScale = 1.0f;
+		headSegment.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
 
 		foreach(SpriteRenderer spriteRender in boss_sprites){
 			Rigidbody2D spriteBody = spriteRender.gameObject.GetComponent<Rigidbody2D>();
 			if(spriteBody != null){
 				yield return new WaitForSeconds(1f);
 				//spriteBody.velocity = new Vector2(0f,-1f);
-				spriteBody.rigidbody2D.gravityScale = 1.0f;
+				spriteBody.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
 			}
 		}
 

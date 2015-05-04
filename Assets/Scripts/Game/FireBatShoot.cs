@@ -27,7 +27,7 @@ public class FireBatShoot : MonoBehaviour {
 	void fire(){
 		
 		cutefire c = Instantiate (cf_pf, go.transform.position, Quaternion.identity) as cutefire;
-		c.rigidbody2D.AddForce (new Vector2 (-300f, 0));
+		c.GetComponent<Rigidbody2D>().AddForce (new Vector2 (-300f, 0));
 		fireCounter = 0;
 
 	}

@@ -29,7 +29,7 @@ public class HealthScript : MonoBehaviour {
 
 	public void DropScale(){
 		HealthScale scale = HealthScaleStack.Pop();
-		scale.rigidbody2D.gravityScale = 1.0f;
-		scale.rigidbody2D.AddForce(new Vector2(100.0f,100.0f));
+		scale.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+		scale.GetComponent<Rigidbody2D>().AddForce(new Vector2(100.0f,100.0f));
 	}
 }

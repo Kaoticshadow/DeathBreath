@@ -20,7 +20,7 @@ public class stalagmite : MonoBehaviour {
 			loose = true;
 		}
 		if(loose){
-			rigidbody2D.AddForce(new Vector2(0f,100f*Time.deltaTime));
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,100f*Time.deltaTime));
 		}
 	}
 }

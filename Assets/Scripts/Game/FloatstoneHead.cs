@@ -43,7 +43,7 @@ public class FloatstoneHead : MonoBehaviour {
 		destination = destinations[0];
 		Vector2 newVelocity = ((Vector2)destinations [destinationIndex] - (Vector2)this.transform.position);
 		newVelocity.Normalize();
-		this.rigidbody2D.velocity = newVelocity * 3;
+		this.GetComponent<Rigidbody2D>().velocity = newVelocity * 3;
 		targetVector = newVelocity;
 		originalVector = newVelocity;
 
@@ -60,7 +60,7 @@ public class FloatstoneHead : MonoBehaviour {
 			chooseNextDestination();
 		}
 		turnFraction+= Time.deltaTime;
-		this.rigidbody2D.velocity = Vector2.Lerp(originalVector,targetVector,turnFraction) * 4.0f;
+		this.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(originalVector,targetVector,turnFraction) * 4.0f;
 	
 	}
 

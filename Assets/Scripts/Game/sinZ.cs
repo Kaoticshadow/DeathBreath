@@ -12,6 +12,6 @@ public class sinZ : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		this.transform.position = this.transform.position + new Vector3(0.0f,Time.deltaTime,-Time.deltaTime);
-		this.camera.orthographicSize += Time.deltaTime;
+		this.GetComponent<Camera>().orthographicSize += Time.deltaTime;
 	}
 }

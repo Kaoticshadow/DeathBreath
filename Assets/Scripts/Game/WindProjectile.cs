@@ -19,7 +19,7 @@ public class WindProjectile : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.tag == "Player"){
-			other.gameObject.rigidbody2D.AddForce(new Vector2(-1000f,0f));
+			other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f,0f));
 			Destroy(this.gameObject);
 		}
 	}

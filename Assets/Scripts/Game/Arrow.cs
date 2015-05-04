@@ -15,7 +15,7 @@ public class Arrow : MonoBehaviour {
 	void Update () {
 		//point @ velocity
 		life += Time.deltaTime;
-		Quaternion q = Quaternion.AngleAxis (getAngle (this.rigidbody2D.velocity), getv(this.rigidbody2D.velocity.x));//positive rotates down, negative up
+		Quaternion q = Quaternion.AngleAxis (getAngle (this.GetComponent<Rigidbody2D>().velocity), getv(this.GetComponent<Rigidbody2D>().velocity.x));//positive rotates down, negative up
 		this.transform.rotation = q;//Quaternion.Slerp (this.transform.rotation, q, Time.deltaTime * 1.0f);
 		if (life > lifetime)
 						Destroy (this.gameObject);

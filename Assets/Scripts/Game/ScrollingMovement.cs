@@ -10,7 +10,7 @@ public class ScrollingMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_t = this.transform;
-		m_rb = this.rigidbody2D;
+		m_rb = this.GetComponent<Rigidbody2D>();
 		m_rb.velocity = new Vector2 (speed, 0);
 		
 		

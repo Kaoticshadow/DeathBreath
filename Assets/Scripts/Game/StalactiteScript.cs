@@ -76,7 +76,7 @@ public class StalactiteScript : MonoBehaviour {
 	{
 		if(Random.value >= 0.5)
 		{
-			this.rigidbody2D.AddForce(new Vector2(0f, -300.0f));
+			this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -300.0f));
 		}
 
 	}

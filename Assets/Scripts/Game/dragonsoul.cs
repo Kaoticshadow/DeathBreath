@@ -18,8 +18,8 @@ public class dragonsoul : MonoBehaviour {
 
 		if (target != null) {
 			Vector3 dir = target.transform.position - this.transform.position;
-			this.rigidbody2D.velocity = Vector3.Lerp(this.rigidbody2D.velocity,dir.normalized * targetSpeed,0.05f);
-			this.rigidbody2D.AddForce (dir * accel * Time.deltaTime);//dir of player target
+			this.GetComponent<Rigidbody2D>().velocity = Vector3.Lerp(this.GetComponent<Rigidbody2D>().velocity,dir.normalized * targetSpeed,0.05f);
+			this.GetComponent<Rigidbody2D>().AddForce (dir * accel * Time.deltaTime);//dir of player target
 			if (dir.magnitude < targetDistance){
 					Destroy (this.gameObject);
 			}
@@ -29,7 +29,7 @@ public class dragonsoul : MonoBehaviour {
 
 
 	void updateRotation(){
-		Vector2 targetVector = this.rigidbody2D.velocity;
+		Vector2 targetVector = this.GetComponent<Rigidbody2D>().velocity;
 		float angle = (Mathf.Atan2(targetVector.y, targetVector.x) * Mathf.Rad2Deg);
 		angle += 270.0f;
 		this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

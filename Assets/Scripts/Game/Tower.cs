@@ -36,7 +36,7 @@ public class Tower : MonoBehaviour {
 		
 		foreach(TowerFragment fragmentPrefab in fragmentPrefabs){
 			TowerFragment fragment = Instantiate(fragmentPrefab,m_t.localPosition,Quaternion.identity) as TowerFragment;
-			fragment.rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.None;
+			fragment.GetComponent<Rigidbody2D>().collisionDetectionMode = CollisionDetectionMode2D.None;
 			fragment.transform.parent = this.transform;
 			TowerFragmentList.Add(fragment);
 		}
@@ -44,8 +44,8 @@ public class Tower : MonoBehaviour {
 	
 	public void DropFragments(){
 		foreach(TowerFragment fragment in TowerFragmentList){
-			fragment.rigidbody2D.gravityScale = 1.0f;
-			fragment.rigidbody2D.AddForce(new Vector2(100.0f * Random.Range(-1f,1f),100.0f * Random.Range(0.5f,2.0f)));
+			fragment.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+			fragment.GetComponent<Rigidbody2D>().AddForce(new Vector2(100.0f * Random.Range(-1f,1f),100.0f * Random.Range(0.5f,2.0f)));
 			//fragment.rigidbody2D.AddTorque(100f * Random.Range(0.5f,2.0f));
 		}
 	}

@@ -59,7 +59,7 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 		destination = destinations[0];
 		Vector2 newVelocity = ((Vector2)destinations [destinationIndex] - (Vector2)this.transform.position);
 		newVelocity.Normalize();
-		this.rigidbody2D.velocity = newVelocity * speed;
+		this.GetComponent<Rigidbody2D>().velocity = newVelocity * speed;
 		targetVector = newVelocity;
 		originalVector = newVelocity;
 		
@@ -96,7 +96,7 @@ public class FloatstoneWurmSegment : MonoBehaviour {
 		//targetVector = new Vector3(destination.x,destination.y,0) - new Vector3(prevDestination.x, prevDestination.y, 0);
 		targetVector = new Vector3 (destination.x, destination.y, 0) - gameObject.transform.localPosition;
 		targetVector.Normalize ();
-		this.rigidbody2D.velocity = targetVector * speed;
+		this.GetComponent<Rigidbody2D>().velocity = targetVector * speed;
 		turnFraction = 0;
 
 		//Vector3 vectorToTarget = targetTransform.position - transform.position;

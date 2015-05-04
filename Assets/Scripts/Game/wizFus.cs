@@ -25,7 +25,7 @@ public class wizFus : MonoBehaviour {
 		if (start <= 0){
 			//this.rigidbody2D.AddForce ((target.position - this.transform.position).normalized * speed)
 			targetVelocity = (target.position - this.transform.position).normalized * speed;
-			this.rigidbody2D.velocity = Vector2.Lerp(this.rigidbody2D.velocity,targetVelocity,velocityChangeFactor);
+			this.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(this.GetComponent<Rigidbody2D>().velocity,targetVelocity,velocityChangeFactor);
 		}
 		else if (start > 0 && startspot != null){
 			this.transform.position = startspot.position;
@@ -51,7 +51,7 @@ public class wizFus : MonoBehaviour {
 	}
 
 	void updateRotation(){
-		Vector2 targetVector = this.rigidbody2D.velocity;
+		Vector2 targetVector = this.GetComponent<Rigidbody2D>().velocity;
 		float angle = (Mathf.Atan2(targetVector.y, targetVector.x) * Mathf.Rad2Deg);
 		angle += 180.0f;
 		this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -69,7 +69,7 @@ public class wizFus : MonoBehaviour {
 			catch(UnityException e){}
 			//create splosions
 			GameObject x = (GameObject)Instantiate(smokel,this.transform.position,Quaternion.identity);
-			x.renderer.sortingLayerName = "Middle_player";
+			x.GetComponent<Renderer>().sortingLayerName = "Middle_player";
 			Destroy(this.gameObject);
 		}
 		if (col.gameObject.tag == "Player") {

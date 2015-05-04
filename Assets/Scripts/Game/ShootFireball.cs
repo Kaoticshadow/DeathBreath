@@ -27,7 +27,7 @@ public class ShootFireball : MonoBehaviour {
 		{
 			if (Time.time >= nextFireTime){
 				clone = Instantiate (m_rb, m_t.position, m_t.rotation) as FireBall;
-				Physics2D.IgnoreCollision(clone.collider2D, collider2D);
+				Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 				clone.veloc = _direction*projectileSpeed;
 				nextFireTime = Time.time + cooldown;
 			}

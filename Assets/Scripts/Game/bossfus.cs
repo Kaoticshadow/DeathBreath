@@ -14,7 +14,7 @@ public class bossfus : MonoBehaviour {
 	}
 
 	void updateRotation(){
-		Vector2 targetVector = this.rigidbody2D.velocity;
+		Vector2 targetVector = this.GetComponent<Rigidbody2D>().velocity;
 		float angle = (Mathf.Atan2(targetVector.y, targetVector.x) * Mathf.Rad2Deg);
 		angle += 180.0f;
 		this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

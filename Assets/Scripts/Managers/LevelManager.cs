@@ -98,7 +98,7 @@ public class LevelManager : MonoBehaviour {
 
 										//set enemy as champion
 										if (entity.champion > 0) {
-												spawnedObject.AddComponent ("ChampionEnemy");
+												spawnedObject.AddComponent <ChampionEnemy>();
 										}
 								}
 						}
@@ -152,9 +152,9 @@ public class LevelManager : MonoBehaviour {
 	void GameOver(){
 		player.GetComponent<DragonMove>().disableControls = true;
 		playerBoundaries.SetActive (false);
-		player.rigidbody2D.gravityScale = 1.0f;
-		player.rigidbody2D.AddForce(new Vector2(100f,50f));
-		player.rigidbody2D.AddTorque(-50f);
+		player.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+		player.GetComponent<Rigidbody2D>().AddForce(new Vector2(100f,50f));
+		player.GetComponent<Rigidbody2D>().AddTorque(-50f);
 		persistentInformation.levelToLoad = levelName;
 		//StartCoroutine(WaitAndLoadLevel(2.0f,levelName));
 		StartCoroutine(WaitAndLoadLevel(2.0f,"Death"));
@@ -207,7 +207,7 @@ public class LevelManager : MonoBehaviour {
 		//Application.loadlevel
 		//yield return new WaitForSeconds (3.0f);
 		//player.rigidbody2D.AddForce (myVec2);
-		player.rigidbody2D.velocity = new Vector2(10f,0f);
+		player.GetComponent<Rigidbody2D>().velocity = new Vector2(10f,0f);
 		//player.rigidbody2D.AddTorque (10f);
 		//yield return new WaitForSeconds (0.5f);
 		//player.rigidbody2D.AddTorque (-10f);

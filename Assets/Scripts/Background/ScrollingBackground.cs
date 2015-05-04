@@ -14,7 +14,7 @@ public class ScrollingBackground : MonoBehaviour {
 	void Start () {
 		levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 		m_t = this.transform;
-		m_rb = this.rigidbody2D;
+		m_rb = this.GetComponent<Rigidbody2D>();
 		m_rb.velocity = new Vector2 (speed, 0);
 
 

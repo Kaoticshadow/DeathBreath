@@ -24,12 +24,12 @@ public class Flame : MonoBehaviour {
 				col.gameObject.SendMessage ("takeDamage", power);
 				//create splosions
 				GameObject x = (GameObject)Instantiate(smoke,this.transform.position,Quaternion.identity);
-				x.renderer.sortingLayerName = "Middle_player";
+				x.GetComponent<Renderer>().sortingLayerName = "Middle_player";
 				Destroy(this.gameObject);
 		}
 		if (col.gameObject.tag == "FireResist" || col.gameObject.tag == "EnemyTerrain") {
 			GameObject x = (GameObject)Instantiate(smoke,this.transform.position,Quaternion.identity);
-			x.renderer.sortingLayerName = "Middle_player";
+			x.GetComponent<Renderer>().sortingLayerName = "Middle_player";
 			Destroy(this.gameObject);
 		}
 	}

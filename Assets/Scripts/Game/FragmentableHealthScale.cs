@@ -39,7 +39,7 @@ public class FragmentableHealthScale : MonoBehaviour {
 		foreach(HealthScaleFragment fragmentPrefab in fragmentPrefabs){
 			HealthScaleFragment fragment = Instantiate(fragmentPrefab,m_t.localPosition,Quaternion.identity) as HealthScaleFragment;
 			fragment.transform.localScale = new Vector3(1.5f,1.5f,1);
-			fragment.renderer.sortingLayerName = "UI";
+			fragment.GetComponent<Renderer>().sortingLayerName = "UI";
 			fragment.transform.parent=this.transform;
 			HealthScaleFragmentList.Add(fragment);
 		}
@@ -65,18 +65,18 @@ public class FragmentableHealthScale : MonoBehaviour {
 	public void DropFragment(){
 		HealthScaleFragment fragment = HealthScaleFragmentList[HealthScaleFragmentList.Count-1];
 		HealthScaleFragmentList.Remove(fragment);
-		fragment.rigidbody2D.gravityScale = 1.0f;
-		fragment.rigidbody2D.AddForce(new Vector2(100.0f,100.0f));
-		fragment.rigidbody2D.AddTorque(100f);
+		fragment.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+		fragment.GetComponent<Rigidbody2D>().AddForce(new Vector2(100.0f,100.0f));
+		fragment.GetComponent<Rigidbody2D>().AddTorque(100f);
 		hp--;
 	}
 
 	public void DropFragments(){
 		foreach(HealthScaleFragment fragment in HealthScaleFragmentList){
 			//HealthScaleFragmentList.Remove(fragment);
-			fragment.rigidbody2D.gravityScale = 1.0f;
-			fragment.rigidbody2D.AddForce(new Vector2(100.0f * Random.Range(-1f,1f),100.0f * Random.Range(0.5f,2.0f)));
-			fragment.rigidbody2D.AddTorque(100f * Random.Range(0.5f,2.0f));
+			fragment.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+			fragment.GetComponent<Rigidbody2D>().AddForce(new Vector2(100.0f * Random.Range(-1f,1f),100.0f * Random.Range(0.5f,2.0f)));
+			fragment.GetComponent<Rigidbody2D>().AddTorque(100f * Random.Range(0.5f,2.0f));
 			hp = 0;
 		}
 	}
@@ -92,7 +92,7 @@ public class FragmentableHealthScale : MonoBehaviour {
 
 	void applySortOrder(){
 		foreach(HealthScaleFragment fragment in HealthScaleFragmentList){
-			fragment.renderer.sortingOrder = sortOrder;
+			fragment.GetComponent<Renderer>().sortingOrder = sortOrder;
 		}
 	}
 

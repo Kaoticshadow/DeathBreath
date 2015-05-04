@@ -39,8 +39,8 @@ public class AxShoot : MonoBehaviour {
 		
 		Ax tempA = (Ax)Instantiate (a, startloc.transform.position, Quaternion.identity);
 		
-		tempA.rigidbody2D.AddTorque (-factor * 120);
-		tempA.rigidbody2D.AddForce (new Vector2(-power, 3f) *280);
+		tempA.GetComponent<Rigidbody2D>().AddTorque (-factor * 120);
+		tempA.GetComponent<Rigidbody2D>().AddForce (new Vector2(-power, 3f) *280);
 
 		}
 
@@ -51,8 +51,8 @@ public class AxShoot : MonoBehaviour {
 
 		Ax tempA = (Ax)Instantiate (a, startloc.transform.position, Quaternion.identity);
 		
-		tempA.rigidbody2D.AddTorque (-factor * 120);
-		tempA.rigidbody2D.AddForce (new Vector2(Random.Range(factor,factor-1.5f), 2f) *280);
+		tempA.GetComponent<Rigidbody2D>().AddTorque (-factor * 120);
+		tempA.GetComponent<Rigidbody2D>().AddForce (new Vector2(Random.Range(factor,factor-1.5f), 2f) *280);
 
 
 	}

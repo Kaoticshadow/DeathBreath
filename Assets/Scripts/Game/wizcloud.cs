@@ -5,7 +5,7 @@ public class wizcloud : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.particleSystem.renderer.sortingLayerName = "Foreground";
+		this.GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
 	}
 	
 	// Update is called once per frame

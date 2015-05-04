@@ -19,7 +19,7 @@ public class FinalDestinationCamera : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		egg = GameObject.FindGameObjectWithTag ("egg");
-		initialCameraSize = this.camera.orthographicSize;
+		initialCameraSize = this.GetComponent<Camera>().orthographicSize;
 		initialY = this.transform.position.y;	
 	}
 	
@@ -29,7 +29,7 @@ public class FinalDestinationCamera : MonoBehaviour {
 		sizeRatio = Vector3.Distance(player.transform.position,egg.transform.position)/7.5f;
 		sizeRatio = Mathf.Clamp(sizeRatio, 0.5f,3f);
 
-		this.camera.orthographicSize = initialCameraSize * sizeRatio;
+		this.GetComponent<Camera>().orthographicSize = initialCameraSize * sizeRatio;
 		this.transform.position = new Vector3(this.transform.position.x,initialY+sizeRatio*2.7f,this.transform.position.z);// + new Vector3 (0f, sizeRatio, 0f);
 	}
 }

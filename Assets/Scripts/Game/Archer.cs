@@ -81,7 +81,7 @@ public class Archer : MonoBehaviour {
 		Vector3 dir = target.transform.position - this.transform.position + new Vector3(0,offset,0);
 		Vector3 dirn = dir.normalized;
 
-		x.rigidbody2D.AddForce (new Vector2 (dirn.x, dirn.y) * arrowForce*calcDecay(dir.magnitude));
+		x.GetComponent<Rigidbody2D>().AddForce (new Vector2 (dirn.x, dirn.y) * arrowForce*calcDecay(dir.magnitude));
 
 		canfire = false;
 	}
@@ -93,7 +93,7 @@ public class Archer : MonoBehaviour {
 
 		float constantArrowForce = 1000f;
 		Vector2 yOffset = new Vector2(0f, Mathf.Abs(dir.x * 5f));
-		x.rigidbody2D.AddForce (new Vector2 (dirn.x, dirn.y) * 1000f + yOffset);
+		x.GetComponent<Rigidbody2D>().AddForce (new Vector2 (dirn.x, dirn.y) * 1000f + yOffset);
 
 		canfire = false;
 	}

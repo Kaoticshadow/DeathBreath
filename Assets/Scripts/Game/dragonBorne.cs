@@ -113,7 +113,7 @@ public class dragonBorne : MonoBehaviour {
 			{
 				rebound = false;
 				fusrudaback.GetComponent<ParticleSystem>().Emit(200);
-				player.rigidbody2D.AddForce(new Vector2(1000,0));
+				player.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000,0));
 			}
 			if (!rebound) {
 				reboundctr-= Time.deltaTime;
@@ -173,7 +173,7 @@ public class dragonBorne : MonoBehaviour {
 		{
 			rebound = false;
 			fusruda.GetComponent<ParticleSystem>().Emit(200);
-			player.rigidbody2D.AddForce(new Vector2(-1000,0));
+			player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000,0));
 		}
 
 		if (!rebound) {
@@ -191,7 +191,7 @@ public class dragonBorne : MonoBehaviour {
 		if(openingcd<0&&rain!=null){
 			fusruda.GetComponent<ParticleSystem>().Emit(200);
 			
-			player.rigidbody2D.AddForce(new Vector2(-200,0));
+			player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,0));
 			rain.GetComponent<ParticleSystem>().Stop();
 			if(openingcd<0){
 				destroyeverything();
