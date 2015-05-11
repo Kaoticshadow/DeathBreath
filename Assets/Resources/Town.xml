@@ -75,7 +75,7 @@
         <SpawnableEntity>
             <name>hut</name>
             <time>20</time>
-            <x>-1</x>
+            <x>-2</x>
             <y>-1</y>
         </SpawnableEntity>
         <SpawnableEntity>
@@ -83,8 +83,8 @@
             <time>20</time>
             <x>0</x>
             <y>0.2</y>
-            <x_scale>0.5</x_scale>
-            <y_scale>0.5</y_scale>
+            <x_scale>0.8</x_scale>
+            <y_scale>0.8</y_scale>
         </SpawnableEntity>
         <SpawnableEntity>
             <name>hut</name>
@@ -97,8 +97,8 @@
             <time>22</time>
             <x>0</x>
             <y>0.2</y>
-            <x_scale>0.6</x_scale>
-            <y_scale>0.6</y_scale>
+            <x_scale>0.9</x_scale>
+            <y_scale>0.9</y_scale>
         </SpawnableEntity>
         <SpawnableEntity>
             <name>hut</name>
@@ -109,14 +109,6 @@
         
         
 <!-- town defense -->
- 		<SpawnableEntity>
- 			<name>archer</name>
- 			<time>21</time>
- 			<x>-2</x>
- 			<y>0</y>
-            <x_scale>0.8</x_scale>
-            <y_scale>0.8</y_scale>
- 		</SpawnableEntity>
  		<SpawnableEntity>
  			<name>archer</name>
  			<time>22</time>
@@ -416,8 +408,6 @@
  			<time>50.1</time>
  			<x>0</x>
  			<y>0.7</y>
-            <x_scale>0.5</x_scale>
-            <y_scale>0.5</y_scale>
         </SpawnableEntity>
  		<SpawnableEntity>
  			<name>archer</name>
@@ -473,8 +463,8 @@
             <time>58</time>
             <x>0</x>
             <y>0.8</y>
-            <x_scale>0.5</x_scale>
-            <y_scale>0.5</y_scale>
+            <x_scale>0.8</x_scale>
+            <y_scale>0.8</y_scale>
         </SpawnableEntity>
         <SpawnableEntity>
             <name>hut</name>
@@ -567,8 +557,8 @@
             <time>72</time>
             <x>1</x>
             <y>0.8</y>
-            <x_scale>0.5</x_scale>
-            <y_scale>0.5</y_scale>
+            <x_scale>0.8</x_scale>
+            <y_scale>0.8</y_scale>
         </SpawnableEntity>
 
 
@@ -619,8 +609,6 @@
             <time>77.5</time>
             <x>0</x>
             <y>0.7</y>
-            <x_scale>0.5</x_scale>
-            <y_scale>0.5</y_scale>
         </SpawnableEntity>
 
         
